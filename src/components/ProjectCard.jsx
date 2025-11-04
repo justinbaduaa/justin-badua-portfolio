@@ -12,7 +12,7 @@ const ProjectCard = ({
   return (
     <NavLink
       to={to}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-200/80 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-neutral-300"
+      className="group relative flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-200/80 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-neutral-300"
     >
       <div className="flex items-start justify-between text-xs uppercase tracking-[0.3em] text-neutral-400">
         <span>
@@ -37,9 +37,9 @@ const ProjectCard = ({
           )}
         </div>
 
-        <div className="space-y-2 text-neutral-600">
+        <div className="space-y-2">
           <h3 className="text-xl font-semibold text-neutral-900">{title}</h3>
-          <p className="max-w-[28ch] text-sm leading-6 text-neutral-500">
+          <p className="text-sm leading-6 text-neutral-500">
             {description}
           </p>
         </div>
