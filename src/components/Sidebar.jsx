@@ -48,7 +48,7 @@ const linkBaseStyles =
 
 const Sidebar = () => {
   return (
-    <aside className="hidden h-screen w-72 shrink-0 border-r border-neutral-200 bg-white px-8 py-10 lg:fixed lg:left-0 lg:inset-y-0 lg:flex lg:flex-col lg:justify-between lg:overflow-y-auto">
+    <aside className="hidden h-screen w-72 shrink-0 border-r border-neutral-200 bg-white px-8 py-10 lg:fixed lg:left-0 lg:inset-y-0 lg:flex lg:flex-col lg:justify-between lg:overflow-hidden">
       <div className="space-y-10">
         <div className="space-y-4">
           <NavLink to="/" className="inline-block">

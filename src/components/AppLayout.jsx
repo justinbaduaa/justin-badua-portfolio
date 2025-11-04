@@ -3,10 +3,10 @@ import Sidebar from "./Sidebar.jsx";
 
 const AppLayout = () => {
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div className="h-screen bg-white text-neutral-900 overflow-hidden">
       <Sidebar />
-      <div className="flex w-full flex-1 flex-col lg:ml-72">
-        <header className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 lg:hidden">
+      <div className="flex h-screen w-full flex-1 flex-col lg:ml-72">
+        <header className="flex shrink-0 items-center justify-between border-b border-neutral-200 px-6 py-4 lg:hidden">
           <NavLink to="/" className="flex items-center gap-3">
             <img
               src="/JB-Glasses.svg"
@@ -44,7 +44,7 @@ const AppLayout = () => {
           </nav>
         </header>
 
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden">
           <Outlet />
         </main>
       </div>

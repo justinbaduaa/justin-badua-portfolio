@@ -61,7 +61,7 @@ const Home = () => {
   }).format(currentTime);
 
   return (
-    <div className="min-h-screen bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-10 lg:px-16">
+    <div className="min-h-screen w-full bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-10 lg:px-16">
       <header className="mb-16 space-y-10">
         <div className="flex flex-col gap-4 text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
           <p className="text-sm uppercase tracking-[0.3em] text-neutral-400">
@@ -92,7 +92,7 @@ const Home = () => {
           <span>Selected Work</span>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid auto-rows-fr gap-10 lg:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
