@@ -9,30 +9,15 @@ const workSections = [
   {
     label: "Human Interface",
     items: [
-      { label: "Apple", to: "/projects/apple" },
-      { label: "GoodNotes", to: "/projects/goodnotes" },
-      { label: "Micro-Interactions", to: "/projects/micro-interactions" },
+      { label: "Clikk Apply", to: "/projects/clikk-apply" },
     ],
   },
   {
-    label: "Enterprise",
+    label: "AI & Machine Learning",
     items: [
-      { label: "Marqeta | SSO Forms", to: "/projects/marqeta" },
-      { label: "Bug-Add", to: "/projects/bug-add" },
-      { label: "PropertyGuru", to: "/projects/propertyguru" },
-    ],
-  },
-  {
-    label: "Brand",
-    items: [
-      { label: "Sleepy Cat Books", to: "/projects/sleepy-cat-books" },
-    ],
-  },
-  {
-    label: "Sketch",
-    items: [
-      { label: "Watercolor", to: "/sketch/watercolor" },
-      { label: "Draw", to: "/sketch/draw" },
+      { label: "MiCRA", to: "/projects/micra" },
+      { label: "RL² Rocket League Agent", to: "/projects/rl-rocket-league" },
+      { label: "Crakd", to: "/projects/crakd" },
     ],
   },
 ];
