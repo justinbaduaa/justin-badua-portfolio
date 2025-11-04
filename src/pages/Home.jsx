@@ -46,6 +46,8 @@ const projects = [
 
 const Home = () => {
   const [currentTime, setCurrentTime] = useState(() => new Date());
+  const [spotlightPosition, setSpotlightPosition] = useState({ x: 50, y: 50 });
+  const [isSpotlightActive, setIsSpotlightActive] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => setCurrentTime(new Date()), 60_000);
@@ -63,6 +65,29 @@ const Home = () => {
     hour: "numeric",
     minute: "2-digit",
   }).format(currentTime);
+
+  const handleSpotlightMove = (event) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+
+    // Use requestAnimationFrame for smoother updates
+    requestAnimationFrame(() => {
+      setSpotlightPosition({
+        x: Math.min(Math.max(x, 0), 100),
+        y: Math.min(Math.max(y, 0), 100),
+      });
+    });
+  };
+
+  const handleSpotlightEnter = (event) => {
+    setIsSpotlightActive(true);
+    handleSpotlightMove(event);
+  };
+
+  const handleSpotlightLeave = () => {
+    setIsSpotlightActive(false);
+  };
 
   return (
     <div className="w-full max-w-full bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-8 lg:px-12 lg:pr-16 xl:px-16 xl:pr-24">
@@ -104,16 +129,25 @@ const Home = () => {
         </div>
 
         <div className="min-w-0 space-y-6 overflow-hidden">
-          <h1 
-            className="max-w-3xl text-4xl font-semibold leading-tight wrap-break-word sm:text-5xl"
-            style={{
-              background: 'linear-gradient(to right, #7F8187, #424448)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}
+          <h1
+            className="max-w-3xl text-4xl font-semibold leading-tight wrap-break-word sm:text-5xl hero-gradient-text"
           >
-            I'm a Queen's Computing student in AI and Economics, building thoughtful,
+            I'm a {" "}
+            <span
+              className="queens-highlight"
+              data-text="Queen's"
+              onMouseEnter={handleSpotlightEnter}
+              onMouseMove={handleSpotlightMove}
+              onMouseLeave={handleSpotlightLeave}
+              style={{
+                "--spotlight-x": `${spotlightPosition.x}%`,
+                "--spotlight-y": `${spotlightPosition.y}%`,
+                "--spotlight-opacity": isSpotlightActive ? 1 : 0,
+              }}
+            >
+              Queen&apos;s
+            </span>{" "}
+            Computing student in AI and Economics, building thoughtful,
             human-centered interfaces.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-neutral-500 wrap-break-word">
