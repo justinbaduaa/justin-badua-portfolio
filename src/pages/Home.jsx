@@ -91,9 +91,8 @@ const Home = () => {
       </header>
 
       <section className="min-w-0 max-w-5xl space-y-10 overflow-hidden">
-        <div className="flex w-full min-w-0 items-center justify-between overflow-hidden border-y border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
+        <div className="flex w-full min-w-0 items-center overflow-hidden border-t border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
           <p className="min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap">Projects</p>
-          <span className="ml-4 shrink-0 overflow-hidden text-ellipsis whitespace-nowrap">Selected Work</span>
         </div>
 
         {/* Bento Box Grid Layout */}
