@@ -73,9 +73,19 @@ const Home = () => {
               /ka-MOOS-tah/
             </p>
             <p className="text-4xl">
-              <span className="font-light text-neutral-300">Welcome </span>
+              <span
+                className="font-medium"
+                style={{
+                  background: 'linear-gradient(to right, #A7A7A7, #7D7F82)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                Welcome
+              </span>{' '}
               <span 
-                className="font-semibold"
+                className="font-normal"
                 style={{
                   background: 'linear-gradient(to right, #7F8187, #424448)',
                   WebkitBackgroundClip: 'text',
@@ -114,8 +124,8 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="min-w-0 max-w-5xl space-y-10 overflow-hidden">
-        <div className="flex w-full min-w-0 items-center overflow-hidden border-t border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
+      <section className="min-w-0 max-w-5xl space-y-10 overflow-visible">
+        <div className="flex w-full min-w-0 items-center border-t border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
           <p className="min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap">Projects</p>
         </div>
 

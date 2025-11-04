@@ -12,7 +12,7 @@ const ProjectCard = ({
   return (
     <NavLink
       to={to}
-      className="group relative flex h-full w-full min-w-0 max-w-full flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-50 to-neutral-100/50 p-5 shadow-md ring-1 ring-neutral-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-neutral-300/70 sm:p-6 lg:p-8"
+      className="group relative flex h-full w-full min-w-0 max-w-full flex-col rounded-3xl bg-gradient-to-br from-neutral-50 to-neutral-100/50 p-5 shadow-md ring-1 ring-neutral-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-neutral-300/70 sm:p-6 lg:p-8"
     >
       {/* Header with category and year */}
       <div className="mb-4 flex min-w-0 items-start justify-between overflow-hidden text-xs uppercase tracking-[0.25em] text-neutral-400 sm:mb-5 sm:tracking-[0.3em]">
