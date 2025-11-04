@@ -68,9 +68,25 @@ const Home = () => {
     <div className="w-full max-w-full bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-8 lg:px-12 lg:pr-16 xl:px-16 xl:pr-24">
       <header className="mb-16 min-w-0 max-w-5xl space-y-10">
         <div className="flex min-w-0 flex-col gap-4 text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
-          <p className="overflow-hidden text-ellipsis text-sm uppercase tracking-[0.3em] text-neutral-400">
-            /ka\-MOOS-ta/ Welcome kamusta!
-          </p>
+          <div className="space-y-1">
+            <p className="text-sm text-neutral-400">
+              /ka-MOOS-tah/
+            </p>
+            <p className="text-4xl">
+              <span className="font-light text-neutral-300">Welcome </span>
+              <span 
+                className="font-semibold"
+                style={{
+                  background: 'linear-gradient(to right, #7F8187, #424448)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}
+              >
+                kamusta !
+              </span>
+            </p>
+          </div>
           <div className="text-sm text-neutral-400 lg:text-right">
             <p>{formattedDate}</p>
             <p>{formattedTime}</p>
@@ -78,7 +94,15 @@ const Home = () => {
         </div>
 
         <div className="min-w-0 space-y-6 overflow-hidden">
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-neutral-900 wrap-break-word sm:text-5xl">
+          <h1 
+            className="max-w-3xl text-4xl font-semibold leading-tight wrap-break-word sm:text-5xl"
+            style={{
+              background: 'linear-gradient(to right, #7F8187, #424448)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >
             I'm a Queen's Computing student in AI and Economics, building thoughtful,
             human-centered interfaces.
           </h1>
