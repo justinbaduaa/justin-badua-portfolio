@@ -7,17 +7,25 @@ const primaryLinks = [
 
 const workSections = [
   {
-    label: "Human Interface",
+    label: "Experience",
     items: [
       { label: "Clikk Apply", to: "/projects/clikk-apply" },
     ],
   },
   {
-    label: "AI & Machine Learning",
+    label: "Projects",
     items: [
       { label: "MiCRA", to: "/projects/micra" },
       { label: "RL² Rocket League Agent", to: "/projects/rl-rocket-league" },
       { label: "Crakd", to: "/projects/crakd" },
+    ],
+  },
+  {
+    label: "Leadership & Community",
+    items: [
+      { label: "FIRST Robotics", to: "/projects/first-robotics" },
+      { label: "COMPSA", to: "/projects/compsa" },
+      { label: "AI Collective", to: "/projects/ai-collective" },
     ],
   },
 ];
@@ -46,7 +54,6 @@ const Sidebar = () => {
           </NavLink>
           <div className="space-y-1 text-sm text-neutral-500">
             <p>Justin Badua</p>
-            <p className="text-neutral-400">/kaˈ-moos-ta\ Welcome kamusta!</p>
           </div>
         </div>
 
@@ -68,21 +75,25 @@ const Sidebar = () => {
             ))}
           </ul>
 
+          <div className="border-t border-neutral-200"></div>
+
           <div className="space-y-6">
             {workSections.map((section) => (
               <div key={section.label} className="space-y-2">
                 <p className="text-xs uppercase tracking-[0.2em] text-neutral-400">
                   {section.label}
                 </p>
-                <ul className="space-y-1">
-                  {section.items.map((item) => (
-                    <li key={item.to}>
-                      <NavLink to={item.to} className={linkBaseStyles}>
-                        {item.label}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
+                {section.items.length > 0 && (
+                  <ul className="space-y-1">
+                    {section.items.map((item) => (
+                      <li key={item.to}>
+                        <NavLink to={item.to} className={linkBaseStyles}>
+                          {item.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
@@ -90,6 +101,7 @@ const Sidebar = () => {
       </div>
 
       <div className="space-y-2">
+        <div className="border-t border-neutral-200"></div>
         <p className="text-xs uppercase tracking-[0.2em] text-neutral-400">
           Contact
         </p>

@@ -94,10 +94,7 @@ const Home = () => {
       <header className="mb-16 min-w-0 max-w-5xl space-y-10">
         <div className="flex min-w-0 flex-col gap-4 text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-1">
-            <p className="text-sm text-neutral-400">
-              /ka-MOOS-tah/
-            </p>
-            <p className="text-4xl">
+            <p className="flex flex-wrap items-baseline gap-2 text-xl sm:text-2xl">
               <span
                 className="font-medium"
                 style={{
@@ -107,18 +104,23 @@ const Home = () => {
                   backgroundClip: 'text'
                 }}
               >
-                Welcome
-              </span>{' '}
-              <span 
-                className="font-normal"
-                style={{
-                  background: 'linear-gradient(to right, #7F8187, #424448)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}
-              >
-                kamusta !
+                Hi there,
+              </span>
+              <span className="inline-flex items-baseline gap-2">
+                <span 
+                  className="font-normal"
+                  style={{
+                    background: 'linear-gradient(to right, #7F8187, #424448)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                >
+                  kamusta !
+                </span>
+                <span className="text-xs font-normal text-neutral-400 sm:text-sm">
+                  /ka-MOOS-tah/
+                </span>
               </span>
             </p>
           </div>
