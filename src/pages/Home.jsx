@@ -6,37 +6,41 @@ const projects = [
     index: 1,
     category: "Human Interface",
     title: "Clikk Apply",
-    description: "Hiring made approachable for student-led teams, crafted with care for campus communities.",
-    year: "2024",
+    description: "Application system processing hundreds of applications for ASUS Orientation hiring with interview scheduling and candidate forms.",
+    year: "2025",
     to: "/projects/clikk-apply",
     imageSrc: "https://placehold.co/960x540/png",
+    size: "large", // spans more space in bento grid
   },
   {
     index: 2,
-    category: "Tools for Thought",
-    title: "NumNum",
-    description: "An AI-powered dining companion that balances taste, budget, and social plans.",
+    category: "AI & Machine Learning",
+    title: "MiCRA",
+    description: "AI content repurposing system that transforms long-form video and audio into LinkedIn posts, emails, and blogs using multi-agent pipeline.",
     year: "2024",
-    to: "/projects/numnum",
+    to: "/projects/micra",
     imageSrc: "https://placehold.co/960x540/png",
+    size: "tall", // taller card
   },
   {
     index: 3,
-    category: "Enterprise",
-    title: "Marqeta SSO Forms",
-    description: "Streamlining onboarding for global partners with clarity and compliance in mind.",
-    year: "2023",
-    to: "/projects/marqeta",
+    category: "AI & Machine Learning",
+    title: "RL² Rocket League Agent",
+    description: "People's Choice Award winner at CUCAI 2025. Reinforcement learning agent using Proximal Policy Optimization and self-play training.",
+    year: "2024",
+    to: "/projects/rl-rocket-league",
     imageSrc: "https://placehold.co/960x540/png",
+    size: "medium",
   },
   {
     index: 4,
-    category: "Brand",
-    title: "Sleepy Cat Books",
-    description: "A warm retail experience that blends discovery, literature, and community.",
-    year: "2023",
-    to: "/projects/sleepy-cat-books",
+    category: "AI & Machine Learning",
+    title: "Crakd",
+    description: "AI mock interview platform with real-time voice interviews using Vapi AI and Google Gemini, with personalized feedback system.",
+    year: "2024",
+    to: "/projects/crakd",
     imageSrc: "https://placehold.co/960x540/png",
+    size: "wide", // wider card
   },
 ];
 
@@ -61,41 +65,55 @@ const Home = () => {
   }).format(currentTime);
 
   return (
-    <div className="min-h-screen w-full bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-10 lg:px-16">
-      <header className="mb-16 space-y-10">
-        <div className="flex flex-col gap-4 text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
-          <p className="text-sm uppercase tracking-[0.3em] text-neutral-400">
+    <div className="w-full max-w-full bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-8 lg:px-12 lg:pr-16 xl:px-16 xl:pr-24">
+      <header className="mb-16 min-w-0 max-w-5xl space-y-10">
+        <div className="flex min-w-0 flex-col gap-4 text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
+          <p className="overflow-hidden text-ellipsis text-sm uppercase tracking-[0.3em] text-neutral-400">
             /ka\-MOOS-ta/ Welcome kamusta!
           </p>
-          <div className="text-right text-sm text-neutral-400">
+          <div className="text-sm text-neutral-400 lg:text-right">
             <p>{formattedDate}</p>
             <p>{formattedTime}</p>
           </div>
         </div>
 
-        <div className="space-y-6">
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-neutral-900 sm:text-5xl">
-            I’m a Queen’s Computing student in AI and Economics, building thoughtful,
+        <div className="min-w-0 space-y-6 overflow-hidden">
+          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-neutral-900 wrap-break-word sm:text-5xl">
+            I'm a Queen's Computing student in AI and Economics, building thoughtful,
             human-centered interfaces.
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-neutral-500">
-            Previously, I’ve helped teams across startups and student organizations design
-            intelligent tools that feel natural in everyday workflows. Today, I’m exploring how
+          <p className="max-w-2xl text-lg leading-8 text-neutral-500 wrap-break-word">
+            Previously, I've helped teams across startups and student organizations design
+            intelligent tools that feel natural in everyday workflows. Today, I'm exploring how
             emerging interaction models can empower communities to move with clarity and delight.
           </p>
         </div>
       </header>
 
-      <section className="space-y-10">
-        <div className="flex items-center justify-between border-y border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
-          <p>Projects</p>
-          <span>Selected Work</span>
+      <section className="min-w-0 max-w-5xl space-y-10 overflow-hidden">
+        <div className="flex w-full min-w-0 items-center overflow-hidden border-t border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
+          <p className="min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap">Projects</p>
         </div>
 
-        <div className="grid auto-rows-fr gap-10 lg:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
+        {/* Bento Box Grid Layout */}
+        <div className="w-full min-w-0">
+          <div className="grid min-w-0 auto-rows-[minmax(260px,auto)] grid-cols-1 gap-4 sm:auto-rows-[minmax(280px,auto)] sm:gap-5 md:grid-cols-2 md:gap-6 xl:auto-rows-[minmax(320px,auto)] xl:grid-cols-3">
+            {projects.map((project) => {
+              // Map size to responsive grid classes
+              const sizeClasses = {
+                large: "md:col-span-2 md:row-span-2",
+                tall: "md:row-span-2",
+                wide: "md:col-span-2",
+                medium: "",
+              };
+              
+              return (
+                <div key={project.title} className={`min-w-0 ${sizeClasses[project.size] || ""}`}>
+                  <ProjectCard {...project} />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>
