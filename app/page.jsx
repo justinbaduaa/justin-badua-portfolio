@@ -7,10 +7,8 @@ import ProjectCard from '@/components/ProjectCard';
 const projects = [
   {
     index: 1,
-    category: 'Human Interface',
-    title: 'Clikk Apply',
-    description:
-      'Application system processing hundreds of applications for ASUS Orientation hiring with interview scheduling and candidate forms.',
+    title: 'Tricode Cloud',
+    subtitle: 'Clikk Apply',
     year: '2025',
     href: '/projects/clikk-apply',
     imageSrc: 'https://placehold.co/960x540/png',
@@ -18,10 +16,8 @@ const projects = [
   },
   {
     index: 2,
-    category: 'AI & Machine Learning',
     title: 'MiCRA',
-    description:
-      'AI content repurposing system that transforms long-form video and audio into LinkedIn posts, emails, and blogs using multi-agent pipeline.',
+    subtitle: 'multi model content repurposing agent',
     year: '2024',
     href: '/projects/micra',
     imageSrc: 'https://placehold.co/960x540/png',
@@ -29,10 +25,8 @@ const projects = [
   },
   {
     index: 3,
-    category: 'AI & Machine Learning',
     title: 'RL² Rocket League Agent',
-    description:
-      "People's Choice Award winner at CUCAI 2025. Reinforcement learning agent using Proximal Policy Optimization and self-play training.",
+    subtitle: 'Reinforcement learning',
     year: '2024',
     href: '/projects/rl-rocket-league',
     imageSrc: 'https://placehold.co/960x540/png',
@@ -40,10 +34,8 @@ const projects = [
   },
   {
     index: 4,
-    category: 'AI & Machine Learning',
     title: 'Crakd',
-    description:
-      'AI mock interview platform with real-time voice interviews using Vapi AI and Google Gemini, with personalized feedback system.',
+    subtitle: 'AI Mock interview',
     year: '2024',
     href: '/projects/crakd',
     imageSrc: 'https://placehold.co/960x540/png',
@@ -51,10 +43,8 @@ const projects = [
   },
   {
     index: 5,
-    category: 'Product Design',
-    title: 'NexRidge',
-    description:
-      'Intelligent logistics console for coordinating field operations with predictive insights and streamlined dispatch workflows.',
+    title: 'Nexridge',
+    subtitle: 'AI automation',
     year: '2023',
     href: '/projects/nexridge',
     imageSrc: 'https://placehold.co/960x540/png',
@@ -107,9 +97,9 @@ export default function HomePage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1400px] px-6 pb-28 text-neutral-900 sm:px-10 lg:px-16 xl:px-20">
-      <header className="mb-24 space-y-14">
-        <div className="flex flex-col gap-6 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
+    <div className="mx-auto w-full max-w-[1600px] pb-20 text-neutral-900">
+      <header className="mb-16 space-y-10 px-6 sm:px-8 lg:px-12">
+        <div className="flex flex-col gap-4 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="flex flex-wrap items-baseline gap-3 text-sm text-neutral-500">
               <span className="font-medium text-neutral-600">Hi there,</span>
@@ -152,17 +142,18 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="space-y-12">
-        <div className="flex items-center border-t border-neutral-200 pt-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Projects</p>
+      <section className="space-y-8 px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center border-t border-neutral-200/60 pt-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Work</p>
         </div>
 
-        <div className="grid auto-rows-[320px] gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        {/* Bento Box Grid */}
+        <div className="grid auto-rows-[280px] gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {projects.map((project) => {
             const sizeClasses = {
-              large: 'sm:col-span-2 sm:row-span-2 lg:col-span-1 lg:row-span-2',
-              tall: 'sm:row-span-2 lg:row-span-2',
-              wide: 'sm:col-span-2 lg:col-span-2 lg:row-span-1',
+              large: 'sm:col-span-2 sm:row-span-2',
+              tall: 'sm:row-span-2',
+              wide: 'sm:col-span-2',
               medium: '',
             };
 
