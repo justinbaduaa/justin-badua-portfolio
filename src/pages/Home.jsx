@@ -46,6 +46,8 @@ const projects = [
 
 const Home = () => {
   const [currentTime, setCurrentTime] = useState(() => new Date());
+  const [spotlightPosition, setSpotlightPosition] = useState({ x: 50, y: 50 });
+  const [isSpotlightActive, setIsSpotlightActive] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => setCurrentTime(new Date()), 60_000);
@@ -64,25 +66,69 @@ const Home = () => {
     minute: "2-digit",
   }).format(currentTime);
 
+  const handleSpotlightMove = (event) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+
+    // Use requestAnimationFrame for smoother updates
+    requestAnimationFrame(() => {
+      setSpotlightPosition({
+        x: Math.min(Math.max(x, 0), 100),
+        y: Math.min(Math.max(y, 0), 100),
+      });
+    });
+  };
+
+  const handleSpotlightEnter = (event) => {
+    setIsSpotlightActive(true);
+    handleSpotlightMove(event);
+  };
+
+  const handleSpotlightLeave = () => {
+    setIsSpotlightActive(false);
+  };
+
   return (
-    <div className="w-full max-w-full bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-8 lg:px-12 lg:pr-16 xl:px-16 xl:pr-24">
-      <header className="mb-16 min-w-0 max-w-5xl space-y-10">
-        <div className="flex min-w-0 flex-col gap-4 text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
-          <p className="overflow-hidden text-ellipsis text-sm uppercase tracking-[0.3em] text-neutral-400">
-            /ka\-MOOS-ta/ Welcome kamusta!
-          </p>
-          <div className="text-sm text-neutral-400 lg:text-right">
+    <div className="mx-auto w-full max-w-6xl px-4 pb-24 text-neutral-900 sm:px-8 lg:px-12">
+      <header className="mb-20 space-y-12">
+        <div className="flex flex-col gap-6 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="flex flex-wrap items-baseline gap-3 text-sm text-neutral-500">
+              <span className="font-medium text-neutral-600">Hi there,</span>
+              <span className="inline-flex items-baseline gap-2">
+                <span className="font-medium text-neutral-600">kamusta !</span>
+                <span className="text-xs text-neutral-400">/ka-MOOS-tah/</span>
+              </span>
+            </p>
+          </div>
+          <div className="text-xs font-medium text-neutral-400 lg:text-right">
             <p>{formattedDate}</p>
-            <p>{formattedTime}</p>
+            <p className="mt-1">{formattedTime}</p>
           </div>
         </div>
 
-        <div className="min-w-0 space-y-6 overflow-hidden">
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-neutral-900 wrap-break-word sm:text-5xl">
-            I'm a Queen's Computing student in AI and Economics, building thoughtful,
+        <div className="space-y-6">
+          <h1 className="max-w-5xl text-4xl font-semibold leading-tight text-neutral-700 sm:text-5xl lg:text-[3.5rem]">
+            I'm a{" "}
+            <span
+              className="queens-highlight"
+              data-text="Queen's"
+              onMouseEnter={handleSpotlightEnter}
+              onMouseMove={handleSpotlightMove}
+              onMouseLeave={handleSpotlightLeave}
+              style={{
+                "--spotlight-x": `${spotlightPosition.x}%`,
+                "--spotlight-y": `${spotlightPosition.y}%`,
+                "--spotlight-opacity": isSpotlightActive ? 1 : 0,
+              }}
+            >
+              Queen&apos;s
+            </span>{" "}
+            Computing student in AI and Economics, building thoughtful,
             human-centered interfaces.
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-neutral-500 wrap-break-word">
+          <p className="max-w-4xl text-lg leading-8 text-neutral-500">
             Previously, I've helped teams across startups and student organizations design
             intelligent tools that feel natural in everyday workflows. Today, I'm exploring how
             emerging interaction models can empower communities to move with clarity and delight.
@@ -90,30 +136,26 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="min-w-0 max-w-5xl space-y-10 overflow-hidden">
-        <div className="flex w-full min-w-0 items-center overflow-hidden border-t border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
-          <p className="min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap">Projects</p>
+      <section className="space-y-10">
+        <div className="flex items-center border-t border-neutral-200 pt-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Projects</p>
         </div>
 
-        {/* Bento Box Grid Layout */}
-        <div className="w-full min-w-0">
-          <div className="grid min-w-0 auto-rows-[minmax(260px,auto)] grid-cols-1 gap-4 sm:auto-rows-[minmax(280px,auto)] sm:gap-5 md:grid-cols-2 md:gap-6 xl:auto-rows-[minmax(320px,auto)] xl:grid-cols-3">
-            {projects.map((project) => {
-              // Map size to responsive grid classes
-              const sizeClasses = {
-                large: "md:col-span-2 md:row-span-2",
-                tall: "md:row-span-2",
-                wide: "md:col-span-2",
-                medium: "",
-              };
-              
-              return (
-                <div key={project.title} className={`min-w-0 ${sizeClasses[project.size] || ""}`}>
-                  <ProjectCard {...project} />
-                </div>
-              );
-            })}
-          </div>
+        <div className="grid auto-rows-[minmax(280px,auto)] gap-6 sm:grid-cols-2 xl:auto-rows-[minmax(320px,auto)] xl:grid-cols-3">
+          {projects.map((project) => {
+            const sizeClasses = {
+              large: "sm:col-span-2 xl:col-span-2 xl:row-span-2",
+              tall: "xl:row-span-2",
+              wide: "sm:col-span-2",
+              medium: "",
+            };
+
+            return (
+              <div key={project.title} className={`${sizeClasses[project.size] || ""}`}>
+                <ProjectCard {...project} />
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>

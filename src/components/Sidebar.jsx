@@ -7,17 +7,25 @@ const primaryLinks = [
 
 const workSections = [
   {
-    label: "Human Interface",
+    label: "Experience",
     items: [
       { label: "Clikk Apply", to: "/projects/clikk-apply" },
     ],
   },
   {
-    label: "AI & Machine Learning",
+    label: "Projects",
     items: [
       { label: "MiCRA", to: "/projects/micra" },
       { label: "RL² Rocket League Agent", to: "/projects/rl-rocket-league" },
       { label: "Crakd", to: "/projects/crakd" },
+    ],
+  },
+  {
+    label: "Leadership & Community",
+    items: [
+      { label: "FIRST Robotics", to: "/projects/first-robotics" },
+      { label: "COMPSA", to: "/projects/compsa" },
+      { label: "AI Collective", to: "/projects/ai-collective" },
     ],
   },
 ];
@@ -29,29 +37,28 @@ const contactLinks = [
 ];
 
 const linkBaseStyles =
-  "transition-colors duration-200 text-sm text-neutral-600 hover:text-neutral-900";
+  "transition-colors duration-200 text-sm text-neutral-500 hover:text-neutral-900";
 
 const Sidebar = () => {
   return (
-    <aside className="hidden h-screen w-72 shrink-0 border-r border-neutral-200 bg-white px-8 py-10 lg:fixed lg:left-0 lg:inset-y-0 lg:flex lg:flex-col lg:justify-between lg:overflow-hidden">
-      <div className="space-y-10">
-        <div className="space-y-4">
+    <aside className="hidden w-64 shrink-0 border-r border-neutral-200/80 bg-white pl-2 pr-10 pt-14 lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
+      <div className="space-y-12">
+        <div className="space-y-5">
           <NavLink to="/" className="inline-block">
             <img
               src="/JB-Glasses.svg"
               alt="Justin Badua mark"
-              className="h-16 w-auto"
+              className="h-14 w-auto"
               draggable={false}
             />
           </NavLink>
           <div className="space-y-1 text-sm text-neutral-500">
-            <p>Justin Badua</p>
-            <p className="text-neutral-400">/kaˈ-moos-ta\ Welcome kamusta!</p>
+            <p className="font-medium text-neutral-600">Justin Badua</p>
           </div>
         </div>
 
-        <nav className="space-y-8">
-          <ul className="space-y-3 text-base font-medium text-neutral-800">
+        <nav className="space-y-10">
+          <ul className="space-y-4 text-sm font-medium text-neutral-700">
             {primaryLinks.map((link) => (
               <li key={link.to}>
                 <NavLink
@@ -68,32 +75,37 @@ const Sidebar = () => {
             ))}
           </ul>
 
+          <div className="border-t border-neutral-200/70"></div>
+
           <div className="space-y-6">
             {workSections.map((section) => (
-              <div key={section.label} className="space-y-2">
-                <p className="text-xs uppercase tracking-[0.2em] text-neutral-400">
+              <div key={section.label} className="space-y-3">
+                <p className="text-[0.7rem] uppercase tracking-[0.35em] text-neutral-400">
                   {section.label}
                 </p>
-                <ul className="space-y-1">
-                  {section.items.map((item) => (
-                    <li key={item.to}>
-                      <NavLink to={item.to} className={linkBaseStyles}>
-                        {item.label}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
+                {section.items.length > 0 && (
+                  <ul className="space-y-2">
+                    {section.items.map((item) => (
+                      <li key={item.to}>
+                        <NavLink to={item.to} className={linkBaseStyles}>
+                          {item.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
         </nav>
       </div>
 
-      <div className="space-y-2">
-        <p className="text-xs uppercase tracking-[0.2em] text-neutral-400">
+      <div className="space-y-3">
+        <div className="border-t border-neutral-200/70"></div>
+        <p className="text-[0.7rem] uppercase tracking-[0.35em] text-neutral-400">
           Contact
         </p>
-        <ul className="space-y-1">
+        <ul className="space-y-2">
           {contactLinks.map((link) => (
             <li key={link.label}>
               <a className={linkBaseStyles} href={link.href} target="_blank" rel="noreferrer">
