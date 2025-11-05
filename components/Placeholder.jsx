@@ -1,8 +1,13 @@
-import { useParams } from "react-router-dom";
+function formatSlug(slug) {
+  if (!slug) {
+    return 'section';
+  }
 
-const Placeholder = ({ title }) => {
-  const params = useParams();
-  const slug = params?.slug?.replace(/-/g, " ") ?? "section";
+  return slug.replace(/-/g, ' ');
+}
+
+export default function Placeholder({ title, slug }) {
+  const label = formatSlug(slug);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-white px-6 py-24 text-center text-neutral-500">
@@ -10,13 +15,11 @@ const Placeholder = ({ title }) => {
         <p className="text-sm uppercase tracking-[0.3em] text-neutral-400">{title}</p>
         <h1 className="text-3xl font-semibold text-neutral-900">Coming soon</h1>
         <p className="max-w-xl leading-7">
-          I’m curating a detailed story for {slug}. Check back shortly or drop me a line if you’d
-          like a preview.
+          I’m curating a detailed story for {label}. Check back shortly or drop me a line if you’d like a
+          preview.
         </p>
       </div>
     </div>
   );
-};
-
-export default Placeholder;
+}
 
