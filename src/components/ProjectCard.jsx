@@ -1,32 +1,17 @@
 import { NavLink } from "react-router-dom";
 
-const ProjectCard = ({
-  index,
-  category,
-  title,
-  description,
-  imageSrc,
-  year,
-  to,
-}) => {
+const ProjectCard = ({ category, title, imageSrc, year, to }) => {
   return (
     <NavLink
       to={to}
-      className="group flex h-full min-w-0 flex-col overflow-hidden rounded-3xl border border-neutral-200/80 bg-white p-6 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-lg"
+      className="group flex h-full min-w-0 flex-col gap-6 overflow-hidden rounded-[8px] border border-neutral-200/60 bg-white p-6 pb-8 shadow-[0_22px_45px_-32px_rgba(15,23,42,0.18)] transition-all duration-500 hover:-translate-y-[6px] hover:border-neutral-200 hover:shadow-[0_40px_70px_-45px_rgba(15,23,42,0.25)]"
     >
-      <div className="flex items-center justify-between text-[0.7rem] uppercase tracking-[0.35em] text-neutral-400">
-        <span className="overflow-hidden text-ellipsis whitespace-nowrap pr-2 font-medium">
-          {String(index).padStart(2, "0")} | {category}
-        </span>
-        <span className="shrink-0 font-medium">{year}</span>
-      </div>
-
-      <div className="relative mt-6 flex-1 min-h-[220px] overflow-hidden rounded-2xl bg-neutral-100">
+      <div className="relative aspect-4/3 w-full overflow-hidden rounded-[6px] bg-neutral-100">
         {imageSrc ? (
           <img
             src={imageSrc}
             alt={`${title} preview`}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             loading="lazy"
           />
         ) : (
@@ -36,9 +21,16 @@ const ProjectCard = ({
         )}
       </div>
 
-      <div className="mt-6 space-y-3">
-        <h3 className="text-xl font-semibold text-neutral-800">{title}</h3>
-        <p className="text-sm leading-relaxed text-neutral-500">{description}</p>
+      <div className="flex flex-1 flex-col justify-end">
+        <div className="flex items-end justify-between gap-6">
+          <div className="space-y-1">
+            <p className="text-sm font-medium uppercase tracking-[0.25em] text-neutral-400/80">
+              {category}
+            </p>
+            <h3 className="text-2xl font-semibold text-neutral-800">{title}</h3>
+          </div>
+          <span className="text-sm font-medium text-neutral-400">{year}</span>
+        </div>
       </div>
     </NavLink>
   );

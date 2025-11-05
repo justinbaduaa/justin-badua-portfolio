@@ -42,6 +42,16 @@ const projects = [
     imageSrc: "https://placehold.co/960x540/png",
     size: "wide", // wider card
   },
+  {
+    index: 5,
+    category: "Product Design",
+    title: "NexRidge",
+    description: "Intelligent logistics console for coordinating field operations with predictive insights and streamlined dispatch workflows.",
+    year: "2023",
+    to: "/projects/nexridge",
+    imageSrc: "https://placehold.co/960x540/png",
+    size: "medium",
+  },
 ];
 
 const Home = () => {
@@ -90,8 +100,8 @@ const Home = () => {
   };
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 pb-24 text-neutral-900 sm:px-8 lg:px-12">
-      <header className="mb-20 space-y-12">
+    <div className="mx-auto w-full max-w-[1400px] px-6 pb-28 text-neutral-900 sm:px-10 lg:px-16 xl:px-20">
+      <header className="mb-24 space-y-14">
         <div className="flex flex-col gap-6 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="flex flex-wrap items-baseline gap-3 text-sm text-neutral-500">
@@ -136,17 +146,17 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="space-y-10">
-        <div className="flex items-center border-t border-neutral-200 pt-6">
+      <section className="space-y-12">
+        <div className="flex items-center border-t border-neutral-200 pt-8">
           <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Projects</p>
         </div>
 
-        <div className="grid auto-rows-[minmax(280px,auto)] gap-6 sm:grid-cols-2 xl:auto-rows-[minmax(320px,auto)] xl:grid-cols-3">
+        <div className="grid auto-rows-[320px] gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {projects.map((project) => {
             const sizeClasses = {
-              large: "sm:col-span-2 xl:col-span-2 xl:row-span-2",
-              tall: "xl:row-span-2",
-              wide: "sm:col-span-2",
+              large: "sm:col-span-2 sm:row-span-2 lg:col-span-1 lg:row-span-2",
+              tall: "sm:row-span-2 lg:row-span-2",
+              wide: "sm:col-span-2 lg:col-span-2 lg:row-span-1",
               medium: "",
             };
 
