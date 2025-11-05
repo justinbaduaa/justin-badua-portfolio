@@ -5,10 +5,10 @@ export default function ProjectCard({ title, subtitle, imageSrc, year, href }) {
   return (
     <Link
       href={href}
-      className="group relative flex h-full min-w-0 flex-col overflow-hidden bg-white transition-all duration-300 outline-none focus:outline-none focus-visible:outline-none"
+      className="group relative flex h-full min-w-0 flex-col bg-white transition-all duration-300 outline-none focus:outline-none focus-visible:outline-none"
     >
       {/* Image Container - Takes up most of the card */}
-      <div className="relative flex-1 overflow-hidden bg-[#F5F5F5] border border-neutral-200/40">
+      <div className="relative flex-1 overflow-hidden bg-[#F5F5F5] rounded-md border border-neutral-200/40">
         {imageSrc ? (
           <Image
             src={imageSrc}
@@ -29,7 +29,7 @@ export default function ProjectCard({ title, subtitle, imageSrc, year, href }) {
       </div>
 
       {/* Info Section - Minimal text at bottom, matching reference */}
-      <div className="relative z-10 px-6 py-5 bg-white border-t border-neutral-200/40">
+      <div className="relative z-10 px-6 pt-6 pb-5 bg-white">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
             <h3 className="text-[15px] font-medium leading-tight text-neutral-800">{title}</h3>
