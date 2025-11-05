@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen overflow-x-hidden bg-white text-neutral-900">
         <div className="mx-auto flex w-full max-w-7xl gap-12 px-4 sm:px-6 lg:px-8 xl:px-12">
           <Sidebar />
-          <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col py-6 sm:py-10 lg:py-14">
+          <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col py-6 sm:py-10 lg:ml-72 lg:py-14">
             <MobileHeader />
             <main className="min-w-0 flex-1">{children}</main>
           </div>
