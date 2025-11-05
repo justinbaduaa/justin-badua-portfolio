@@ -99,12 +99,12 @@ export default function HomePage() {
   return (
     <div className="mx-auto w-full max-w-[1600px] pb-20 text-neutral-900">
       <header className="mb-16 space-y-10 px-6 sm:px-8 lg:px-12">
-        <div className="flex flex-col gap-4 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-4 pt-8 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <p className="flex flex-wrap items-baseline gap-3 text-sm text-neutral-500">
-              <span className="font-medium text-neutral-600">Hi there,</span>
+              <span className="font-medium text-[18px] text-neutral-600">Hi there,</span>
               <span className="inline-flex items-baseline gap-2">
-                <span className="font-medium text-neutral-600">kamusta !</span>
+                <span className="font-medium text-[18px] text-neutral-600">kamusta !</span>
                 <span className="text-xs text-neutral-400">/ka-MOOS-tah/</span>
               </span>
             </p>
