@@ -49,7 +49,16 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(90deg, #082f5d 0%, #efbe2d 50%, #9e1136 100%);
+  background-image: linear-gradient(
+    90deg,
+    #3b5aa4 0%,
+    #3b5aa4 32%,
+    #3b5aa4 34%,
+    #d2ad4f 40%,
+    #e3b953 58%,
+    #bf193a 66%,
+    #bf193a 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -67,7 +76,16 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: linear-gradient(90deg, #082f5d 0%, #efbe2d 50%, #9e1136 100%);
+  background-image: linear-gradient(
+    90deg,
+    #3b5aa4 0%,
+    #3b5aa4 32%,
+    #3b5aa4 34%,
+    #d2ad4f 40%,
+    #e3b953 58%,
+    #bf193a 66%,
+    #bf193a 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

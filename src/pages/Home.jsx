@@ -90,51 +90,27 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full max-w-full bg-transparent px-6 pb-24 pt-12 text-neutral-900 sm:px-8 lg:px-12 lg:pr-16 xl:px-16 xl:pr-24">
-      <header className="mb-16 min-w-0 max-w-5xl space-y-10">
-        <div className="flex min-w-0 flex-col gap-4 text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-1">
-            <p className="flex flex-wrap items-baseline gap-2 text-xl sm:text-2xl">
-              <span
-                className="font-medium"
-                style={{
-                  background: 'linear-gradient(to right, #A7A7A7, #7D7F82)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}
-              >
-                Hi there,
-              </span>
+    <div className="mx-auto w-full max-w-6xl px-4 pb-24 text-neutral-900 sm:px-8 lg:px-12">
+      <header className="mb-20 space-y-12">
+        <div className="flex flex-col gap-6 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="flex flex-wrap items-baseline gap-3 text-sm text-neutral-500">
+              <span className="font-medium text-neutral-600">Hi there,</span>
               <span className="inline-flex items-baseline gap-2">
-                <span 
-                  className="font-normal"
-                  style={{
-                    background: 'linear-gradient(to right, #7F8187, #424448)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text'
-                  }}
-                >
-                  kamusta !
-                </span>
-                <span className="text-xs font-normal text-neutral-400 sm:text-sm">
-                  /ka-MOOS-tah/
-                </span>
+                <span className="font-medium text-neutral-600">kamusta !</span>
+                <span className="text-xs text-neutral-400">/ka-MOOS-tah/</span>
               </span>
             </p>
           </div>
-          <div className="text-sm text-neutral-400 lg:text-right">
+          <div className="text-xs font-medium text-neutral-400 lg:text-right">
             <p>{formattedDate}</p>
-            <p>{formattedTime}</p>
+            <p className="mt-1">{formattedTime}</p>
           </div>
         </div>
 
-        <div className="min-w-0 space-y-6 overflow-hidden">
-          <h1
-            className="max-w-3xl text-4xl font-semibold leading-tight wrap-break-word sm:text-5xl hero-gradient-text"
-          >
-            I'm a {" "}
+        <div className="space-y-6">
+          <h1 className="max-w-5xl text-4xl font-semibold leading-tight text-neutral-700 sm:text-5xl lg:text-[3.5rem]">
+            I'm a{" "}
             <span
               className="queens-highlight"
               data-text="Queen's"
@@ -152,7 +128,7 @@ const Home = () => {
             Computing student in AI and Economics, building thoughtful,
             human-centered interfaces.
           </h1>
-          <p className="max-w-2xl text-lg leading-8 text-neutral-500 wrap-break-word">
+          <p className="max-w-4xl text-lg leading-8 text-neutral-500">
             Previously, I've helped teams across startups and student organizations design
             intelligent tools that feel natural in everyday workflows. Today, I'm exploring how
             emerging interaction models can empower communities to move with clarity and delight.
@@ -160,30 +136,26 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="min-w-0 max-w-5xl space-y-10 overflow-visible">
-        <div className="flex w-full min-w-0 items-center border-t border-neutral-200 py-6 text-sm uppercase tracking-[0.3em] text-neutral-400">
-          <p className="min-w-0 flex-1 overflow-hidden text-ellipsis whitespace-nowrap">Projects</p>
+      <section className="space-y-10">
+        <div className="flex items-center border-t border-neutral-200 pt-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Projects</p>
         </div>
 
-        {/* Bento Box Grid Layout */}
-        <div className="w-full min-w-0">
-          <div className="grid min-w-0 auto-rows-[minmax(260px,auto)] grid-cols-1 gap-4 sm:auto-rows-[minmax(280px,auto)] sm:gap-5 md:grid-cols-2 md:gap-6 xl:auto-rows-[minmax(320px,auto)] xl:grid-cols-3">
-            {projects.map((project) => {
-              // Map size to responsive grid classes
-              const sizeClasses = {
-                large: "md:col-span-2 md:row-span-2",
-                tall: "md:row-span-2",
-                wide: "md:col-span-2",
-                medium: "",
-              };
-              
-              return (
-                <div key={project.title} className={`min-w-0 ${sizeClasses[project.size] || ""}`}>
-                  <ProjectCard {...project} />
-                </div>
-              );
-            })}
-          </div>
+        <div className="grid auto-rows-[minmax(280px,auto)] gap-6 sm:grid-cols-2 xl:auto-rows-[minmax(320px,auto)] xl:grid-cols-3">
+          {projects.map((project) => {
+            const sizeClasses = {
+              large: "sm:col-span-2 xl:col-span-2 xl:row-span-2",
+              tall: "xl:row-span-2",
+              wide: "sm:col-span-2",
+              medium: "",
+            };
+
+            return (
+              <div key={project.title} className={`${sizeClasses[project.size] || ""}`}>
+                <ProjectCard {...project} />
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
