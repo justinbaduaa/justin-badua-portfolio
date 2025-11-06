@@ -30,7 +30,7 @@ const projects = [
     subtitle: 'Multi-Model Content Repurposing Agent',
     year: '2025 —',
     href: '/projects/micra',
-    imageSrc: '/MiCRA Mock V2.png',
+    videoSrc: '/MiCRA Demo.mp4',
     size: 'wide',
     imageFit: 'contain',
     imageAspect: '1365 / 768',
