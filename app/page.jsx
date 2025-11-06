@@ -101,8 +101,8 @@ export default function HomePage() {
 
   return (
     <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900">
-      <header className="mb-20 space-y-12 px-8 sm:px-12 lg:px-16 pt-16">
-        <div className="flex flex-col gap-4 text-sm text-neutral-500 lg:flex-row lg:items-start lg:justify-between">
+      <header className="mb-12 sm:mb-16 lg:mb-20 space-y-10 sm:space-y-12 px-6 sm:px-8 lg:px-16 pt-12 sm:pt-16">
+        <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 lg:flex-row lg:items-start lg:justify-between">
           <div className="space-y-1">
             <p className="text-[15px] text-neutral-600">
               Hi there, <span className="font-normal">kamusta !</span>
@@ -115,8 +115,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="space-y-8">
-          <h1 className="max-w-4xl text-[2.75rem] font-medium leading-[1.2] text-neutral-800 sm:text-5xl lg:text-[3.25rem] tracking-tight">
+        <div className="space-y-6 sm:space-y-8">
+          <h1 className="max-w-4xl text-[2rem] font-medium leading-[1.2] text-neutral-800 sm:text-[2.75rem] lg:text-[3.25rem] tracking-tight">
             I&apos;m a{' '}
             <span
               className="queens-highlight"
@@ -134,7 +134,7 @@ export default function HomePage() {
             </span>{' '}
             Computing student in AI and Economics, building thoughtful, human-centered interfaces.
           </h1>
-          <p className="max-w-4xl text-[15px] leading-[1.7] text-neutral-600">
+          <p className="max-w-4xl text-[14px] sm:text-[15px] leading-[1.7] text-neutral-600">
             Previously, I&apos;ve designed products across startups and student organizations, crafting user experiences that
             solve real problems through thoughtful design decisions. Today, I&apos;m exploring how emerging interaction paradigms
             can shape product experiences that feel intuitive and meaningful to the people who use them.
@@ -142,15 +142,15 @@ export default function HomePage() {
         </div>
       </header>
 
-      <div className="mx-8 sm:mx-12 lg:mx-16 border-t border-neutral-200" />
+      <div className="mx-6 sm:mx-8 lg:mx-16 border-t border-neutral-200" />
 
-      <section className="space-y-10 px-8 sm:px-12 lg:px-16">
-        <div className="flex items-center pt-8">
-          <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Experience & Projects</p>
+      <section className="space-y-8 sm:space-y-10 px-6 sm:px-8 lg:px-16">
+        <div className="flex items-center pt-6 sm:pt-8">
+          <p className="text-[0.75rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Experience & Projects</p>
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid auto-rows-[minmax(280px,_auto)] gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-[minmax(260px,_auto)] sm:auto-rows-[minmax(280px,_auto)] gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => {
             const sizeClasses = {
               large: 'sm:col-span-2 sm:row-span-2',
