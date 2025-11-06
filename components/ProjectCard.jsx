@@ -5,6 +5,7 @@ export default function ProjectCard({
   title,
   subtitle,
   imageSrc,
+  videoSrc,
   year,
   href,
   size = 'medium',
@@ -31,7 +32,17 @@ export default function ProjectCard({
         className="relative w-full overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] transition-shadow duration-300 group-hover:shadow-[0_18px_50px_rgba(15,23,42,0.08)] group-focus-visible:shadow-[0_18px_50px_rgba(15,23,42,0.08)]"
         style={imageAspect ? { aspectRatio: imageAspect } : undefined}
       >
-        {imageSrc ? (
+        {videoSrc ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        ) : imageSrc ? (
           <Image
             src={imageSrc}
             alt={`${title} preview`}
