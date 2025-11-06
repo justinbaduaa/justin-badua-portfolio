@@ -15,6 +15,7 @@ out
 tmp
 *.local
 .playwright-mcp
+.website-testing-report.md
 
 # Editor directories and files
 .vscode/*

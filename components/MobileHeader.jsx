@@ -21,26 +21,26 @@ export default function MobileHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="flex min-w-0 shrink-0 items-center justify-between bg-white border-b border-neutral-200 px-6 py-5 lg:hidden">
-      <Link href="/" className="flex items-center">
+    <header className="flex min-w-0 shrink-0 items-center justify-between bg-white border-b border-neutral-200 px-5 sm:px-6 py-4 sm:py-5 lg:hidden">
+      <div className="flex items-center">
         <Image
           src="/JB-Glasses.svg"
           alt="Justin Badua mark"
-          width={40}
-          height={40}
-          className="h-10 w-auto"
+          width={36}
+          height={36}
+          className="h-9 sm:h-10 w-auto"
           draggable={false}
           priority
         />
-      </Link>
+      </div>
 
-      <nav className="flex items-center gap-6 text-sm">
+      <nav className="flex items-center gap-4 sm:gap-6 text-sm">
         {primaryLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             className={clsx(
-              'text-[15px] font-normal transition-colors duration-200',
+              'text-[14px] sm:text-[15px] font-normal transition-colors duration-200',
               isActive(pathname, link.href) ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
             )}
           >
