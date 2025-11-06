@@ -7,8 +7,6 @@ import { usePathname } from 'next/navigation';
 
 import { primaryLinks } from '@/lib/navigation';
 
-const linkBaseStyles = 'transition-colors duration-200 hover:text-neutral-900';
-
 const isActive = (pathname, href) => {
   if (href === '/') {
     return pathname === '/';

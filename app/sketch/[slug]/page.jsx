@@ -1,7 +1,8 @@
 import Placeholder from '@/components/Placeholder';
+import { formatSlug } from '@/lib/format';
 
 export function generateMetadata({ params }) {
-  const formatted = params.slug.replace(/-/g, ' ');
+  const formatted = formatSlug(params.slug);
 
   return {
     title: `${formatted} | Sketches | Justin Badua`,

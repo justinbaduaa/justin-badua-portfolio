@@ -9,9 +9,9 @@ const projects = [
     index: 1,
     title: 'Tricode Cloud',
     subtitle: 'Clikk Apply',
-    year: '2024 -',
+    year: '2024 —',
     href: '/projects/clikk-apply',
-    imageSrc: '/Tricode Cloud mock.png',
+    imageSrc: '/Tricode Cloud Mock.png',
     size: 'large',
   },
   {
@@ -37,20 +37,30 @@ const projects = [
   },
   {
     index: 4,
+    title: 'NumNum',
+    subtitle: 'QHacks 2024',
+    year: '2024',
+    href: '/projects/numnum',
+    imageSrc: '/NumNum Mock.png',
+    size: 'tall',
+    imageAspect: '866 / 1000',
+  },
+  {
+    index: 5,
     title: 'RL² Rocket League Agent',
     subtitle: 'Reinforcement Learning',
     year: '2024',
     href: '/projects/rl-rocket-league',
-    imageSrc: 'https://placehold.co/960x540/png',
-    size: 'medium',
+    imageSrc: '/RL^2 Mock.png',
+    size: 'large',
   },
   {
-    index: 5,
+    index: 6,
     title: 'Crakd',
     subtitle: 'AI Mock Interview',
     year: '2024',
     href: '/projects/crakd',
-    imageSrc: 'https://placehold.co/960x540/png',
+    imageSrc: '/Crakd Mock V2.png',
     size: 'wide',
   },
 ];
@@ -105,7 +115,7 @@ export default function HomePage() {
         <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 lg:flex-row lg:items-start lg:justify-between">
           <div className="space-y-1">
             <p className="text-[15px] text-neutral-600">
-              Hi there, <span className="font-normal">kamusta !</span>
+              Hi there, <span className="font-normal">kamusta!</span>
             </p>
             <p className="text-[13px] text-neutral-400 italic">/ka-MOOS-tah/</p>
           </div>
