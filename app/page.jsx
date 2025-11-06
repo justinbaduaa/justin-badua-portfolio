@@ -16,15 +16,27 @@ const projects = [
   },
   {
     index: 2,
+    title: 'Nexridge',
+    subtitle: 'AI automation',
+    year: '2023',
+    href: '/projects/nexridge',
+    imageSrc: '/Nexridge Mock.png',
+    size: 'tall',
+    imageAspect: '866 / 1000',
+  },
+  {
+    index: 3,
     title: 'MiCRA',
     subtitle: 'multi model content repurposing agent',
     year: '2024',
     href: '/projects/micra',
-    imageSrc: 'https://placehold.co/960x540/png',
-    size: 'tall',
+    imageSrc: '/MiCRA Mock V2.png',
+    size: 'wide',
+    imageFit: 'contain',
+    imageAspect: '1365 / 768',
   },
   {
-    index: 3,
+    index: 4,
     title: 'RL² Rocket League Agent',
     subtitle: 'Reinforcement learning',
     year: '2024',
@@ -33,22 +45,13 @@ const projects = [
     size: 'medium',
   },
   {
-    index: 4,
+    index: 5,
     title: 'Crakd',
     subtitle: 'AI Mock interview',
     year: '2024',
     href: '/projects/crakd',
     imageSrc: 'https://placehold.co/960x540/png',
     size: 'wide',
-  },
-  {
-    index: 5,
-    title: 'Nexridge',
-    subtitle: 'AI automation',
-    year: '2023',
-    href: '/projects/nexridge',
-    imageSrc: 'https://placehold.co/960x540/png',
-    size: 'medium',
   },
 ];
 
@@ -147,12 +150,12 @@ export default function HomePage() {
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid auto-rows-[280px] gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-[minmax(280px,_auto)] gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => {
             const sizeClasses = {
               large: 'sm:col-span-2 sm:row-span-2',
               tall: 'sm:row-span-2',
-              wide: 'sm:col-span-2',
+              wide: 'sm:col-span-2 lg:col-span-3',
               medium: '',
             };
 
