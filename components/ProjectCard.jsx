@@ -54,8 +54,8 @@ export default function ProjectCard({
       <div className="relative z-10 px-0 pt-6 pb-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
-            <h3 className="text-[15px] font-semibold leading-tight text-neutral-900">{title}</h3>
-            <p className="mt-1.5 text-[13px] font-medium leading-relaxed text-neutral-600">{subtitle}</p>
+            <h3 className="text-[18px] font-semibold leading-tight text-neutral-900">{title}</h3>
+            <p className="-mt-1 text-[16px] font-semibold leading-tight text-[#A0A5AC]">{subtitle}</p>
           </div>
           <span className="pt-0.5 text-[13px] font-medium text-neutral-500 whitespace-nowrap">{year}</span>
         </div>
