@@ -20,8 +20,10 @@ const projects = [
     subtitle: 'multi model content repurposing agent',
     year: '2024',
     href: '/projects/micra',
-    imageSrc: 'https://placehold.co/960x540/png',
-    size: 'tall',
+    imageSrc: '/MiCRA Mock.png',
+    size: 'wide',
+    imageFit: 'contain',
+    imageAspect: '1365 / 768',
   },
   {
     index: 3,
@@ -147,12 +149,12 @@ export default function HomePage() {
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid auto-rows-[280px] gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-[minmax(280px,_auto)] gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => {
             const sizeClasses = {
               large: 'sm:col-span-2 sm:row-span-2',
               tall: 'sm:row-span-2',
-              wide: 'sm:col-span-2',
+              wide: 'sm:col-span-2 lg:col-span-3',
               medium: '',
             };
 
