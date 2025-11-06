@@ -4,19 +4,19 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto w-full max-w-[1600px] px-6 py-20 sm:px-8 lg:px-12">
-      <div className="mx-auto max-w-4xl space-y-16">
+    <div className="mx-auto w-full max-w-[1400px] px-8 py-16 sm:px-12 lg:px-16">
+      <div className="mx-auto max-w-4xl space-y-20">
         {/* Greeting */}
-        <div className="space-y-3">
-          <p className="text-base text-neutral-500">
-            Hello there, <span className="text-neutral-600 font-medium">kamusta!</span>
+        <div className="space-y-1">
+          <p className="text-[15px] text-neutral-600">
+            Hello there, <span className="font-normal">kamusta!</span>
           </p>
-          <p className="text-xs text-neutral-400 italic">/huàn yíng/</p>
+          <p className="text-[13px] text-neutral-400 italic">/ka-MOOS-tah/</p>
         </div>
 
         {/* Large intro text like in the reference */}
         <div className="space-y-8">
-          <h1 className="text-4xl font-normal leading-relaxed text-neutral-500 sm:text-5xl lg:text-[3.25rem] lg:leading-[1.4]">
+          <h1 className="text-[2.75rem] font-normal leading-[1.2] text-neutral-500 sm:text-5xl lg:text-[3.25rem] tracking-tight">
             Justin is a designer thinking about{' '}
             <span className="text-neutral-700">intelligent interfaces</span> driven by{' '}
             <span className="text-neutral-700">novel interaction paradigms</span> that feel natural, seamlessly blending
@@ -28,9 +28,9 @@ export default function AboutPage() {
         </div>
 
         {/* Additional sections placeholder */}
-        <div className="border-t border-neutral-200/60 pt-12">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400 mb-8">Background</p>
-          <div className="space-y-4 text-base text-neutral-600 leading-relaxed">
+        <div className="pt-12">
+          <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium mb-8">Background</p>
+          <div className="space-y-5 text-[15px] text-neutral-600 leading-[1.7]">
             <p>
               I&apos;m passionate about creating interfaces that bridge the gap between complex technology and human understanding.
               My work spans AI-powered applications, design systems, and interactive experiences.

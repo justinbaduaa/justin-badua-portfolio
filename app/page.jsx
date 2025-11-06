@@ -11,7 +11,7 @@ const projects = [
     subtitle: 'Clikk Apply',
     year: '2025',
     href: '/projects/clikk-apply',
-    imageSrc: 'https://placehold.co/960x540/png',
+    imageSrc: '/Tricode Cloud mock.png',
     size: 'large',
   },
   {
@@ -97,26 +97,23 @@ export default function HomePage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1600px] pb-20 text-neutral-900">
-      <header className="mb-16 space-y-10 px-6 sm:px-8 lg:px-12">
-        <div className="flex flex-col gap-4 text-sm text-neutral-500 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="flex flex-wrap items-baseline gap-3 text-sm text-neutral-500">
-              <span className="font-medium text-neutral-600">Hi there,</span>
-              <span className="inline-flex items-baseline gap-2">
-                <span className="font-medium text-neutral-600">kamusta !</span>
-                <span className="text-xs text-neutral-400">/ka-MOOS-tah/</span>
-              </span>
+    <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900">
+      <header className="mb-20 space-y-12 px-8 sm:px-12 lg:px-16 pt-16">
+        <div className="flex flex-col gap-4 text-sm text-neutral-500 lg:flex-row lg:items-start lg:justify-between">
+          <div className="space-y-1">
+            <p className="text-[15px] text-neutral-600">
+              Hi there, <span className="font-normal">kamusta !</span>
             </p>
+            <p className="text-[13px] text-neutral-400 italic">/ka-MOOS-tah/</p>
           </div>
-          <div className="text-xs font-medium text-neutral-400 lg:text-right">
+          <div className="text-[13px] font-normal text-neutral-400 lg:text-right">
             <p>{formattedDate}</p>
-            <p className="mt-1">{formattedTime}</p>
+            <p className="mt-0.5">{formattedTime}</p>
           </div>
         </div>
 
-        <div className="space-y-6">
-          <h1 className="max-w-5xl text-4xl font-semibold leading-tight text-neutral-700 sm:text-5xl lg:text-[3.5rem]">
+        <div className="space-y-8">
+          <h1 className="max-w-4xl text-[2.75rem] font-medium leading-[1.2] text-neutral-800 sm:text-5xl lg:text-[3.25rem] tracking-tight">
             I&apos;m a{' '}
             <span
               className="queens-highlight"
@@ -134,21 +131,23 @@ export default function HomePage() {
             </span>{' '}
             Computing student in AI and Economics, building thoughtful, human-centered interfaces.
           </h1>
-          <p className="max-w-4xl text-lg leading-8 text-neutral-500">
-            Previously, I&apos;ve helped teams across startups and student organizations design intelligent tools that feel
-            natural in everyday workflows. Today, I&apos;m exploring how emerging interaction models can empower communities
-            to move with clarity and delight.
+          <p className="max-w-4xl text-[15px] leading-[1.7] text-neutral-600">
+            Previously, I&apos;ve designed products across startups and student organizations, crafting user experiences that
+            solve real problems through thoughtful design decisions. Today, I&apos;m exploring how emerging interaction paradigms
+            can shape product experiences that feel intuitive and meaningful to the people who use them.
           </p>
         </div>
       </header>
 
-      <section className="space-y-8 px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center border-t border-neutral-200/60 pt-6">
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">Work</p>
+      <div className="mx-8 sm:mx-12 lg:mx-16 border-t border-neutral-200" />
+
+      <section className="space-y-10 px-8 sm:px-12 lg:px-16">
+        <div className="flex items-center pt-8">
+          <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Experience & Projects</p>
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid auto-rows-[280px] gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="grid auto-rows-[280px] gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => {
             const sizeClasses = {
               large: 'sm:col-span-2 sm:row-span-2',
