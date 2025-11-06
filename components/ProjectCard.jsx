@@ -1,20 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function ProjectCard({ title, subtitle, imageSrc, year, href }) {
+export default function ProjectCard({ title, subtitle, imageSrc, year, href, size = 'medium' }) {
+  const sizeToSizes = {
+    large: '(min-width: 1024px) 66vw, (min-width: 640px) 100vw, 100vw',
+    wide: '(min-width: 1024px) 66vw, (min-width: 640px) 100vw, 100vw',
+    tall: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
+    medium: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
+  };
+
+  const imageSizes = sizeToSizes[size] || sizeToSizes.medium;
+
   return (
     <Link
       href={href}
-      className="group relative flex h-full min-w-0 flex-col bg-white transition-all duration-300 outline-none focus:outline-none focus-visible:outline-none"
+      className="group relative flex h-full min-w-0 flex-col transition-all duration-300 outline-none focus:outline-none focus-visible:outline-none"
     >
       {/* Image Container - Takes up most of the card */}
-      <div className="relative flex-1 overflow-hidden bg-[#F5F5F5] rounded-md border border-neutral-200/40">
+      <div className="relative flex-1 overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] transition-shadow duration-300 group-hover:shadow-[0_18px_50px_rgba(15,23,42,0.08)] group-focus-visible:shadow-[0_18px_50px_rgba(15,23,42,0.08)]">
         {imageSrc ? (
           <Image
             src={imageSrc}
             alt={`${title} preview`}
             fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            sizes={imageSizes}
             className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
             priority={false}
           />
@@ -29,7 +38,7 @@ export default function ProjectCard({ title, subtitle, imageSrc, year, href }) {
       </div>
 
       {/* Info Section - Minimal text at bottom, matching reference */}
-      <div className="relative z-10 px-0 pt-6 pb-5 bg-white">
+      <div className="relative z-10 px-0 pt-6 pb-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 flex-1">
             <h3 className="text-[15px] font-semibold leading-tight text-neutral-900">{title}</h3>

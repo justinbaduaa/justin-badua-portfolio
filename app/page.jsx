@@ -11,7 +11,7 @@ const projects = [
     subtitle: 'Clikk Apply',
     year: '2025',
     href: '/projects/clikk-apply',
-    imageSrc: 'https://placehold.co/960x540/png',
+    imageSrc: '/Tricode Cloud mock.png',
     size: 'large',
   },
   {
