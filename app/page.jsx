@@ -139,6 +139,8 @@ export default function HomePage() {
         </div>
       </header>
 
+      <div className="mx-8 sm:mx-12 lg:mx-16 border-t border-neutral-200" />
+
       <section className="space-y-10 px-8 sm:px-12 lg:px-16">
         <div className="flex items-center pt-8">
           <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Experience & Projects</p>

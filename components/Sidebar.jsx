@@ -21,7 +21,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-56 shrink-0 bg-[#FAFAFA] px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
+    <aside className="hidden w-56 shrink-0 bg-white border-r border-neutral-200 px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
       <div className="space-y-12">
         <div className="space-y-6">
           <Link href="/" className="inline-block">

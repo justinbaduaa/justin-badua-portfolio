@@ -21,7 +21,7 @@ export default function MobileHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="flex min-w-0 shrink-0 items-center justify-between bg-[#FAFAFA] px-6 py-5 lg:hidden">
+    <header className="flex min-w-0 shrink-0 items-center justify-between bg-white border-b border-neutral-200 px-6 py-5 lg:hidden">
       <Link href="/" className="flex items-center">
         <Image
           src="/JB-Glasses.svg"
