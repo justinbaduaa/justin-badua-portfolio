@@ -18,7 +18,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 ### Main Pages
 1. ✅ **Homepage** (`/`)
 2. ✅ **About** (`/about`)
-3. ✅ **CV** (`/cv`)
+3. ✅ **Resume** (`/cv`)
 
 ### Project Pages
 4. ✅ **Clikk Apply** (`/projects/clikk-apply`)
@@ -39,7 +39,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 
 - **Layout:** Sidebar navigation on the left with full project categories
 - **Navigation:** Comprehensive sidebar with:
-  - Primary links (About, CV)
+  - Primary links (About, Resume)
   - Experience section
   - Projects section
   - Leadership & Community section
@@ -53,7 +53,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 **Status:** ✅ **Good**
 
 - **Layout:** Banner header replaces sidebar (responsive breakpoint at `lg:`)
-- **Navigation:** Horizontal navigation in header (About, CV links visible)
+- **Navigation:** Horizontal navigation in header (About, Resume links visible)
 - **Content:** Responsive padding adjustments (px-8, pt-16)
 - **Project Grid:** 2-column grid layout (`sm:grid-cols-2`)
 - **Typography:** Scaled appropriately for tablet
@@ -63,7 +63,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 **Status:** ✅ **Good**
 
 - **Layout:** Compact banner header with logo and navigation
-- **Navigation:** Minimal horizontal nav (About, CV only)
+- **Navigation:** Minimal horizontal nav (About, Resume only)
 - **Content:** Mobile-optimized padding (px-6, pt-12)
 - **Project Grid:** Single column layout
 - **Typography:** Smaller but readable font sizes
@@ -79,7 +79,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 1. **Logo/Brand Mark:** Successfully navigates to homepage from any page
 2. **Primary Navigation Links:**
    - About → `/about` ✅
-   - CV → `/cv` ✅
+   - Resume → `/cv` ✅
 3. **Project Cards:** All project cards are clickable and navigate correctly
 4. **Sidebar Links (Desktop):** All sidebar navigation links work properly
 5. **Contact Links:** External links (mailto, LinkedIn, Read.cv) are properly configured
@@ -87,7 +87,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 ### ⚠️ Navigation Limitations
 
 **Mobile/Tablet Navigation:**
-- On mobile and tablet, only primary links (About, CV) are visible in the header
+- On mobile and tablet, only primary links (About, Resume) are visible in the header
 - Sidebar navigation categories (Experience, Projects, Leadership & Community) are not accessible
 - Users can still access projects via project cards on the homepage
 - **Recommendation:** Consider adding a mobile menu or making project categories accessible on smaller screens
@@ -111,7 +111,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
    - This is intentional based on the code, but worth noting
    - All 8 project pages have the same placeholder content
 
-2. **CV Page:** Shows placeholder message about interactive CV coming soon
+2. **Resume Page:** Shows placeholder message about interactive resume coming soon
    - This appears intentional
 
 ---
@@ -178,8 +178,8 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
    - Add actual project content when ready
    - Currently all show "Coming soon" placeholders
 
-2. **CV Page Enhancement**
-   - Implement the interactive CV experience mentioned in placeholder
+2. **Resume Page Enhancement**
+   - Implement the interactive resume experience mentioned in placeholder
 
 ### 💡 Low Priority
 

@@ -57,7 +57,7 @@ export default function ProjectCard({
             <h3 className="text-[19px] sm:text-[22px] font-semibold leading-tight tracking-tight text-neutral-900">{title}</h3>
             <p className="mt-0.5 text-[19px] sm:text-[22px] font-semibold leading-tight tracking-tight text-[#A0A5AC]">{subtitle}</p>
           </div>
-          <span className="pt-0.5 text-[12px] sm:text-[13px] font-medium text-neutral-500 whitespace-nowrap">{year}</span>
+          <span className="pt-0.5 text-[13px] sm:text-[14px] font-medium text-neutral-500 whitespace-nowrap">{year}</span>
         </div>
       </div>
     </Link>
