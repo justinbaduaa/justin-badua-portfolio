@@ -78,7 +78,7 @@ export default function Sidebar() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[15px] font-normal text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
+                      className="text-[15px] font-semibold text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
                     >
                       {link.label}
                     </a>
@@ -86,7 +86,7 @@ export default function Sidebar() {
                     <Link
                       href={link.href}
                       className={clsx(
-                        'text-[15px] font-normal transition-colors duration-200',
+                        'text-[15px] font-semibold transition-colors duration-200',
                         active ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
                       )}
                     >
