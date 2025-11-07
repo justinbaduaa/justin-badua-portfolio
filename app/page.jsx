@@ -145,9 +145,10 @@ export default function HomePage() {
             Computing student in AI and Economics, building thoughtful, human-centered interfaces.
           </h1>
           <p className="max-w-4xl text-[14px] sm:text-[15px] leading-[1.7] text-neutral-600">
-            Previously, I&apos;ve designed products across startups and student organizations, crafting user experiences that
-            solve real problems through thoughtful design decisions. Today, I&apos;m exploring how emerging interaction paradigms
-            can shape product experiences that feel intuitive and meaningful to the people who use them.
+            I like building things that help people. I&apos;ve worked with startups and student teams to turn ideas into stuff you
+            can actually use: simple tools that solve real problems. I care about the details, like clear language, calm flows, and
+            thoughtful choices. Lately I&apos;m exploring interactions that feel natural and useful, the kind that make technology
+            fade into the background so you can just get things done.
           </p>
         </div>
       </header>
