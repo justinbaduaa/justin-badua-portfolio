@@ -37,19 +37,34 @@ export default function Sidebar() {
 
         <nav className="space-y-10">
           <ul className="space-y-4 text-sm">
-            {primaryLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={clsx(
-                    'text-[15px] font-normal transition-colors duration-200',
-                    isActive(pathname, link.href) ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
+            {primaryLinks.map((link) => {
+              const active = link.external ? false : isActive(pathname, link.href);
+
+              return (
+                <li key={link.label}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[15px] font-normal text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className={clsx(
+                        'text-[15px] font-normal transition-colors duration-200',
+                        active ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
+                      )}
+                    >
+                      {link.label}
+                    </Link>
                   )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
 
           <div className="space-y-6">

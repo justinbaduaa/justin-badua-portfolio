@@ -33,18 +33,32 @@ export default function MobileHeader() {
       </div>
 
       <nav className="flex items-center gap-4 sm:gap-6 text-sm">
-        {primaryLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={clsx(
-              'text-[14px] sm:text-[15px] font-normal transition-colors duration-200',
-              isActive(pathname, link.href) ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
-            )}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {primaryLinks.map((link) => {
+          const active = link.external ? false : isActive(pathname, link.href);
+
+          return link.external ? (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] sm:text-[15px] font-normal text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
+            >
+              {link.label}
+            </a>
+          ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={clsx(
+                'text-[14px] sm:text-[15px] font-normal transition-colors duration-200',
+                active ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
+              )}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
     </header>
   );
