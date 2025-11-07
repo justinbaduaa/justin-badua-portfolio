@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -5,12 +8,16 @@ export default function ProjectCard({
   title,
   subtitle,
   imageSrc,
+  mobileImageSrc,
   videoSrc,
+  mobileVideoSrc,
   year,
   href,
   size = 'medium',
   imageFit = 'cover',
   imageAspect = '16 / 9',
+  imageAspectMobile,
+  mobileBreakpoint = '(max-width: 640px)',
 }) {
   const sizeToSizes = {
     large: '(min-width: 1024px) 66vw, (min-width: 640px) 100vw, 100vw',
@@ -19,8 +26,32 @@ export default function ProjectCard({
     medium: '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw',
   };
 
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(mobileBreakpoint);
+
+    const handleChange = (event) => {
+      setIsMobileViewport(event.matches);
+    };
+
+    // Set initial state
+    handleChange(mediaQuery);
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
+
+    mediaQuery.addListener(handleChange);
+    return () => mediaQuery.removeListener(handleChange);
+  }, [mobileBreakpoint]);
+
   const imageSizes = sizeToSizes[size] || sizeToSizes.medium;
   const fitClass = imageFit === 'contain' ? 'object-contain' : 'object-cover';
+  const currentVideoSrc = isMobileViewport && mobileVideoSrc ? mobileVideoSrc : videoSrc;
+  const currentImageSrc = isMobileViewport && mobileImageSrc ? mobileImageSrc : imageSrc;
+  const currentAspect = isMobileViewport && imageAspectMobile ? imageAspectMobile : imageAspect;
 
   return (
     <Link
@@ -30,21 +61,22 @@ export default function ProjectCard({
       {/* Image Container - Takes up most of the card */}
       <div
         className="relative w-full overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] transition-shadow duration-300 group-hover:shadow-[0_18px_50px_rgba(15,23,42,0.08)] group-focus-visible:shadow-[0_18px_50px_rgba(15,23,42,0.08)]"
-        style={imageAspect ? { aspectRatio: imageAspect } : undefined}
+        style={currentAspect ? { aspectRatio: currentAspect } : undefined}
       >
-        {videoSrc ? (
+        {currentVideoSrc ? (
           <video
+            key={`${title}-${currentVideoSrc}`}
             autoPlay
             loop
             muted
             playsInline
             className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           >
-            <source src={videoSrc} type="video/mp4" />
+            <source src={currentVideoSrc} type="video/mp4" />
           </video>
-        ) : imageSrc ? (
+        ) : currentImageSrc ? (
           <Image
-            src={imageSrc}
+            src={currentImageSrc}
             alt={`${title} preview`}
             fill
             sizes={imageSizes}
