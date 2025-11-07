@@ -112,14 +112,14 @@ export default function HomePage() {
   return (
     <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900">
       <header className="mb-12 sm:mb-16 lg:mb-20 space-y-10 sm:space-y-12 px-6 sm:px-8 lg:px-16 pt-12 sm:pt-16">
-        <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 sm:flex-row sm:items-start sm:justify-between">
           <div className="space-y-1">
             <p className="text-[15px] text-neutral-600">
               Hi there, <span className="font-normal">kamusta!</span>
             </p>
             <p className="text-[13px] text-neutral-400 italic">/ka-MOOS-tah/</p>
           </div>
-          <div className="text-[13px] font-normal text-neutral-400 lg:text-right">
+          <div className="text-[13px] font-normal text-neutral-400 sm:text-right">
             <p>{formattedDate}</p>
             <p className="mt-0.5">{formattedTime}</p>
           </div>
@@ -165,7 +165,7 @@ export default function HomePage() {
           {projects.map((project) => {
             const sizeClasses = {
               large: 'sm:col-span-2 sm:row-span-2',
-              tall: 'sm:row-span-2',
+              tall: 'sm:col-span-2 sm:row-span-2 lg:col-span-1 lg:row-span-2',
               wide: 'sm:col-span-2 lg:col-span-3',
               medium: '',
             };
