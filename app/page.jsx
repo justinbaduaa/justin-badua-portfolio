@@ -27,7 +27,7 @@ const projects = [
   {
     index: 3,
     title: 'MiCRA',
-    subtitle: 'Multi-Model Content Repurposing Agent',
+    subtitle: 'Multi-Modal Content Repurposing Agent',
     year: '2025 —',
     href: '/projects/micra',
     videoSrc: '/MiCRA Portfolio Demo.mp4',
