@@ -2,7 +2,7 @@ export const metadata = {
   title: "Resume | Justin Badua",
 };
 
-export default function CVPage() {
+export default function ResumePage() {
   return (
     <div className="mx-auto w-full max-w-[1600px] px-6 py-20 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-4xl space-y-12">
