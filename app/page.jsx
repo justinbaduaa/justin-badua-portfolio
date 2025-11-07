@@ -11,7 +11,7 @@ const projects = [
     subtitle: 'Clikk Apply',
     year: '2024 —',
     href: '/projects/clikk-apply',
-    imageSrc: '/Tricode Cloud Mock.png',
+    imageSrc: '/tricode-cloud-mock.png',
     size: 'large',
   },
   {
