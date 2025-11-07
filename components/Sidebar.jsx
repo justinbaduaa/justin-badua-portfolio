@@ -53,7 +53,7 @@ export default function Sidebar() {
     <aside className="hidden w-56 shrink-0 bg-white border-r border-neutral-200 px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
       <div className="space-y-12">
         <div className="space-y-6">
-          <div className="inline-block">
+          <Link href="/" className="inline-block" aria-label="Go to work page">
             <Image
               src="/JB-Glasses.svg"
               alt="Justin Badua mark"
@@ -63,7 +63,7 @@ export default function Sidebar() {
               draggable={false}
               priority
             />
-          </div>
+          </Link>
         </div>
 
         <nav className="space-y-10">

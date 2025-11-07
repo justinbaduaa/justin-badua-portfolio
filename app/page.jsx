@@ -47,7 +47,7 @@ const projects = [
   {
     index: 4,
     title: 'NumNum',
-    subtitle: 'QHacks 2024',
+    subtitle: 'QHacks',
     year: '2024',
     href: '/projects/numnum',
     imageSrc: '/NumNum Mock.png',
