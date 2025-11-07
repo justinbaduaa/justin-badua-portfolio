@@ -18,7 +18,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 ### Main Pages
 1. ✅ **Homepage** (`/`)
 2. ✅ **About** (`/about`)
-3. ✅ **Resume** (`/cv`)
+3. ✅ **Resume** (`/resume`)
 
 ### Project Pages
 4. ✅ **Clikk Apply** (`/projects/clikk-apply`)
@@ -79,7 +79,7 @@ I've completed a comprehensive test of your portfolio website across **Desktop (
 1. **Logo/Brand Mark:** Successfully navigates to homepage from any page
 2. **Primary Navigation Links:**
    - About → `/about` ✅
-   - Resume → `/cv` ✅
+   - Resume → `/resume` ✅
 3. **Project Cards:** All project cards are clickable and navigate correctly
 4. **Sidebar Links (Desktop):** All sidebar navigation links work properly
 5. **Contact Links:** External links (mailto, LinkedIn, Read.cv) are properly configured
