@@ -70,7 +70,10 @@ const projects = [
     year: '2024',
     href: '/projects/crakd',
     imageSrc: '/Crakd Mock V2.png',
+    mobileImageSrc: '/Crakd Mock Mobile.png',
     size: 'wide',
+    imageAspectMobile: '866 / 1000',
+    mobileBreakpoint: '(max-width: 1023px)',
   },
 ];
 
