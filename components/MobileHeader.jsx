@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { contactLinks, primaryLinks, workSections } from '@/lib/navigation';
 
@@ -50,6 +50,7 @@ const contactIcons = {
 export default function MobileHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollPositionRef = useRef(0);
 
   // Close menu on route change
   useEffect(() => {
@@ -58,20 +59,48 @@ export default function MobileHeader() {
 
   // Prevent body scroll when menu is open
   useEffect(() => {
+    const html = document.documentElement;
+
     if (isMenuOpen) {
+      scrollPositionRef.current = window.scrollY;
+      const scrollY = scrollPositionRef.current;
+      html.style.overscrollBehavior = 'none';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
     } else {
+      const scrollY = scrollPositionRef.current;
+      html.style.overscrollBehavior = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+      window.scrollTo(0, scrollY);
     }
+
     return () => {
+      html.style.overscrollBehavior = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     };
   }, [isMenuOpen]);
 
   return (
     <>
       <header className="flex min-w-0 shrink-0 items-center justify-between bg-white border-b border-neutral-200 px-5 sm:px-6 py-4 sm:py-5 lg:hidden">
-        <div className="flex items-center">
+        <Link href="/" className="flex items-center" aria-label="Go to work page">
           <Image
             src="/JB-Glasses.svg"
             alt="Justin Badua mark"
@@ -81,7 +110,7 @@ export default function MobileHeader() {
             draggable={false}
             priority
           />
-        </div>
+        </Link>
 
         {/* Hamburger button for mobile and tablet */}
         <button
@@ -113,13 +142,16 @@ export default function MobileHeader() {
       {/* Mobile menu full-screen panel */}
       <div
         className={clsx(
-          'fixed inset-0 z-50 flex flex-col bg-white transition-transform duration-500 ease-out lg:hidden',
+          'fixed inset-0 z-50 flex min-h-[100dvh] flex-col bg-white transition-transform duration-500 ease-out lg:hidden',
           isMenuOpen ? 'translate-y-0 pointer-events-auto' : '-translate-y-full pointer-events-none'
         )}
         aria-hidden={!isMenuOpen}
       >
-        <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-neutral-200">
-          <div className="flex items-center">
+        <div
+          className="flex items-center justify-between px-6 pb-4 border-b border-neutral-200"
+          style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 1.5rem)' }}
+        >
+          <Link href="/" className="flex items-center" aria-label="Go to work page">
             <Image
               src="/JB-Glasses.svg"
               alt="Justin Badua mark"
@@ -129,7 +161,7 @@ export default function MobileHeader() {
               draggable={false}
               priority
             />
-          </div>
+          </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center justify-center w-10 h-10 -mr-2 text-neutral-500 hover:text-neutral-900 transition-colors"
