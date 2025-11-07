@@ -110,76 +110,78 @@ export default function MobileHeader() {
           />
         </button>
       </header>
-
-      {/* Mobile menu overlay */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/20 z-40 lg:hidden"
-          onClick={() => setIsMenuOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Mobile menu drawer */}
+      {/* Mobile menu full-screen panel */}
       <div
         className={clsx(
-          'fixed top-0 right-0 h-full w-[280px] bg-white border-l border-neutral-200 z-50 transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto',
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          'fixed inset-0 z-50 flex flex-col bg-white transition-transform duration-500 ease-out lg:hidden',
+          isMenuOpen ? 'translate-y-0 pointer-events-auto' : '-translate-y-full pointer-events-none'
         )}
+        aria-hidden={!isMenuOpen}
       >
-        <div className="flex flex-col h-full p-6 space-y-8">
-          {/* Close button */}
-          <div className="flex justify-end">
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-center w-10 h-10 -mr-2 text-neutral-500 hover:text-neutral-900 transition-colors"
-              aria-label="Close menu"
-            >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+        <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-neutral-200">
+          <div className="flex items-center">
+            <Image
+              src="/JB-Glasses.svg"
+              alt="Justin Badua mark"
+              width={32}
+              height={32}
+              className="h-8 w-auto"
+              draggable={false}
+              priority
+            />
           </div>
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center justify-center w-10 h-10 -mr-2 text-neutral-500 hover:text-neutral-900 transition-colors"
+            aria-label="Close menu"
+          >
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
 
-          {/* Navigation */}
-          <nav className="flex-1 space-y-8">
+        <nav className="flex-1 px-6 py-8 flex flex-col overflow-y-hidden">
+          <div className="space-y-8">
             {/* Primary links */}
-            <ul className="space-y-4">
-              {primaryLinks.map((link) => {
-                const active = link.external ? false : isActive(pathname, link.href);
+            <div>
+              <ul className="space-y-4">
+                {primaryLinks.map((link) => {
+                  const active = link.external ? false : isActive(pathname, link.href);
 
-                return (
-                  <li key={link.label}>
-                    {link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-[15px] font-normal text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className={clsx(
-                          'block text-[15px] font-normal transition-colors duration-200',
-                          active ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
+                  return (
+                    <li key={link.label}>
+                      {link.external ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-[17px] font-medium text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className={clsx(
+                            'block text-[17px] font-medium transition-colors duration-200',
+                            active ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
 
             {/* Work sections */}
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
               {workSections.map((section) => (
                 <div key={section.label} className="space-y-3">
-                  <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">
+                  <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 font-medium">
                     {section.label}
                   </p>
                   {section.items.length > 0 && (
@@ -202,32 +204,32 @@ export default function MobileHeader() {
                 </div>
               ))}
             </div>
+          </div>
 
-            {/* Contact links */}
-            <div className="space-y-3">
-              <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Contact</p>
-              <ul className="space-y-2.5">
-                {contactLinks.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {contactIcons[link.icon] && (
-                        <span className="inline-flex h-4 w-4 items-center justify-center text-current opacity-80 transition-opacity duration-200 group-hover:opacity-100">
-                          {contactIcons[link.icon]}
-                        </span>
-                      )}
-                      <span>{link.label}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </nav>
-        </div>
+          {/* Contact links */}
+          <div className="mt-auto pt-6 space-y-3">
+            <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 font-medium">Contact</p>
+            <ul className="space-y-3">
+              {contactLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    className="group inline-flex items-center gap-2.5 text-[14px] font-normal text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {contactIcons[link.icon] && (
+                      <span className="inline-flex h-4 w-4 items-center justify-center text-current opacity-80 transition-opacity duration-200 group-hover:opacity-100">
+                        {contactIcons[link.icon]}
+                      </span>
+                    )}
+                    <span>{link.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
       </div>
     </>
   );
