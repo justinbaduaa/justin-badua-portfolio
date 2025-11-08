@@ -99,7 +99,7 @@ export default function MobileHeader() {
 
   return (
     <>
-      <header className="flex min-w-0 shrink-0 items-center justify-between bg-white border-b border-neutral-200 px-5 sm:px-6 py-4 sm:py-5 lg:hidden">
+      <header className="sticky top-0 z-40 flex min-w-0 shrink-0 items-center justify-between bg-white border-b border-neutral-200 px-5 sm:px-6 py-4 sm:py-5 lg:hidden">
         <Link href="/" className="flex items-center" aria-label="Go to work page">
           <Image
             src="/JB-Glasses.svg"
