@@ -92,7 +92,7 @@ export default function AboutPage() {
                 </p>
                 
                 <p>
-                  Outside of school and projects, I unwind with my guitar. I&apos;m a F1 fan and check in on race weekends when I can. When I&apos;m off a screen, I&apos;m usually outside. I play golf and enjoy the challenge of steady improvement. I also love getting out on hikes and exploring new trails, whether it is a quick weekend walk or a longer route with a good view. I&apos;m curious by nature and like trying new things, meeting new people, and finding good coffee along the way.
+                  Outside of school and projects, I unwind with my guitar. I&apos;m a F1 fan and check in on race weekends when I can. When I&apos;m off a screen, I&apos;m usually outside. I play golf and enjoy the challenge of steady improvement. I also love getting out on hikes and exploring new trails, whether it is a quick weekend walk or a longer route with a good view. I&apos;m curious by nature and like trying new things, meeting new people, and finding good shawarma along the way.
                 </p>
               </div>
             </div>
