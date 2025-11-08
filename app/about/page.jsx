@@ -10,11 +10,11 @@ export default function AboutPage() {
         aria-hidden
       />
 
-      <div className="relative w-full py-14 sm:py-16">
+      <div className="relative w-full pb-14 sm:pb-16">
         {/* Hero Section */}
-        <section className="flex items-center gap-8 sm:gap-12 lg:gap-16">
+        <section className="mx-auto max-w-[1920px] flex items-center gap-8 sm:gap-12 lg:gap-16 -mt-12 sm:-mt-16 px-6 sm:px-12 lg:px-20 xl:px-32">
           {/* Left: Name and pronunciation */}
-          <div className="min-w-0 flex-1 space-y-4 px-6 sm:space-y-6 sm:px-32 lg:px-48 xl:px-60">
+          <div className="min-w-0 flex-1 space-y-4 sm:space-y-6">
             <p className="text-[0.6rem] font-medium uppercase tracking-[0.5em] text-neutral-400">Get to know me...</p>
             <h1 className="text-[4.5rem] font-semibold leading-none tracking-tight text-[#6B6A6D] sm:text-[6.5rem] lg:text-[8.5rem] xl:text-[10rem]">
               Justin
@@ -61,21 +61,21 @@ export default function AboutPage() {
         </section>
 
         {/* About Me Info Section */}
-        <section className="mt-20 px-12 sm:px-20 lg:px-40 xl:px-52">
+        <section className="mx-auto mt-20 max-w-[1920px] px-6 sm:px-12 lg:px-20 xl:px-32">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
             {/* Left side: Images */}
             <div className="flex flex-row gap-4 lg:gap-6 flex-shrink-0">
               {/* Left image */}
               <div className="w-[220px] h-[215px] -mt-[20px] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
                 <div className="flex h-full items-center justify-center">
-                  <p className="px-4 text-xs text-neutral-400">Architecture Model Photo</p>
+                  <p className="px-4 text-xs text-neutral-400">Generic Photo X</p>
                 </div>
               </div>
               
               {/* Right image */}
               <div className="w-[280px] aspect-[3/4] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
                 <div className="flex h-full items-center justify-center">
-                  <p className="px-4 text-xs text-neutral-400">Landscape Photo</p>
+                  <p className="px-4 text-xs text-neutral-400">Generic Photo X</p>
                 </div>
               </div>
             </div>
@@ -88,15 +88,11 @@ export default function AboutPage() {
               
               <div className="space-y-6 text-[15px] leading-relaxed text-neutral-600">
                 <p>
-                  Justin Badua is a Queens student.
+                  I&apos;m Filipino, born and raised, and I moved to Canada when I was six. That mix of cultures shaped a lot of who I am. Family, food, and community matter to me, and I bring that energy into the teams I work with.
                 </p>
                 
                 <p>
-                  For a long time, I&apos;ve been designing spaces that people can enjoy strolling around, always striving to curate an engaging human experience as they navigate the built environment. Throughout this journey, I&apos;ve been curious about understanding human interaction to build more intuitive things – there are many complexities in human relationships with nature and architecture with so much still to explore.
-                </p>
-                
-                <p>
-                  During my sophomore year, I decided to shift my career towards designing for people in computing spaces because of a desire to work at larger and faster scales. While computing and architecture slowly evolve, still, at the heart of these disciplines are what makes design valuable – it improves people&apos;s lives holistically through emotion, functionality, and aesthetics. Instead of strolling spaces, however, people are now scrolling interfaces more. Architecture has given me a spatial &apos;taste&apos; of design in the real world and allows me to bring a systems view to designing interfaces that feel more humane.
+                  Outside of school and projects, I unwind with my guitar. I&apos;m a F1 fan and check in on race weekends when I can. When I&apos;m off a screen, I&apos;m usually outside. I play golf and enjoy the challenge of steady improvement. I also love getting out on hikes and exploring new trails, whether it is a quick weekend walk or a longer route with a good view. I&apos;m curious by nature and like trying new things, meeting new people, and finding good coffee along the way.
                 </p>
               </div>
             </div>
