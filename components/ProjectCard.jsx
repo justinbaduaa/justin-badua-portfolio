@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -27,23 +27,15 @@ export default function ProjectCard({
   };
 
   const [isMobileViewport, setIsMobileViewport] = useState(false);
-  const [hasIntersected, setHasIntersected] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const cardRef = useRef(null);
-  const videoRef = useRef(null);
 
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return undefined;
-    }
-
     const mediaQuery = window.matchMedia(mobileBreakpoint);
 
     const handleChange = (event) => {
       setIsMobileViewport(event.matches);
     };
 
+    // Set initial state
     handleChange(mediaQuery);
 
     if (typeof mediaQuery.addEventListener === 'function') {
@@ -55,96 +47,15 @@ export default function ProjectCard({
     return () => mediaQuery.removeListener(handleChange);
   }, [mobileBreakpoint]);
 
-  useEffect(() => {
-    if (typeof window === 'undefined' || !cardRef.current) {
-      setHasIntersected(true);
-      setIsInView(true);
-      return undefined;
-    }
-
-    if (!('IntersectionObserver' in window)) {
-      setHasIntersected(true);
-      setIsInView(true);
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setHasIntersected(true);
-            setIsInView(true);
-          } else {
-            setIsInView(false);
-          }
-        });
-      },
-      {
-        rootMargin: '200px 0px',
-        threshold: 0.1,
-      }
-    );
-
-    observer.observe(cardRef.current);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return undefined;
-    }
-
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    const handleChange = (event) => {
-      setPrefersReducedMotion(event.matches);
-    };
-
-    handleChange(mediaQuery);
-
-    if (typeof mediaQuery.addEventListener === 'function') {
-      mediaQuery.addEventListener('change', handleChange);
-      return () => mediaQuery.removeEventListener('change', handleChange);
-    }
-
-    mediaQuery.addListener(handleChange);
-    return () => mediaQuery.removeListener(handleChange);
-  }, []);
-
-  useEffect(() => {
-    const element = videoRef.current;
-
-    if (!element) {
-      return;
-    }
-
-    if (!prefersReducedMotion && isInView) {
-      const playPromise = element.play();
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(() => {});
-      }
-    } else {
-      element.pause();
-      if (!isInView) {
-        element.currentTime = 0;
-      }
-    }
-  }, [isInView, prefersReducedMotion]);
-
   const imageSizes = sizeToSizes[size] || sizeToSizes.medium;
   const fitClass = imageFit === 'contain' ? 'object-contain' : 'object-cover';
   const currentVideoSrc = isMobileViewport && mobileVideoSrc ? mobileVideoSrc : videoSrc;
   const currentImageSrc = isMobileViewport && mobileImageSrc ? mobileImageSrc : imageSrc;
   const currentAspect = isMobileViewport && imageAspectMobile ? imageAspectMobile : imageAspect;
-  const shouldRenderVideo = Boolean(currentVideoSrc && hasIntersected);
 
   return (
     <Link
       href={href}
-      ref={cardRef}
       className="group relative flex h-full min-w-0 flex-col transition-all duration-300 outline-none focus:outline-none focus-visible:outline-none"
     >
       {/* Image Container - Takes up most of the card */}
@@ -152,16 +63,14 @@ export default function ProjectCard({
         className="relative w-full overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] transition-shadow duration-300 group-hover:shadow-[0_18px_50px_rgba(15,23,42,0.08)] group-focus-visible:shadow-[0_18px_50px_rgba(15,23,42,0.08)]"
         style={currentAspect ? { aspectRatio: currentAspect } : undefined}
       >
-        {shouldRenderVideo ? (
+        {currentVideoSrc ? (
           <video
             key={`${title}-${currentVideoSrc}`}
-            ref={videoRef}
+            autoPlay
             loop
             muted
             playsInline
-            preload={prefersReducedMotion ? 'auto' : 'metadata'}
-            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-            controls={prefersReducedMotion}
+            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           >
             <source src={currentVideoSrc} type="video/mp4" />
           </video>
