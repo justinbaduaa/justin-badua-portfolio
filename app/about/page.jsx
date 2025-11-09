@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const metadata = {
   title: 'About | Justin Badua',
 };
@@ -31,9 +33,12 @@ export default function AboutPage() {
             <div className="grid h-full w-full grid-cols-8 grid-rows-6 gap-3 sm:gap-4 lg:gap-5">
               {/* Left square - Hidden on small screens, shown from md up */}
               <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] hidden md:block" style={{aspectRatio: '1/1'}}>
-                <div className="flex h-full items-center justify-center">
-                  <p className="px-4 text-xs text-neutral-400">Photo 1 · square (1:1)</p>
-                </div>
+                <Image
+                  src="/Ski.JPG"
+                  alt="Skiing adventure"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Center portrait - Always visible when container is shown */}
@@ -45,16 +50,22 @@ export default function AboutPage() {
 
               {/* Top-right square - Shown from sm up */}
               <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-l-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]" style={{aspectRatio: '1/1'}}>
-                <div className="flex h-full items-center justify-center">
-                  <p className="px-3 text-xs text-neutral-400">Photo 3 · square (1:1)</p>
-                </div>
+                <Image
+                  src="/Queens.JPG"
+                  alt="Queen's University"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Bottom-right square - Hidden on sm, shown from lg up */}
               <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-l-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] hidden lg:block" style={{aspectRatio: '1/1'}}>
-                <div className="flex h-full items-center justify-center">
-                  <p className="px-3 text-xs text-neutral-400">Photo 4 · square (1:1)</p>
-                </div>
+                <Image
+                  src="/HTN.jpg"
+                  alt="Hack the North"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
@@ -66,17 +77,23 @@ export default function AboutPage() {
             {/* Left side: Images */}
             <div className="flex flex-row gap-3 sm:gap-4 lg:gap-6 flex-shrink-0">
               {/* Left image */}
-              <div className="w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] lg:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
-                <div className="flex h-full items-center justify-center">
-                  <p className="px-4 text-xs text-neutral-400">Generic Photo X</p>
-                </div>
+              <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] lg:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
+                <Image
+                  src="/waterfall.jpg"
+                  alt="Waterfall view"
+                  fill
+                  className="object-cover"
+                />
               </div>
               
               {/* Right image */}
-              <div className="w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] lg:w-[280px] aspect-[3/4] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
-                <div className="flex h-full items-center justify-center">
-                  <p className="px-4 text-xs text-neutral-400">Generic Photo X</p>
-                </div>
+              <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] lg:w-[280px] aspect-[3/4] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
+                <Image
+                  src="/Trail.jpg"
+                  alt="Scenic trail view"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
             
@@ -88,11 +105,11 @@ export default function AboutPage() {
               
               <div className="space-y-6 text-[15px] leading-relaxed text-neutral-600">
                 <p>
-                  I&apos;m Filipino, born and raised, and I moved to Canada when I was six. That mix of cultures shaped a lot of who I am. (make this flow better)Family, food, and community matter to me, and I bring that energy into the teams I work with.
+                  I&apos;m Filipino, born and raised, and moved to Canada when I was six. That mix shaped a lot of who I am. Family, food, and community matter to me, and I try to bring that same warmth and energy to the teams I&apos;m part of.
                 </p>
                 
                 <p>
-                  Outside of school and projects, I unwind with my guitar. I&apos;m an F1 fan and check in on race weekends when I can. When I&apos;m off a screen, I&apos;m usually outside. I play golf and enjoy the challenge of steady improvement. I also love getting out on hikes and exploring new trails, whether it is a quick weekend walk or a longer route with a good view. I&apos;m curious by nature and like trying new things, meeting new people, and finding good shawarma along the way. (mention i am very idk - meli)
+                  When I&apos;m not in class or working on projects, you&apos;ll usually find me with a guitar in hand. I&apos;m a big F1 fan and tune in on race weekends when I can. Away from screens, I&apos;m outside, working on my golf game, hiking new trails, and chasing good views. I&apos;m curious by nature, always keen to try new things, meet new people, and hunt down great food. I&apos;m a big foodie, always searching for the best eats, especially a standout shawarma.
                 </p>
               </div>
             </div>
