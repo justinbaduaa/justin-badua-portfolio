@@ -4,6 +4,18 @@ import { useEffect, useState } from 'react';
 
 import ProjectCard from '@/components/ProjectCard';
 
+const dateFormatter = new Intl.DateTimeFormat('en-CA', {
+  weekday: 'long',
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+
+const timeFormatter = new Intl.DateTimeFormat('en-CA', {
+  hour: 'numeric',
+  minute: '2-digit',
+});
+
 const projects = [
   {
     index: 1,
@@ -11,8 +23,8 @@ const projects = [
     subtitle: 'Clikk Apply',
     year: '2024 — Present',
     href: '/projects/clikk-apply',
-    imageSrc: '/tricode-cloud-mock.png',
-    mobileImageSrc: '/Tricode Cloud Mobile.png',
+    imageSrc: '/tricode-cloud-mock.webp',
+    mobileImageSrc: '/Tricode Cloud Mobile.webp',
     imageAspectMobile: '866 / 1000',
     mobileBreakpoint: '(max-width: 1023px)',
     size: 'large',
@@ -23,8 +35,8 @@ const projects = [
     subtitle: 'AI Automation',
     year: '2025 — Present',
     href: '/projects/nexridge',
-    imageSrc: '/Nexridge Mock.png',
-    mobileImageSrc: '/Nexridge Mock 16-9.png',
+    imageSrc: '/Nexridge Mock.webp',
+    mobileImageSrc: '/Nexridge Mock 16-9.webp',
     size: 'tall',
     imageAspect: '866 / 1000',
     imageAspectMobile: '16 / 9',
@@ -50,7 +62,7 @@ const projects = [
     subtitle: 'QHacks',
     year: '2024',
     href: '/projects/numnum',
-    imageSrc: '/NumNum Mock.png',
+    imageSrc: '/NumNum Mock.webp',
     size: 'tall',
     imageAspect: '866 / 1000',
   },
@@ -60,7 +72,7 @@ const projects = [
     subtitle: 'Reinforcement Learning',
     year: '2024',
     href: '/projects/rl-rocket-league',
-    imageSrc: '/RL^2 Mock.png',
+    imageSrc: '/RL^2 Mock.webp',
     size: 'large',
   },
   {
@@ -69,8 +81,8 @@ const projects = [
     subtitle: 'AI Mock Interview',
     year: '2024',
     href: '/projects/crakd',
-    imageSrc: '/Crakd Mock V2.png',
-    mobileImageSrc: '/Crakd Mock Mobile.png',
+    imageSrc: '/Crakd Mock V2.webp',
+    mobileImageSrc: '/Crakd Mock Mobile.webp',
     size: 'wide',
     imageAspectMobile: '866 / 1000',
     mobileBreakpoint: '(max-width: 1023px)',
@@ -87,17 +99,8 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  const formattedDate = new Intl.DateTimeFormat('en-CA', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  }).format(currentTime);
-
-  const formattedTime = new Intl.DateTimeFormat('en-CA', {
-    hour: 'numeric',
-    minute: '2-digit',
-  }).format(currentTime);
+  const formattedDate = dateFormatter.format(currentTime);
+  const formattedTime = timeFormatter.format(currentTime);
 
   const handleSpotlightMove = (event) => {
     const bounds = event.currentTarget.getBoundingClientRect();

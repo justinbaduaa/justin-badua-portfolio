@@ -34,9 +34,10 @@ export default function AboutPage() {
               {/* Left square - Hidden on small screens, shown from md up */}
               <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] hidden md:block" style={{aspectRatio: '1/1'}}>
                 <Image
-                  src="/Ski.JPG"
+                  src="/Ski.webp"
                   alt="Skiing adventure"
                   fill
+                  sizes="(max-width: 767px) 0px, (max-width: 1279px) 180px, 220px"
                   className="object-cover"
                 />
               </div>
@@ -44,10 +45,10 @@ export default function AboutPage() {
               {/* Center portrait - Always visible when container is shown */}
               <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] sm:mt-[102px] lg:mt-[118px]" style={{aspectRatio: '3/4'}}>
                 <Image
-                  src="/headshot.png"
+                  src="/headshot.webp"
                   alt="Justin Badua headshot"
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  sizes="(max-width: 639px) 0px, (max-width: 1023px) 48vw, (max-width: 1279px) 46vw, 44vw"
                   className="object-cover"
                 />
               </div>
@@ -55,9 +56,10 @@ export default function AboutPage() {
               {/* Top-right square - Shown from sm up */}
               <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-l-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]" style={{aspectRatio: '1/1'}}>
                 <Image
-                  src="/Queens.JPG"
+                  src="/Queens.webp"
                   alt="Queen's University"
                   fill
+                  sizes="(max-width: 767px) 0px, (max-width: 1279px) 160px, 200px"
                   className="object-cover"
                 />
               </div>
@@ -65,9 +67,10 @@ export default function AboutPage() {
               {/* Bottom-right square - Hidden on sm, shown from lg up */}
               <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-l-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] hidden lg:block" style={{aspectRatio: '1/1'}}>
                 <Image
-                  src="/HTN.jpg"
+                  src="/HTN.webp"
                   alt="Hack the North"
                   fill
+                  sizes="(max-width: 1023px) 0px, (max-width: 1535px) 160px, 200px"
                   className="object-cover"
                 />
               </div>
@@ -83,9 +86,10 @@ export default function AboutPage() {
               {/* Left image */}
               <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] lg:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
                 <Image
-                  src="/waterfall.jpg"
+                  src="/waterfall.webp"
                   alt="Waterfall view"
                   fill
+                  sizes="(max-width: 639px) 170px, (max-width: 1023px) 200px, 220px"
                   className="object-cover"
                 />
               </div>
@@ -93,9 +97,10 @@ export default function AboutPage() {
               {/* Right image */}
               <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] lg:w-[280px] aspect-[3/4] overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)]">
                 <Image
-                  src="/Trail.jpg"
+                  src="/Trail.webp"
                   alt="Scenic trail view"
                   fill
+                  sizes="(max-width: 639px) 220px, (max-width: 1023px) 260px, 280px"
                   className="object-cover"
                 />
               </div>
