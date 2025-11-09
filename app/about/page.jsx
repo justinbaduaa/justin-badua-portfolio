@@ -88,11 +88,11 @@ export default function AboutPage() {
               
               <div className="space-y-6 text-[15px] leading-relaxed text-neutral-600">
                 <p>
-                  I&apos;m Filipino, born and raised, and I moved to Canada when I was six. That mix of cultures shaped a lot of who I am. Family, food, and community matter to me, and I bring that energy into the teams I work with.
+                  I&apos;m Filipino, born and raised, and I moved to Canada when I was six. That mix of cultures shaped a lot of who I am. (make this flow better)Family, food, and community matter to me, and I bring that energy into the teams I work with.
                 </p>
                 
                 <p>
-                  Outside of school and projects, I unwind with my guitar. I&apos;m a F1 fan and check in on race weekends when I can. When I&apos;m off a screen, I&apos;m usually outside. I play golf and enjoy the challenge of steady improvement. I also love getting out on hikes and exploring new trails, whether it is a quick weekend walk or a longer route with a good view. I&apos;m curious by nature and like trying new things, meeting new people, and finding good shawarma along the way.
+                  Outside of school and projects, I unwind with my guitar. I&apos;m an F1 fan and check in on race weekends when I can. When I&apos;m off a screen, I&apos;m usually outside. I play golf and enjoy the challenge of steady improvement. I also love getting out on hikes and exploring new trails, whether it is a quick weekend walk or a longer route with a good view. I&apos;m curious by nature and like trying new things, meeting new people, and finding good shawarma along the way. (mention i am very idk - meli)
                 </p>
               </div>
             </div>

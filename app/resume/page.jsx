@@ -5,7 +5,7 @@ export const metadata = {
 };
 
 export default function ResumePage() {
-  redirect('/B_Justin_Resume_2025_26.pdf');
+  redirect('/Justin Badua Resume 2025-26.pdf');
   return null;
 }
 
