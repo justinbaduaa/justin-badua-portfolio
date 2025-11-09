@@ -43,9 +43,13 @@ export default function AboutPage() {
 
               {/* Center portrait - Always visible when container is shown */}
               <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-md border border-neutral-200/40 bg-[#F5F5F5] shadow-[0_10px_35px_rgba(15,23,42,0.05)] sm:mt-[102px] lg:mt-[118px]" style={{aspectRatio: '3/4'}}>
-                <div className="flex h-full items-center justify-center">
-                  <p className="px-4 text-xs text-neutral-400">Photo 2 · portrait (3:4)</p>
-                </div>
+                <Image
+                  src="/headshot.png"
+                  alt="Justin Badua headshot"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
 
               {/* Top-right square - Shown from sm up */}
