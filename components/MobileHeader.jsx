@@ -219,7 +219,7 @@ export default function MobileHeader() {
             <div className="grid grid-cols-1 gap-6">
               {workSections.map((section) => (
                 <div key={section.label} className="space-y-3">
-                  <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 font-medium">
+                  <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 dark:text-neutral-200 font-medium">
                     {section.label}
                   </p>
                   {section.items.length > 0 && (
@@ -246,7 +246,7 @@ export default function MobileHeader() {
 
           {/* Contact links */}
           <div className="mt-auto pt-6 space-y-3">
-            <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 font-medium">Contact</p>
+            <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
             <ul className="space-y-3">
               {contactLinks.map((link) => (
                 <li key={link.label}>
