@@ -107,7 +107,7 @@ export default function Sidebar() {
           <div className="space-y-6">
             {workSections.map((section) => (
               <div key={section.label} className="space-y-3">
-                <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">
+                <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 dark:text-neutral-200 font-medium">
                   {section.label}
                 </p>
                 {section.items.length > 0 && (
@@ -134,7 +134,7 @@ export default function Sidebar() {
       </div>
 
       <div className="space-y-3">
-        <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Contact</p>
+        <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
         <ul className="space-y-2.5">
           {contactLinks.map((link) => (
             <li key={link.label}>
