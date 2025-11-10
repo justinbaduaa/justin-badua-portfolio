@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { contactLinks, primaryLinks, workSections } from '@/lib/navigation';
+import ThemeToggle from './ThemeToggle';
+import { useTheme } from './ThemeProvider';
 
 const isActive = (pathname, href) => {
   if (href === '/') {
@@ -48,22 +50,26 @@ const contactIcons = {
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { theme } = useTheme();
 
   return (
-    <aside className="hidden w-56 shrink-0 bg-white border-r border-neutral-200 px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
+    <aside className="hidden w-56 shrink-0 bg-white dark:bg-[#1c1c1e] border-r border-neutral-200 dark:border-[#2c2c2e] px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
       <div className="space-y-12">
         <div className="space-y-6">
-          <Link href="/" className="inline-block" aria-label="Go to work page">
-            <Image
-              src="/JB-Glasses.svg"
-              alt="Justin Badua mark"
-              width={48}
-              height={48}
-              className="h-12 w-auto"
-              draggable={false}
-              priority
-            />
-          </Link>
+          <div className="flex items-center justify-between">
+            <Link href="/" className="inline-block" aria-label="Go to work page">
+              <Image
+                src={theme === 'dark' ? '/JB Glasses White.svg' : '/JB-Glasses.svg'}
+                alt="Justin Badua mark"
+                width={48}
+                height={48}
+                className="h-12 w-auto"
+                draggable={false}
+                priority
+              />
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
 
         <nav className="space-y-10">
@@ -78,7 +84,7 @@ export default function Sidebar() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[15px] font-semibold text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
+                      className="text-[15px] font-semibold text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
                     >
                       {link.label}
                     </a>
@@ -87,7 +93,7 @@ export default function Sidebar() {
                       href={link.href}
                       className={clsx(
                         'text-[15px] font-semibold transition-colors duration-200',
-                        active ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
+                        active ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
                       )}
                     >
                       {link.label}
@@ -112,7 +118,7 @@ export default function Sidebar() {
                           href={item.href}
                           className={clsx(
                             'text-[14px] font-normal transition-colors duration-200',
-                            isActive(pathname, item.href) ? 'text-neutral-900' : 'text-neutral-500 hover:text-neutral-900'
+                            isActive(pathname, item.href) ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
                           )}
                         >
                           {item.label}
@@ -133,7 +139,7 @@ export default function Sidebar() {
           {contactLinks.map((link) => (
             <li key={link.label}>
               <a
-                className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 transition-colors duration-200 hover:text-neutral-900"
+                className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
