@@ -39,12 +39,12 @@ export default function LoadingScreen({ onComplete }) {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-neutral-950 transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-black transition-opacity duration-500 ${
         isVisible && count < 100 ? 'opacity-100' : 'opacity-0'
       }`}
     >
       <div className="text-center">
-        <div className="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 tabular-nums">
+        <div className="text-xl sm:text-2xl font-semibold tracking-tight text-neutral-900 dark:text-[#f5f5f7] tabular-nums">
           {count}
         </div>
       </div>

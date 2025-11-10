@@ -53,7 +53,7 @@ export default function Sidebar() {
   const { theme } = useTheme();
 
   return (
-    <aside className="hidden w-56 shrink-0 bg-white dark:bg-neutral-950 border-r border-neutral-200 dark:border-neutral-800 px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
+    <aside className="hidden w-56 shrink-0 bg-white dark:bg-[#1c1c1e] border-r border-neutral-200 dark:border-[#2c2c2e] px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
       <div className="space-y-12">
         <div className="space-y-6">
           <div className="flex items-center justify-between">
@@ -84,7 +84,7 @@ export default function Sidebar() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[15px] font-semibold text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100"
+                      className="text-[15px] font-semibold text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
                     >
                       {link.label}
                     </a>
@@ -93,7 +93,7 @@ export default function Sidebar() {
                       href={link.href}
                       className={clsx(
                         'text-[15px] font-semibold transition-colors duration-200',
-                        active ? 'text-neutral-900 dark:text-neutral-100' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                        active ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
                       )}
                     >
                       {link.label}
@@ -118,7 +118,7 @@ export default function Sidebar() {
                           href={item.href}
                           className={clsx(
                             'text-[14px] font-normal transition-colors duration-200',
-                            isActive(pathname, item.href) ? 'text-neutral-900 dark:text-neutral-100' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'
+                            isActive(pathname, item.href) ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
                           )}
                         >
                           {item.label}
@@ -139,7 +139,7 @@ export default function Sidebar() {
           {contactLinks.map((link) => (
             <li key={link.label}>
               <a
-                className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-neutral-100"
+                className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"

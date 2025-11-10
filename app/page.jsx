@@ -41,7 +41,9 @@ const projects = [
     year: '2025 — Present',
     href: '/projects/micra',
     videoSrc: '/MiCRA Portfolio Demo.mp4',
+    darkVideoSrc: '/MiCRA Portfolio Dark Demo.mp4',
     mobileVideoSrc: '/MiCRA Portfolio Square Demo.mp4',
+    darkMobileVideoSrc: '/MiCRA Portfolio Square Demo Dark.mp4',
     size: 'wide',
     imageFit: 'contain',
     imageAspect: '1365 / 768',
@@ -130,7 +132,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900 dark:text-neutral-100">
+    <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900 dark:text-[#f5f5f7]">
       <header className="mb-12 sm:mb-16 lg:mb-20 space-y-10 sm:space-y-12 px-6 sm:px-8 lg:px-16 pt-12 sm:pt-16">
         <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:items-start sm:justify-between">
           <div className="space-y-1">
@@ -146,7 +148,7 @@ export default function HomePage() {
         </div>
 
         <div className="space-y-6 sm:space-y-8">
-          <h1 className="max-w-4xl text-[2rem] font-medium leading-[1.2] text-neutral-800 dark:text-neutral-100 sm:text-[2.75rem] lg:text-[3.25rem] tracking-tight">
+          <h1 className="max-w-4xl text-[2rem] font-medium leading-[1.2] text-neutral-800 dark:text-[#f5f5f7] sm:text-[2.75rem] lg:text-[3.25rem] tracking-tight">
             I&apos;m a{' '}
             <span
               className="queens-highlight"
@@ -173,7 +175,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <div className="mx-6 sm:mx-8 lg:mx-16 border-t border-neutral-200 dark:border-neutral-800" />
+      <div className="mx-6 sm:mx-8 lg:mx-16 border-t border-neutral-200 dark:border-[#2c2c2e]" />
 
       <section className="space-y-8 sm:space-y-10 px-6 sm:px-8 lg:px-16">
         <div className="flex items-center pt-6 sm:pt-8">

@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div className="relative isolate overflow-hidden">
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[340px] bg-gradient-to-b from-neutral-100 via-white to-transparent dark:from-neutral-900 dark:via-neutral-950 blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[340px] bg-gradient-to-b from-neutral-100 via-white to-transparent dark:from-[#1c1c1e] dark:via-black blur-3xl"
         aria-hidden
       />
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
           {/* Left: Name and pronunciation */}
           <div className="w-full sm:min-w-0 sm:flex-1 space-y-4 sm:space-y-6">
             <p className="text-[0.6rem] font-medium uppercase tracking-[0.5em] text-neutral-400 dark:text-neutral-500 transition duration-300 hover:text-neutral-500 dark:hover:text-neutral-400">Get to know me...</p>
-            <h1 className="text-[4.5rem] font-semibold leading-none tracking-tight text-[#6B6A6D] dark:text-neutral-300 transition-colors duration-500 hover:text-[#555459] dark:hover:text-neutral-200 sm:text-[6.5rem] lg:text-[8.5rem] xl:text-[10rem]">
+            <h1 className="text-[4.5rem] font-semibold leading-none tracking-tight text-[#6B6A6D] dark:text-[#e5e5e7] transition-colors duration-500 hover:text-[#555459] dark:hover:text-[#f5f5f7] sm:text-[6.5rem] lg:text-[8.5rem] xl:text-[10rem]">
               Justin
               <br />
               Badua
@@ -28,11 +28,11 @@ export default function AboutPage() {
 
           {/* Right: Photo layout - Hidden on mobile, shown from sm up */}
           <div className="relative isolate aspect-[5/4] w-full flex-none min-w-[320px] sm:aspect-[6/5] sm:w-[48vw] lg:w-[46vw] xl:w-[44vw] hidden sm:block">
-            <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-gradient-to-br from-white/60 via-white/40 to-transparent dark:from-neutral-800/60 dark:via-neutral-900/40 blur-3xl" aria-hidden />
+            <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-gradient-to-br from-white/60 via-white/40 to-transparent dark:from-[#2c2c2e]/60 dark:via-[#1c1c1e]/40 blur-3xl" aria-hidden />
 
             <div className="grid h-full w-full grid-cols-8 grid-rows-6 gap-3 sm:gap-4 lg:gap-5">
               {/* Left square - Hidden on small screens, shown from md up */}
-              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-md border border-neutral-200/40 dark:border-neutral-700/40 bg-[#F5F5F5] dark:bg-neutral-900 shadow-[0_10px_35px_rgba(15,23,42,0.05)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.3)] transition-transform duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_30px_80px_rgba(15,23,42,0.18)] dark:hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)] hidden md:block" style={{aspectRatio: '1/1'}}>
+              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden md:block" style={{aspectRatio: '1/1'}}>
                 <Image
                   src="/Ski.webp"
                   alt="Skiing adventure"
@@ -42,7 +42,7 @@ export default function AboutPage() {
               </div>
 
               {/* Center portrait - Always visible when container is shown */}
-              <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-md border border-neutral-200/40 dark:border-neutral-700/40 bg-[#F5F5F5] dark:bg-neutral-900 shadow-[0_10px_35px_rgba(15,23,42,0.05)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.3)] transition-transform duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_35px_90px_rgba(15,23,42,0.22)] dark:hover:shadow-[0_35px_90px_rgba(0,0,0,0.5)] sm:mt-[102px] lg:mt-[118px]" style={{aspectRatio: '3/4'}}>
+              <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_12px_40px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.7)] sm:mt-[102px] lg:mt-[118px]" style={{aspectRatio: '3/4'}}>
                 <Image
                   src="/headshot.webp"
                   alt="Justin Badua headshot"
@@ -53,7 +53,7 @@ export default function AboutPage() {
               </div>
 
               {/* Top-right square - Shown from sm up */}
-              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-l-md border border-neutral-200/40 dark:border-neutral-700/40 bg-[#F5F5F5] dark:bg-neutral-900 shadow-[0_10px_35px_rgba(15,23,42,0.05)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.3)] transition-transform duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_30px_80px_rgba(15,23,42,0.18)] dark:hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]" style={{aspectRatio: '1/1'}}>
+              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-l-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{aspectRatio: '1/1'}}>
                 <Image
                   src="/Queens.webp"
                   alt="Queen's University"
@@ -63,7 +63,7 @@ export default function AboutPage() {
               </div>
 
               {/* Bottom-right square - Hidden on sm, shown from lg up */}
-              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-l-md border border-neutral-200/40 dark:border-neutral-700/40 bg-[#F5F5F5] dark:bg-neutral-900 shadow-[0_10px_35px_rgba(15,23,42,0.05)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.3)] transition-transform duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_30px_80px_rgba(15,23,42,0.18)] dark:hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)] hidden lg:block" style={{aspectRatio: '1/1'}}>
+              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-l-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden lg:block" style={{aspectRatio: '1/1'}}>
                 <Image
                   src="/HTN.webp"
                   alt="Hack the North"
@@ -81,7 +81,7 @@ export default function AboutPage() {
             {/* Left side: Images */}
             <div className="flex flex-row gap-3 sm:gap-4 lg:gap-6 flex-shrink-0">
               {/* Left image */}
-              <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] lg:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-md border border-neutral-200/40 dark:border-neutral-700/40 bg-[#F5F5F5] dark:bg-neutral-900 shadow-[0_10px_35px_rgba(15,23,42,0.05)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.3)] transition-transform duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_30px_80px_rgba(15,23,42,0.18)] dark:hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+              <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] lg:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                 <Image
                   src="/waterfall.webp"
                   alt="Waterfall view"
@@ -91,7 +91,7 @@ export default function AboutPage() {
               </div>
               
               {/* Right image */}
-              <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] lg:w-[280px] aspect-[3/4] overflow-hidden rounded-md border border-neutral-200/40 dark:border-neutral-700/40 bg-[#F5F5F5] dark:bg-neutral-900 shadow-[0_10px_35px_rgba(15,23,42,0.05)] dark:shadow-[0_10px_35px_rgba(0,0,0,0.3)] transition-transform duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_30px_80px_rgba(15,23,42,0.18)] dark:hover:shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+              <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] lg:w-[280px] aspect-[3/4] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                 <Image
                   src="/Trail.webp"
                   alt="Scenic trail view"

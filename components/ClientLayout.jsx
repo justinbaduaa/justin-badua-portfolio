@@ -16,7 +16,7 @@ export default function ClientLayout({ children }) {
         <Sidebar />
         <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col lg:ml-56">
           <MobileHeader />
-          <main className="min-w-0 flex-1 bg-white dark:bg-neutral-950">{children}</main>
+          <main className="min-w-0 flex-1 bg-white dark:bg-black">{children}</main>
         </div>
       </div>
     </>
