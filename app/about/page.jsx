@@ -119,6 +119,59 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Divider before education */}
+        <div className="mx-auto mt-20 max-w-[1920px] px-6 sm:px-12 lg:px-20 xl:px-32">
+          <div className="border-t border-neutral-200 dark:border-[#2c2c2e]" />
+        </div>
+
+        {/* Education Section */}
+        <section className="mx-auto max-w-[1920px] space-y-8 sm:space-y-10 px-6 sm:px-12 lg:px-20 xl:px-32">
+          <div className="flex items-center pt-6 sm:pt-8">
+            <p className="text-[0.75rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">
+              Education
+            </p>
+          </div>
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-14">
+            {/* Left side: Education details */}
+            <div className="flex-1 min-w-0 space-y-6">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#111111] dark:text-white">
+                    Queen&apos;s University
+                  </h3>
+                  <div className="space-y-1">
+                    <p className="text-2xl font-medium text-neutral-400 dark:text-neutral-500">
+                      Kingston, Ontario
+                    </p>
+                    <p className="text-base text-neutral-400 dark:text-neutral-500">
+                      2024 &ndash; Expected 2028
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-1 text-base sm:text-lg text-neutral-600 dark:text-neutral-200">
+                  <p>Bachelor of Computing (Honours)</p>
+                  <p>Major in AI, Minor in Economics</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side: Faded image with caption */}
+            <div className="w-full lg:w-[44%]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+                <Image
+                  src="/queens_university_sunset.jpg"
+                  alt="Queen's University main campus at sunset"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="mt-3 text-center text-sm text-neutral-400 dark:text-neutral-500 lg:text-left">
+                Queen&apos;s campus during the spring
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
