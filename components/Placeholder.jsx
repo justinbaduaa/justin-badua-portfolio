@@ -9,7 +9,7 @@ export default function Placeholder({ title, slug }) {
         <p className="text-sm uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">{title}</p>
         <h1 className="text-3xl font-semibold text-neutral-900 dark:text-[#f5f5f7]">Coming soon</h1>
         <p className="max-w-xl leading-7">
-          I'm curating a detailed story for {label}. Check back shortly or drop me a DM on LinkedIn if you'd like to
+          I&apos;m curating a detailed story for {label}. Check back shortly or drop me a DM on LinkedIn if you&apos;d like to
           know more.
         </p>
       </div>
