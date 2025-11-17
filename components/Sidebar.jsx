@@ -53,7 +53,7 @@ export default function Sidebar() {
   const { theme } = useTheme();
 
   return (
-    <aside className="hidden w-56 shrink-0 bg-white dark:bg-[#1c1c1e] border-r border-neutral-200 dark:border-[#2c2c2e] px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:pb-12">
+    <aside className="custom-scroll hidden w-56 shrink-0 bg-white dark:bg-[#1c1c1e] border-r border-neutral-200 dark:border-[#2c2c2e] px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-[100vh] lg:max-h-[100vh] lg:flex-col lg:justify-between lg:pb-12 lg:overflow-y-auto lg:overscroll-contain">
       <div className="space-y-12">
         <div className="space-y-6">
           <div className="flex items-center justify-between">
@@ -133,9 +133,9 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      <div className="space-y-3">
-        <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
-        <ul className="space-y-2.5">
+      <div className="mt-10 border-t border-neutral-200/60 dark:border-[#2c2c2e] pt-6 space-y-4">
+        <p className="text-[0.6rem] uppercase tracking-[0.45em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
+        <ul className="space-y-3.5">
           {contactLinks.map((link) => (
             <li key={link.label}>
               <a
@@ -158,4 +158,3 @@ export default function Sidebar() {
     </aside>
   );
 }
-
