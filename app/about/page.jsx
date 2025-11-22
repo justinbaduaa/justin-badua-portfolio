@@ -31,8 +31,8 @@ export default function AboutPage() {
             <div className="pointer-events-none absolute inset-0 rounded-[36px] bg-gradient-to-br from-white/60 via-white/40 to-transparent dark:from-[#2c2c2e]/60 dark:via-[#1c1c1e]/40 blur-3xl" aria-hidden />
 
             <div className="grid h-full w-full grid-cols-8 grid-rows-6 gap-3 sm:gap-4 lg:gap-5">
-              {/* Left square - Hidden on small screens, shown from md up */}
-              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden md:block" style={{aspectRatio: '1/1'}}>
+              {/* Left square - Hidden on small screens, shown from 1700px up to avoid text overlap */}
+              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden min-[1700px]:block" style={{aspectRatio: '1/1'}}>
                 <Image
                   src="/Ski.webp"
                   alt="Skiing adventure"
