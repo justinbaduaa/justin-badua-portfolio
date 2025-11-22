@@ -76,12 +76,12 @@ export default function AboutPage() {
         </section>
 
         {/* About Me Info Section */}
-        <section className="mx-auto mt-20 max-w-[1920px] px-6 sm:px-12 lg:px-20 xl:px-32">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <section className="mx-auto mt-20 max-w-[1920px] px-6 sm:px-12 lg:px-20 xl:px-24">
+          <div className="flex flex-col xl:flex-row gap-8 xl:gap-12">
             {/* Left side: Images */}
-            <div className="flex flex-row gap-3 sm:gap-4 lg:gap-6 flex-shrink-0">
+            <div className="flex flex-row gap-3 sm:gap-4 xl:gap-6 shrink-0">
               {/* Left image */}
-              <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] lg:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+              <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] xl:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                 <Image
                   src="/waterfall.webp"
                   alt="Waterfall view"
@@ -91,7 +91,7 @@ export default function AboutPage() {
               </div>
               
               {/* Right image */}
-              <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] lg:w-[280px] aspect-[3/4] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+              <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] xl:w-[280px] aspect-[3/4] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                 <Image
                   src="/Trail.webp"
                   alt="Scenic trail view"
@@ -102,7 +102,7 @@ export default function AboutPage() {
             </div>
             
             {/* Right side: Text content */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-[320px]">
               <h2 className="mb-8 text-[0.6rem] font-medium uppercase tracking-[0.5em] text-neutral-400 dark:text-neutral-500">
                 INFO
               </h2>
