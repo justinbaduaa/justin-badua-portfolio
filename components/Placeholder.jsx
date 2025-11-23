@@ -1,4 +1,5 @@
 import { formatSlug } from '@/lib/format';
+import { RESOURCE_ICONS, RESOURCE_LABELS } from '@/lib/resourceLinks';
 
 const projectResources = {
   'clikk-apply': {
@@ -23,35 +24,6 @@ const projectResources = {
     website: 'https://crakd.vercel.app/',
     github: 'https://github.com/justinbaduaa/crakd',
   },
-};
-
-const resourceIcons = {
-  website: (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-5 w-5"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18" />
-      <path d="M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9Z" />
-    </svg>
-  ),
-  github: (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-      <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.166 6.84 9.49.5.09.68-.217.68-.483 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.343-3.369-1.343-.454-1.155-1.109-1.463-1.109-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.034 1.532 1.034.892 1.53 2.341 1.088 2.91.833.091-.646.35-1.088.636-1.338-2.22-.252-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.104-.253-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.908-1.295 2.747-1.026 2.747-1.026.547 1.376.204 2.393.1 2.646.64.698 1.028 1.59 1.028 2.682 0 3.842-2.338 4.688-4.566 4.936.359.308.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .269.18.58.688.482A10.013 10.013 0 0 0 22 12c0-5.52-4.48-10-10-10Z" />
-    </svg>
-  ),
-};
-
-const resourceLabels = {
-  website: 'Website',
-  github: 'GitHub',
 };
 
 const leadershipSlugs = new Set(['first-robotics', 'compsa', 'ai-collective']);
@@ -93,10 +65,10 @@ export default function Placeholder({ title, slug }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200/80 text-neutral-500 transition-colors duration-200 hover:border-neutral-300 hover:text-neutral-900 dark:border-[#2c2c2e] dark:text-neutral-400 dark:hover:border-[#434348] dark:hover:text-[#f5f5f7]"
-                  aria-label={`Open ${resourceLabels[link.type]} for ${projectName}`}
+                  aria-label={`Open ${RESOURCE_LABELS[link.type]} for ${projectName}`}
                 >
-                  <span className="text-current transition-transform duration-200 group-hover:scale-105">{resourceIcons[link.type]}</span>
-                  <span className="sr-only">{resourceLabels[link.type]}</span>
+                  <span className="text-current transition-transform duration-200 group-hover:scale-105">{RESOURCE_ICONS[link.type]}</span>
+                  <span className="sr-only">{RESOURCE_LABELS[link.type]}</span>
                 </a>
               ))}
             </div>
