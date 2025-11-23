@@ -66,6 +66,9 @@ const projects = [
     subtitle: 'QHacks',
     year: '2024',
     href: '/projects/numnum',
+    resourceLinks: {
+      github: 'https://github.com/kevinvalenciaa/NumNum',
+    },
     imageSrc: '/NumNum Mock.webp',
     darkImageSrc: '/NumNum Mock Higher-res Dark.png',
     size: 'tall',

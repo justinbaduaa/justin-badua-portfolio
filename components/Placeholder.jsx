@@ -15,6 +15,10 @@ const projectResources = {
     website: 'https://mi-cra.vercel.app/',
     github: 'https://github.com/mcronin4/MiCRA',
   },
+  numnum: {
+    title: 'NumNum',
+    github: 'https://github.com/kevinvalenciaa/NumNum',
+  },
   'rl-rocket-league': {
     title: 'RL² Rocket League Agent',
     github: 'https://github.com/JoshAlbom/CUCAI-Rocket-League-Agent',
