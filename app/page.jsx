@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import ProjectCard from '@/components/ProjectCard';
+import BlurFade from '@/components/ui/BlurFade';
 
 const projects = [
   {
@@ -154,57 +155,67 @@ export default function HomePage() {
   return (
     <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900 dark:text-[#f5f5f7]">
       <header className="mb-12 sm:mb-16 lg:mb-20 space-y-10 sm:space-y-12 px-6 sm:px-8 lg:px-16 pt-12 sm:pt-16">
-        <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:items-start sm:justify-between">
-          <div className="space-y-1">
-            <p className="text-[15px] text-neutral-600 dark:text-neutral-300">
-              Hi there, <span className="font-normal">kamusta!</span>
-            </p>
-            <p className="text-[13px] text-neutral-400 dark:text-neutral-500 italic">/ka-MOOS-tah/</p>
+        <BlurFade delay={0.1}>
+          <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:items-start sm:justify-between">
+            <div className="space-y-1">
+              <p className="text-[15px] text-neutral-600 dark:text-neutral-300">
+                Hi there, <span className="font-normal">kamusta!</span>
+              </p>
+              <p className="text-[13px] text-neutral-400 dark:text-neutral-500 italic">/ka-MOOS-tah/</p>
+            </div>
+            <div className="text-[13px] font-normal text-neutral-400 dark:text-neutral-500 sm:text-right">
+              <p>{formattedDate}</p>
+              <p className="mt-0.5">{formattedTime}</p>
+            </div>
           </div>
-          <div className="text-[13px] font-normal text-neutral-400 dark:text-neutral-500 sm:text-right">
-            <p>{formattedDate}</p>
-            <p className="mt-0.5">{formattedTime}</p>
-          </div>
-        </div>
+        </BlurFade>
 
         <div className="space-y-6 sm:space-y-8">
-          <h1 className="max-w-4xl text-[2rem] font-medium leading-[1.2] text-neutral-800 dark:text-[#f5f5f7] sm:text-[2.75rem] lg:text-[3.25rem] tracking-tight">
-            I&apos;m a{' '}
-            <span
-              className="queens-highlight"
-              data-text="Queen's"
-              onMouseEnter={handleSpotlightEnter}
-              onMouseMove={handleSpotlightMove}
-              onMouseLeave={handleSpotlightLeave}
-              style={{
-                '--spotlight-x': `${spotlightPosition.x}%`,
-                '--spotlight-y': `${spotlightPosition.y}%`,
-                '--spotlight-opacity': isSpotlightActive ? 1 : 0,
-              }}
-            >
-              Queen&apos;s
-            </span>{' '}
-            Computing student in AI and Economics, building thoughtful, human-centered interfaces.
-          </h1>
-          <p className="max-w-4xl text-[14px] sm:text-[15px] leading-[1.7] text-neutral-600 dark:text-neutral-300">
-            I like building things that help people. I&apos;ve worked with startups and student teams to turn ideas into stuff you
-            can actually use: simple tools that solve real problems. I care about the details, like clear language, calm flows, and
-            thoughtful choices. Lately I&apos;m exploring interactions that feel natural and useful, the kind that make technology
-            fade into the background so you can just get things done.
-          </p>
+          <BlurFade delay={0.2}>
+            <h1 className="max-w-4xl text-[2rem] font-medium leading-[1.2] text-neutral-800 dark:text-[#f5f5f7] sm:text-[2.75rem] lg:text-[3.25rem] tracking-tight">
+              I&apos;m a{' '}
+              <span
+                className="queens-highlight"
+                data-text="Queen's"
+                onMouseEnter={handleSpotlightEnter}
+                onMouseMove={handleSpotlightMove}
+                onMouseLeave={handleSpotlightLeave}
+                style={{
+                  '--spotlight-x': `${spotlightPosition.x}%`,
+                  '--spotlight-y': `${spotlightPosition.y}%`,
+                  '--spotlight-opacity': isSpotlightActive ? 1 : 0,
+                }}
+              >
+                Queen&apos;s
+              </span>{' '}
+              Computing student in AI and Economics, building thoughtful, human-centered interfaces.
+            </h1>
+          </BlurFade>
+          <BlurFade delay={0.3}>
+            <p className="max-w-4xl text-[14px] sm:text-[15px] leading-[1.7] text-neutral-600 dark:text-neutral-300">
+              I like building things that help people. I&apos;ve worked with startups and student teams to turn ideas into stuff you
+              can actually use: simple tools that solve real problems. I care about the details, like clear language, calm flows, and
+              thoughtful choices. Lately I&apos;m exploring interactions that feel natural and useful, the kind that make technology
+              fade into the background so you can just get things done.
+            </p>
+          </BlurFade>
         </div>
       </header>
 
-      <div className="mx-6 sm:mx-8 lg:mx-16 border-t border-neutral-200 dark:border-[#2c2c2e]" />
+      <BlurFade delay={0.4} inView>
+        <div className="mx-6 sm:mx-8 lg:mx-16 border-t border-neutral-200 dark:border-[#2c2c2e]" />
+      </BlurFade>
 
       <section className="space-y-8 sm:space-y-10 px-6 sm:px-8 lg:px-16">
-        <div className="flex items-center pt-6 sm:pt-8">
-          <p className="text-[0.75rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Experience & Projects</p>
-        </div>
+        <BlurFade delay={0.4} inView>
+          <div className="flex items-center pt-6 sm:pt-8">
+            <p className="text-[0.75rem] uppercase tracking-[0.4em] text-neutral-400 font-medium">Experience & Projects</p>
+          </div>
+        </BlurFade>
 
         {/* Bento Box Grid */}
         <div className="grid auto-rows-[minmax(260px,_auto)] sm:auto-rows-[minmax(280px,_auto)] gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => {
+          {projects.map((project, idx) => {
             const sizeClasses = {
               large: 'sm:col-span-2 sm:row-span-2',
               tall: 'sm:col-span-2 sm:row-span-2 lg:col-span-1 lg:row-span-2',
@@ -213,9 +224,9 @@ export default function HomePage() {
             };
 
             return (
-              <div key={project.title} className={sizeClasses[project.size] || ''}>
+              <BlurFade key={project.title} delay={0.25 + idx * 0.05} inView className={sizeClasses[project.size] || ''}>
                 <ProjectCard {...project} />
-              </div>
+              </BlurFade>
             );
           })}
         </div>
