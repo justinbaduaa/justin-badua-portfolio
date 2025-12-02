@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { contactLinks, primaryLinks, workSections } from '@/lib/navigation';
-import ThemeToggle from './ThemeToggle';
 import { useTheme } from './ThemeProvider';
 
 const isActive = (pathname, href) => {
@@ -50,12 +49,13 @@ const contactIcons = {
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const { theme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <aside className="custom-scroll hidden w-56 shrink-0 bg-white dark:bg-[#1c1c1e] border-r border-neutral-200 dark:border-[#2c2c2e] px-12 pt-16 lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-[100vh] lg:max-h-[100vh] lg:flex-col lg:justify-between lg:pb-12 lg:overflow-y-auto lg:overscroll-contain">
-      <div className="space-y-12">
-        <div className="space-y-6">
+    <aside className="hidden w-56 shrink-0 bg-white dark:bg-[#1c1c1e] border-r border-neutral-200 dark:border-[#2c2c2e] lg:fixed lg:top-0 lg:left-0 lg:flex lg:h-[100vh] lg:flex-col lg:overflow-hidden">
+      <div className="flex-1 overflow-y-auto custom-scroll px-12 pt-16 pb-6">
+        <div className="space-y-12">
+          <div className="space-y-6">
           <div className="flex items-center justify-between">
             <Link href="/" className="inline-block" aria-label="Go to work page">
               <Image
@@ -68,7 +68,6 @@ export default function Sidebar() {
                 priority
               />
             </Link>
-            <ThemeToggle />
           </div>
         </div>
 
@@ -132,28 +131,59 @@ export default function Sidebar() {
           </div>
         </nav>
       </div>
+    </div>
 
-      <div className="mt-10 border-t border-neutral-200/60 dark:border-[#2c2c2e] pt-6 space-y-4">
-        <p className="text-[0.6rem] uppercase tracking-[0.45em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
-        <ul className="space-y-3.5">
-          {contactLinks.map((link) => (
-            <li key={link.label}>
-              <a
-                className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {contactIcons[link.icon] && (
-                  <span className="inline-flex h-4 w-4 items-center justify-center text-current opacity-80 transition-opacity duration-200 group-hover:opacity-100">
-                    {contactIcons[link.icon]}
-                  </span>
-                )}
-                <span>{link.label}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+      <div className="shrink-0 px-12 pb-8 pt-4 bg-white dark:bg-[#1c1c1e] border-t border-neutral-200/60 dark:border-[#2c2c2e] space-y-6">
+        <div className="space-y-4">
+          <p className="text-[0.6rem] uppercase tracking-[0.45em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
+          <ul className="space-y-3.5">
+            {contactLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {contactIcons[link.icon] && (
+                    <span className="inline-flex h-4 w-4 items-center justify-center text-current opacity-80 transition-opacity duration-200 group-hover:opacity-100">
+                      {contactIcons[link.icon]}
+                    </span>
+                  )}
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <button
+          onClick={toggleTheme}
+          className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7] w-full text-left pt-6 border-t border-neutral-200/60 dark:border-[#2c2c2e]"
+          type="button"
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          <span className="inline-flex h-4 w-4 items-center justify-center text-current opacity-80 transition-opacity duration-200 group-hover:opacity-100">
+            {theme === 'dark' ? (
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </span>
+          <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+        </button>
       </div>
     </aside>
   );
