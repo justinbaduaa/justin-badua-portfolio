@@ -131,8 +131,10 @@ export default function Sidebar() {
           </div>
         </nav>
       </div>
+    </div>
 
-        <div className="mt-10 border-t border-neutral-200/60 dark:border-[#2c2c2e] pt-6 space-y-4">
+      <div className="shrink-0 px-12 pb-8 pt-4 bg-white dark:bg-[#1c1c1e] border-t border-neutral-200/60 dark:border-[#2c2c2e] space-y-6">
+        <div className="space-y-4">
           <p className="text-[0.6rem] uppercase tracking-[0.45em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
           <ul className="space-y-3.5">
             {contactLinks.map((link) => (
@@ -154,12 +156,10 @@ export default function Sidebar() {
             ))}
           </ul>
         </div>
-      </div>
 
-      <div className="shrink-0 px-12 pb-8 pt-4 bg-white dark:bg-[#1c1c1e] border-t border-neutral-200/60 dark:border-[#2c2c2e]">
         <button
           onClick={toggleTheme}
-          className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7] w-full text-left"
+          className="group inline-flex items-center gap-2 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7] w-full text-left pt-6 border-t border-neutral-200/60 dark:border-[#2c2c2e]"
           type="button"
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
         >
