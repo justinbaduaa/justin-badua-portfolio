@@ -144,7 +144,7 @@ export default function ProjectCard({
             loop
             muted
             playsInline
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] transform-gpu will-change-transform [backface-visibility:hidden]"
           >
             <source src={currentVideoSrc} type="video/mp4" />
           </video>
@@ -155,7 +155,7 @@ export default function ProjectCard({
             alt={`${title} preview`}
             fill
             sizes={imageSizes}
-            className={`${fitClass} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
+            className={`${fitClass} transition-transform duration-700 ease-out group-hover:scale-[1.02] transform-gpu will-change-transform [backface-visibility:hidden]`}
             priority={false}
           />
         ) : (
