@@ -28,6 +28,10 @@ const projectResources = {
     website: 'https://crakd.vercel.app/',
     github: 'https://github.com/justinbaduaa/crakd',
   },
+  cucai: {
+    title: 'CUCAI',
+    pdf: '/CUCAI Sponsorship Package 2026-09.18.26_compressed.pdf',
+  },
 };
 
 const leadershipSlugs = new Set(['first-robotics', 'compsa', 'ai-collective']);
@@ -38,6 +42,7 @@ export default function Placeholder({ title, slug }) {
   const resourceLinks = [
     resource?.website && { type: 'website', href: resource.website },
     resource?.github && { type: 'github', href: resource.github },
+    resource?.pdf && { type: 'pdf', href: resource.pdf },
   ].filter(Boolean);
   const projectName = resource?.title || label;
 

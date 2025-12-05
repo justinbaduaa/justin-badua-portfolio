@@ -106,6 +106,19 @@ const projects = [
     imageAspectMobile: '866 / 1000',
     mobileBreakpoint: '(max-width: 1023px)',
   },
+  {
+    index: 7,
+    title: 'CUCAI',
+    subtitle: 'Sponsorship Package',
+    year: '2025',
+    href: '/projects/cucai',
+    resourceLinks: {
+      pdf: '/CUCAI Sponsorship Package 2026-09.18.26_compressed.pdf',
+    },
+    imageSrc: '/CUCAI Mock.png',
+    darkImageSrc: '/CUCAI Mock Dark.png',
+    size: 'large',
+  },
 ];
 
 export default function HomePage() {
