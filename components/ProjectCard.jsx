@@ -63,7 +63,7 @@ export default function ProjectCard({
 
   const imageSizes = sizeToSizes[size] || sizeToSizes.medium;
   const fitClass = imageFit === 'contain' ? 'object-contain' : 'object-cover';
-  
+
   // Determine the correct video source based on theme and viewport
   let currentVideoSrc;
   if (videoSrc || darkVideoSrc || mobileVideoSrc || darkMobileVideoSrc) {
@@ -76,7 +76,7 @@ export default function ProjectCard({
       currentVideoSrc = isMobileViewport && mobileVideoSrc ? mobileVideoSrc : videoSrc;
     }
   }
-  
+
   // Determine the correct image source based on theme and viewport
   let currentImageSrc;
   if (theme === 'dark') {
@@ -87,7 +87,7 @@ export default function ProjectCard({
   } else {
     currentImageSrc = isMobileViewport && mobileImageSrc ? mobileImageSrc : imageSrc;
   }
-  
+
   const currentAspect = isMobileViewport && imageAspectMobile ? imageAspectMobile : imageAspect;
 
   const activeResourceLinks =
@@ -126,11 +126,11 @@ export default function ProjectCard({
                 key={`${title}-${link.type}`}
                 type="button"
                 onClick={(e) => handleResourceLinkClick(e, link.href)}
-                className="group relative flex h-10 w-10 items-center justify-center text-neutral-400 dark:text-neutral-500 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-500 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
+                className="group/button relative flex h-10 w-10 items-center justify-center text-neutral-400 dark:text-neutral-500 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-500 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
                 aria-label={`Open ${RESOURCE_LABELS[link.type] || 'project'} link for ${title}`}
               >
-                <span className="pointer-events-none absolute inset-0 rounded-full border border-transparent bg-transparent opacity-0 scale-75 shadow-none transition-all duration-200 group-hover:border-neutral-200/70 group-hover:bg-white/90 group-hover:opacity-100 group-hover:scale-100 group-hover:shadow-[0_8px_18px_rgba(0,0,0,0.06)] dark:group-hover:border-[#2c2c2e] dark:group-hover:bg-[#1f1f21] dark:group-hover:shadow-[0_8px_20px_rgba(0,0,0,0.45)] focus-visible:border-neutral-200/70 focus-visible:bg-white/90 focus-visible:opacity-100 focus-visible:scale-100 dark:focus-visible:border-[#2c2c2e] dark:focus-visible:bg-[#1f1f21]" />
-                <span className="relative z-10 text-current transition-transform duration-200 group-hover:scale-105">
+                <span className="pointer-events-none absolute inset-0 rounded-full border border-transparent bg-transparent opacity-0 scale-75 shadow-none transition-all duration-200 group-hover/button:border-neutral-200/70 group-hover/button:bg-white/90 group-hover/button:opacity-100 group-hover/button:scale-100 group-hover/button:shadow-[0_8px_18px_rgba(0,0,0,0.06)] dark:group-hover/button:border-[#2c2c2e] dark:group-hover/button:bg-[#1f1f21] dark:group-hover/button:shadow-[0_8px_20px_rgba(0,0,0,0.45)] focus-visible:border-neutral-200/70 focus-visible:bg-white/90 focus-visible:opacity-100 focus-visible:scale-100 dark:focus-visible:border-[#2c2c2e] dark:focus-visible:bg-[#1f1f21]" />
+                <span className="relative z-10 text-current transition-transform duration-200 group-hover/button:scale-105">
                   {RESOURCE_ICONS[link.type]}
                 </span>
               </button>
