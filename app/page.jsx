@@ -8,8 +8,8 @@ import BlurFade from '@/components/ui/BlurFade';
 const projects = [
   {
     index: 1,
-    title: 'Tricode Cloud',
-    subtitle: 'Clikk Apply',
+    title: 'Clikk Apply',
+    subtitle: 'Hiring Platform for Student Organizations',
     year: '2024 — Present',
     href: '/projects/clikk-apply',
     resourceLinks: {
@@ -26,7 +26,7 @@ const projects = [
   {
     index: 2,
     title: 'Nexridge.',
-    subtitle: 'AI Automation',
+    subtitle: 'AI Systems for Business',
     year: '2025 — Present',
     href: '/projects/nexridge',
     resourceLinks: {
@@ -44,7 +44,7 @@ const projects = [
   {
     index: 3,
     title: 'MiCRA',
-    subtitle: 'Multi-Modal Content Repurposing Agent',
+    subtitle: 'Turn Long-Form Content into Short-Form Media',
     year: '2025 — Present',
     href: '/projects/micra',
     resourceLinks: {
@@ -64,7 +64,7 @@ const projects = [
   {
     index: 4,
     title: 'NumNum',
-    subtitle: 'QHacks',
+    subtitle: 'Swipe to Find Restaurants with Friends',
     year: '2024',
     href: '/projects/numnum',
     resourceLinks: {
@@ -78,7 +78,7 @@ const projects = [
   {
     index: 5,
     title: 'RL² Rocket League Agent',
-    subtitle: 'Reinforcement Learning',
+    subtitle: 'Creating an Agent that Plays Rocket League',
     year: '2024',
     href: '/projects/rl-rocket-league',
     resourceLinks: {
@@ -91,7 +91,7 @@ const projects = [
   {
     index: 6,
     title: 'Crakd',
-    subtitle: 'AI Mock Interview',
+    subtitle: 'AI Mock Interview Platform',
     year: '2024',
     href: '/projects/crakd',
     resourceLinks: {
@@ -109,7 +109,7 @@ const projects = [
   {
     index: 7,
     title: 'CUCAI',
-    subtitle: 'Sponsorship Package',
+    subtitle: 'Sponsorship Package & Web Design',
     year: '2025',
     href: '/projects/cucai',
     resourceLinks: {
