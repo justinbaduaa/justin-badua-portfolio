@@ -271,7 +271,7 @@ export default function TricodePage() {
 
                         <BlurFade delay={0.3}>
                             <p className="tc-hero-subtitle">
-                                As an early-stage team member, I designed the brand identity, built both marketing sites, and developed the frontend for Tricode's flagship product, Clikk Apply.
+                                As an early-stage team member, I designed the brand identity, built both landing pages, and developed the frontend for Tricode Cloud's flagship product, Clikk Apply.
                             </p>
                         </BlurFade>
 
@@ -322,7 +322,7 @@ export default function TricodePage() {
 
                         <h2 className="ca-section-title">What I Built</h2>
                         <p className="ca-section-subtitle">
-                            At Tricode, I wore many hats. From establishing the visual identity to shipping production code, I was involved in every layer of the product experience.
+                            My contributions spanned design and development—here's what I worked on.
                         </p>
                     </BlurFade>
 
@@ -331,7 +331,7 @@ export default function TricodePage() {
                             <RoleItem
                                 icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>}
                                 title="Brand Identity"
-                                description="Designed the Tricode logo, established brand guidelines, color system, and visual language."
+                                description="Designed the Tricode Cloud logo, established brand guidelines, color system, and visual language."
                                 index={0}
                             />
                             <RoleItem
@@ -349,7 +349,7 @@ export default function TricodePage() {
                             <RoleItem
                                 icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8" /><path d="M12 17v4" /></svg>}
                                 title="Landing Pages"
-                                description="Designed and developed both the Tricode Cloud and Clikk Apply marketing sites."
+                                description="Designed and developed both the Tricode Cloud and Clikk Apply landing pages."
                                 index={3}
                             />
                         </div>
@@ -368,7 +368,7 @@ export default function TricodePage() {
 
                         <h2 className="ca-section-title">Brand Identity</h2>
                         <p className="ca-section-subtitle">
-                            I created the visual foundation for Tricode from scratch, establishing a design system that scales across products.
+                            I created the visual foundation for Tricode Cloud from scratch, establishing a design system that scales across products.
                         </p>
                     </BlurFade>
 
@@ -378,11 +378,18 @@ export default function TricodePage() {
                                 <h4>Logo & Wordmark</h4>
                                 <div className="tc-logo-container">
                                     <Image
-                                        src="/TriLogo.png"
+                                        src="/Tricode Work Mark.png"
+                                        alt="Tricode Cloud Logo"
+                                        width={400}
+                                        height={200}
+                                        className="tc-logo-image tc-logo-light"
+                                    />
+                                    <Image
+                                        src="/tricode logo white.png"
                                         alt="Tricode Logo"
                                         width={400}
                                         height={200}
-                                        className="tc-logo-image"
+                                        className="tc-logo-image tc-logo-dark"
                                     />
                                 </div>
                             </div>
@@ -394,26 +401,18 @@ export default function TricodePage() {
                                         <span>Primary</span>
                                     </div>
                                     <div className="tc-swatch tc-swatch-img">
-                                        <Image src="/hire-bg.jpg" alt="Hire" fill style={{ objectFit: 'cover' }} />
-                                        <span>Hire</span>
+                                        <Image src="/hire-bg.jpg" alt="TriHire" fill style={{ objectFit: 'cover' }} />
+                                        <span>TriHire</span>
                                     </div>
                                     <div className="tc-swatch tc-swatch-img">
-                                        <Image src="/events-bg.jpg" alt="Events" fill style={{ objectFit: 'cover' }} />
-                                        <span>Events</span>
+                                        <Image src="/events-bg.jpg" alt="TriEvents" fill style={{ objectFit: 'cover' }} />
+                                        <span>TriEvents</span>
                                     </div>
                                     <div className="tc-swatch tc-swatch-img">
-                                        <Image src="/ExpenseBg.jpg" alt="Expense" fill style={{ objectFit: 'cover' }} />
-                                        <span>Expense</span>
+                                        <Image src="/ExpenseBg.jpg" alt="TriExpense" fill style={{ objectFit: 'cover' }} />
+                                        <span>TriExpense</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="tc-brand-card tc-brand-typography">
-                                <h4>Typography</h4>
-                                <Placeholder label="Typography samples - add later" aspectRatio="3/2" />
-                            </div>
-                            <div className="tc-brand-card tc-brand-guidelines">
-                                <h4>Brand Guidelines</h4>
-                                <Placeholder label="Brand guidelines PDF - add later" aspectRatio="3/2" />
                             </div>
                         </div>
                     </BlurFade>
@@ -452,7 +451,7 @@ export default function TricodePage() {
 
                         <h2 className="ca-section-title">How I Approached It</h2>
                         <p className="ca-section-subtitle">
-                            Tricode serves student organizations with varying levels of tech literacy. Every design decision was guided by these principles.
+                            Tricode Cloud serves student organizations with varying levels of tech literacy. Every design decision was guided by these principles.
                         </p>
                     </BlurFade>
 
@@ -465,8 +464,8 @@ export default function TricodePage() {
                             />
                             <PrincipleCard
                                 number="2"
-                                title="Accessible by Default"
-                                description="Student orgs include members with diverse needs. We built for keyboard navigation, screen readers, and color blindness from day one."
+                                title="User-Driven Iteration"
+                                description="We collect feedback from our users and continuously iterate to improve the experience. Each release gets better based on real input."
                             />
                             <PrincipleCard
                                 number="3"
@@ -527,8 +526,8 @@ export default function TricodePage() {
 
                         <MetricCard
                             value={4}
-                            label="Faculty Societies"
-                            description="Engineering, Arts & Science, Commerce, and Computing."
+                            label="Student Organizations"
+                            description="ASUS, CESA, COMPSA, and Computing O-Week."
                             icon={
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                     <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
@@ -563,11 +562,23 @@ export default function TricodePage() {
                         />
                     </div>
 
+                    <BlurFade delay={0.3}>
+                        <div className="tc-trusted-by">
+                            <p className="tc-trusted-label">Trusted by student organizations at Queen's</p>
+                            <div className="tc-trusted-logos">
+                                <Image src="/asus.webp" alt="ASUS" width={60} height={60} className="tc-org-logo" />
+                                <Image src="/CESA.webp" alt="CESA" width={60} height={60} className="tc-org-logo" />
+                                <Image src="/compsa.webp" alt="COMPSA" width={60} height={60} className="tc-org-logo" />
+                                <Image src="/computing-oweek.webp" alt="Computing O-Week" width={60} height={60} className="tc-org-logo" />
+                            </div>
+                        </div>
+                    </BlurFade>
+
                     <BlurFade delay={0.4}>
                         <div className="tc-reflection">
                             <h4>Reflection</h4>
                             <p>
-                                Working at Tricode taught me how to operate as a full-stack designer and developer. I learned to balance visual polish with engineering pragmatism, and to ship features that real users actually needed. Building something from zero to production, seeing student clubs actually use it, reinforced my belief that the best products come from deeply understanding your users.
+                                Tricode Cloud was my first experience building a real product that people actually use. I learned how to design and ship features, collaborate with a team, and iterate based on real user feedback. Seeing student clubs rely on something I helped build made the work feel meaningful, and reinforced my belief that the best products come from deeply understanding your users.
                             </p>
                         </div>
                     </BlurFade>
@@ -590,7 +601,7 @@ export default function TricodePage() {
                                         <path d="M5 12h14M12 5l7 7-7 7" />
                                     </svg>
                                 </Link>
-                                <Link href="https://linkedin.com/in/justinbadua" target="_blank" rel="noopener noreferrer" className="ca-cta-secondary">
+                                <Link href="https://www.linkedin.com/in/justin-badua/" target="_blank" rel="noopener noreferrer" className="ca-cta-secondary">
                                     LinkedIn
                                 </Link>
                             </div>

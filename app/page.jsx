@@ -8,7 +8,7 @@ import BlurFade from '@/components/ui/BlurFade';
 const projects = [
   {
     index: 1,
-    title: 'Tricode',
+    title: 'Tricode Cloud',
     subtitle: 'Design & Frontend for Student Software',
     year: '2024 — Present',
     href: '/projects/tricode',

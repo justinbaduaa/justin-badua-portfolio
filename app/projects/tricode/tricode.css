@@ -50,20 +50,22 @@
 
 /* Dark mode overrides */
 .dark {
-  --ca-bg-primary: #0A0A0A;
-  --ca-bg-secondary: #111111;
-  --ca-bg-tertiary: #171717;
-  --ca-bg-hover: rgba(0, 85, 255, 0.08);
-  --ca-border-primary: rgba(255, 255, 255, 0.08);
-  --ca-border-secondary: rgba(255, 255, 255, 0.12);
-  --ca-border-strong: rgba(255, 255, 255, 0.18);
-  --ca-text-heading: #FAFAFA;
-  --ca-text-body: #A3A3A3;
-  --ca-text-metadata: #6B6B6B;
-  --ca-text-muted: #525252;
-  --ca-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --ca-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --ca-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
+  --ca-bg-primary: #000000;
+  --ca-bg-secondary: #141414;
+  --ca-bg-tertiary: #1c1c1e;
+  --ca-bg-hover: rgba(147, 197, 253, 0.08);
+  --ca-border-primary: rgba(255, 255, 255, 0.1);
+  --ca-border-secondary: rgba(255, 255, 255, 0.15);
+  --ca-border-strong: rgba(255, 255, 255, 0.22);
+  --ca-text-heading: #f5f5f7;
+  --ca-text-body: #b3b3b3;
+  --ca-text-metadata: #8e8e93;
+  --ca-text-muted: #6e6e73;
+  --ca-accent: #93c5fd;
+  --ca-accent-subtle: rgba(147, 197, 253, 0.12);
+  --ca-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ca-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --ca-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================
@@ -2107,12 +2109,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 200px;
+  min-height: 140px;
 }
 
 .tc-logo-image {
   max-width: 280px;
   height: auto;
+}
+
+/* Theme-aware logo switching */
+.tc-logo-light {
+  display: block;
+}
+
+.tc-logo-dark {
+  display: none;
+}
+
+.dark .tc-logo-light {
+  display: none;
+}
+
+.dark .tc-logo-dark {
+  display: block;
 }
 
 .tc-color-swatches {
@@ -2345,8 +2364,12 @@
   font-weight: 600;
   color: var(--ca-text-heading);
   line-height: 1;
-  opacity: 0.15;
+  opacity: 0.2;
   min-width: 48px;
+}
+
+.dark .tc-principle-num {
+  opacity: 0.3;
 }
 
 .tc-principle-info {
@@ -2701,6 +2724,11 @@
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.tc-site-card:hover .tc-site-image {
+  transform: scale(1.03);
 }
 
 .tc-site-info {
@@ -3069,4 +3097,56 @@
 
 .tricode-page .tc-principle-card:first-child {
   padding-top: 0;
+}
+
+/* ============================================
+   TRUSTED BY SECTION
+   ============================================ */
+
+.tc-trusted-by {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.tc-trusted-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ca-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.tc-trusted-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.tc-org-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: all var(--ca-transition-fast);
+  border-radius: 8px;
+}
+
+.tc-org-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+@media (max-width: 640px) {
+  .tc-trusted-logos {
+    gap: 24px;
+  }
+
+  .tc-org-logo {
+    width: 48px;
+    height: 48px;
+  }
 }
