@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import BlurFade from '@/components/ui/BlurFade';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
-import LottieAnimation from '@/components/ui/LottieAnimation';
 import { useTheme } from '@/components/ThemeProvider';
 import './tricode.css';
 
