@@ -7,40 +7,28 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import BlurFade from '@/components/ui/BlurFade';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import LottieAnimation from '@/components/ui/LottieAnimation';
+import { useTheme } from '@/components/ThemeProvider';
 import './tricode.css';
 
 // ========================================
-// ENHANCED ROLE CARD WITH LOTTIE ANIMATION
+// SIMPLE ROLE ITEM (Clean list style)
 // ========================================
-function RoleCard({ title, description, lottieUrl, index = 0 }) {
-    const cardRef = useRef(null);
-    const isInView = useInView(cardRef, { once: true, margin: '-50px' });
+function RoleItem({ number, title, description, index = 0 }) {
+    const itemRef = useRef(null);
+    const isInView = useInView(itemRef, { once: true, margin: '-50px' });
 
     return (
         <motion.div
-            ref={cardRef}
-            className="tc-role-card-enhanced"
-            initial={{ opacity: 0, y: 30 }}
+            ref={itemRef}
+            className="tc-role-item"
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -4 }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
         >
-            <div className="tc-role-content">
-                <div className="tc-role-text">
-                    <h4 className="tc-role-title">{title}</h4>
-                    <p className="tc-role-desc">{description}</p>
-                </div>
-                {lottieUrl && (
-                    <div className="tc-role-animation">
-                        <LottieAnimation
-                            src={lottieUrl}
-                            loop={true}
-                            autoplay={true}
-                            playOnScroll={true}
-                            className="tc-role-lottie"
-                        />
-                    </div>
-                )}
+            <span className="tc-role-number">{number}</span>
+            <div className="tc-role-text">
+                <h4 className="tc-role-title">{title}</h4>
+                <p className="tc-role-desc">{description}</p>
             </div>
         </motion.div>
     );
@@ -81,6 +69,8 @@ function Placeholder({ label, aspectRatio = '16/9' }) {
 // LANDING PAGE SHOWCASE COMPONENT (Apple-style)
 // ========================================
 function LandingPageShowcase() {
+    const { theme } = useTheme();
+
     const sites = [
         {
             id: 'tricode',
@@ -88,6 +78,7 @@ function LandingPageShowcase() {
             subtitle: 'Company Website',
             description: 'The parent company landing page. Designed with soft gradient aesthetics and a clean SaaS layout that communicates trust and professionalism.',
             image: '/tricode-cloud-mock.webp',
+            darkImage: '/Tricode Cloud Mock Dark.png',
             link: 'https://tricode.cloud/',
             tags: ['Next.js', 'Responsive', 'Custom Illustrations']
         },
@@ -96,53 +87,60 @@ function LandingPageShowcase() {
             title: 'Clikk Apply',
             subtitle: 'Product Page',
             description: 'The conversion-focused product landing. Built with interactive feature demos, pricing tables, and clear CTAs for student organization admins.',
-            image: '/tricode-cloud-mock.webp', // Placeholder - replace with clikk-apply-mock.webp later
-            link: 'https://clikkapply.tricode.cloud/',
+            image: '/tricode-cloud-mock.webp',
+            darkImage: '/Tricode Cloud Mock Dark.png',
+            link: 'https://clikk.ca/',
             tags: ['React', 'Framer Motion', 'Tailwind CSS']
         }
     ];
 
     return (
         <div className="tc-sites-showcase">
-            {sites.map((site, idx) => (
-                <motion.div
-                    key={site.id}
-                    className="tc-site-card"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: idx * 0.15 }}
-                    viewport={{ once: true }}
-                >
-                    <div className="tc-site-image-container">
-                        <Image
-                            src={site.image}
-                            alt={site.title}
-                            width={1200}
-                            height={800}
-                            className="tc-site-image"
-                        />
-                    </div>
-                    <div className="tc-site-info">
-                        <span className="tc-site-subtitle">{site.subtitle}</span>
-                        <h3 className="tc-site-title">{site.title}</h3>
-                        <p className="tc-site-desc">{site.description}</p>
-                        <a
-                            href={site.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="tc-site-link"
-                        >
-                            Visit Site
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M7 17L17 7M17 7H7M17 7V17" />
-                            </svg>
-                        </a>
-                    </div>
-                </motion.div>
-            ))}
+            {sites.map((site, idx) => {
+                const currentImage = theme === 'dark' && site.darkImage ? site.darkImage : site.image;
+
+                return (
+                    <motion.div
+                        key={site.id}
+                        className="tc-site-card"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: idx * 0.15 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="tc-site-image-container">
+                            <Image
+                                key={`${site.id}-${theme}`}
+                                src={currentImage}
+                                alt={site.title}
+                                width={1200}
+                                height={800}
+                                className="tc-site-image"
+                            />
+                        </div>
+                        <div className="tc-site-info">
+                            <span className="tc-site-subtitle">{site.subtitle}</span>
+                            <h3 className="tc-site-title">{site.title}</h3>
+                            <p className="tc-site-desc">{site.description}</p>
+                            <a
+                                href={site.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="tc-site-link"
+                            >
+                                Visit Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </a>
+                        </div>
+                    </motion.div>
+                );
+            })}
         </div>
     );
 }
+
 
 // ========================================
 // DESIGN PRINCIPLE CARD
@@ -241,7 +239,6 @@ function MetricCard({ value, label, suffix = '', prefix = '', description, icon 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            whileHover={{ y: -4, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
         >
             {icon && <div className="ca-metric-icon">{icon}</div>}
             <div className="ca-metric-value">
@@ -259,8 +256,6 @@ function MetricCard({ value, label, suffix = '', prefix = '', description, icon 
 export default function TricodePage() {
     return (
         <div className="clikk-apply-page tricode-page">
-            {/* Grain overlay */}
-            <div className="ca-grain" aria-hidden="true" />
 
             {/* ========================================
                 HERO SECTION
@@ -343,29 +338,29 @@ export default function TricodePage() {
                     </BlurFade>
 
                     <BlurFade delay={0.2}>
-                        <div className="tc-role-grid-enhanced">
-                            <RoleCard
+                        <div className="tc-role-list">
+                            <RoleItem
+                                number="01"
                                 title="Brand Identity"
                                 description="Designed the Tricode logo, established brand guidelines, color system, and visual language."
-                                lottieUrl="/animations/brand-identity.json"
                                 index={0}
                             />
-                            <RoleCard
+                            <RoleItem
+                                number="02"
                                 title="UX/UI Design"
                                 description="Prototyped in Figma with a focus on accessibility and simplicity for student users."
-                                lottieUrl="/animations/ux-design.json"
                                 index={1}
                             />
-                            <RoleCard
+                            <RoleItem
+                                number="03"
                                 title="Frontend Development"
                                 description="Built the React/Next.js codebase, component library, and animation system."
-                                lottieUrl="/animations/frontend-dev.json"
                                 index={2}
                             />
-                            <RoleCard
+                            <RoleItem
+                                number="04"
                                 title="Landing Pages"
                                 description="Designed and developed both the Tricode Cloud and Clikk Apply marketing sites."
-                                lottieUrl="/animations/landing-pages.json"
                                 index={3}
                             />
                         </div>
@@ -433,7 +428,7 @@ export default function TricodePage() {
                 <div className="ca-container">
                     <BlurFade>
 
-                        <h2 className="ca-section-title">Marketing Sites</h2>
+                        <h2 className="ca-section-title">Landing Pages</h2>
                         <p className="ca-section-subtitle">
                             I designed and built two full landing pages: the parent company site and the product page.
                         </p>

@@ -1787,7 +1787,69 @@
   gap: 20px;
 }
 
-/* Enhanced Role Grid - Attio-inspired 2x2 layout */
+/* Clean Role List - Simple, elegant numbered list */
+.tc-role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+}
+
+.tc-role-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--ca-border-primary);
+  transition: all var(--ca-transition-fast);
+}
+
+.tc-role-item:first-child {
+  border-top: 1px solid var(--ca-border-primary);
+}
+
+.tc-role-item:hover {
+  padding-left: 8px;
+}
+
+.tc-role-number {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ca-text-metadata);
+  min-width: 28px;
+  padding-top: 2px;
+}
+
+.tc-role-item .tc-role-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ca-text-heading);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.tc-role-item .tc-role-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ca-text-body);
+}
+
+@media (max-width: 640px) {
+  .tc-role-item {
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .tc-role-item .tc-role-title {
+    font-size: 16px;
+  }
+
+  .tc-role-item .tc-role-desc {
+    font-size: 14px;
+  }
+}
+
+/* Legacy grid layouts - keep for compatibility */
 .tc-role-grid-enhanced {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2357,24 +2419,26 @@
 
 .tc-site-image-container {
   position: relative;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--ca-bg-tertiary) 0%, var(--ca-bg-secondary) 100%);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  background: var(--ca-bg-tertiary);
+  border: 1px solid var(--ca-border-primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   transition: all var(--ca-transition-medium);
 }
 
 .dark .tc-site-image-container {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .tc-site-card:hover .tc-site-image-container {
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   transform: translateY(-4px);
 }
 
 .dark .tc-site-card:hover .tc-site-image-container {
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .tc-site-image {
@@ -2389,10 +2453,10 @@
 
 .tc-site-subtitle {
   font-size: 12px;
-  font-family: var(--ca-font-mono);
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ca-accent);
+  letter-spacing: 0.08em;
+  color: var(--ca-text-metadata);
   margin-bottom: 8px;
   display: block;
 }
