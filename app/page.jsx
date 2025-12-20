@@ -8,10 +8,10 @@ import BlurFade from '@/components/ui/BlurFade';
 const projects = [
   {
     index: 1,
-    title: 'Clikk Apply',
-    subtitle: 'Hiring Platform for Student Organizations',
+    title: 'Tricode',
+    subtitle: 'Design & Frontend for Student Software',
     year: '2024 — Present',
-    href: '/projects/clikk-apply',
+    href: '/projects/tricode',
     resourceLinks: {
       website: 'https://tricode.cloud/',
     },
