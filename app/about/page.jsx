@@ -33,7 +33,7 @@ export default function AboutPage() {
 
             <div className="grid h-full w-full grid-cols-8 grid-rows-6 gap-3 sm:gap-4 lg:gap-5">
               {/* Left square - Hidden on small screens, shown from 1700px up to avoid text overlap */}
-              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden min-[1700px]:block" style={{aspectRatio: '1/1'}}>
+              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden min-[1700px]:block" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/Ski.webp"
                   alt="Skiing adventure"
@@ -43,9 +43,9 @@ export default function AboutPage() {
               </div>
 
               {/* Center portrait - Always visible when container is shown */}
-              <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_12px_40px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.7)] sm:mt-[102px] lg:mt-[118px]" style={{aspectRatio: '3/4'}}>
+              <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_12px_40px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.7)] sm:mt-[102px] lg:mt-[118px]" style={{ aspectRatio: '3/4' }}>
                 <Image
-                  src="/headshot.webp"
+                  src="/JustinB HeadshotV2.1 26.png"
                   alt="Justin Badua headshot"
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -54,7 +54,7 @@ export default function AboutPage() {
               </div>
 
               {/* Top-right square - Shown from sm up */}
-              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{aspectRatio: '1/1'}}>
+              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/Queens.webp"
                   alt="Queen's University"
@@ -64,7 +64,7 @@ export default function AboutPage() {
               </div>
 
               {/* Bottom-right square - Hidden on sm, shown from lg up */}
-              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{aspectRatio: '1/1'}}>
+              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/HTN.webp"
                   alt="Hack the North"
@@ -91,7 +91,7 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
-                
+
                 {/* Right image */}
                 <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] xl:w-[280px] aspect-[3/4] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                   <Image
@@ -102,18 +102,18 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              
+
               {/* Right side: Text content */}
               <div className="flex-1 min-w-[320px]">
                 <h2 className="mb-8 text-[0.6rem] font-medium uppercase tracking-[0.5em] text-neutral-400 dark:text-neutral-500">
                   INFO
                 </h2>
-                
+
                 <div className="space-y-6 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-300">
                   <p>
                     I&apos;m Filipino, born and raised, and moved to Canada when I was six. That mix shaped a lot of who I am. Family, food, and community matter to me, and I try to bring that same warmth and energy to the teams I&apos;m part of.
                   </p>
-                  
+
                   <p>
                     When I&apos;m not in class or working on projects, you&apos;ll usually find me with a guitar in hand. I&apos;m a big F1 fan and tune in on race weekends when I can. Away from screens, I&apos;m outside, working on my golf game, hiking new trails, and chasing good views. I&apos;m curious by nature, always keen to try new things, meet new people, and hunt down great food. I&apos;m a big foodie, always searching for the best eats, especially a standout shawarma.
                   </p>
@@ -173,9 +173,6 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <p className="mt-3 text-center text-sm text-neutral-400 dark:text-neutral-500 lg:text-left">
-                Queen&apos;s campus during the spring
-              </p>
             </div>
           </BlurFade>
         </section>
@@ -183,4 +180,4 @@ export default function AboutPage() {
     </div>
   );
 }
- 
+
