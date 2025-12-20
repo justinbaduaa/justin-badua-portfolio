@@ -270,7 +270,7 @@ export default function TricodePage() {
 
                         <BlurFade delay={0.3}>
                             <p className="tc-hero-subtitle">
-                                As an early-stage team member, I designed the brand identity, built both landing pages, and developed the frontend for Tricode Cloud's flagship product, Clikk Apply.
+                                As an early-stage team member, I designed the brand identity, built both landing pages, and developed the frontend for Tricode Cloud&apos;s flagship product, Clikk Apply.
                             </p>
                         </BlurFade>
 
@@ -321,7 +321,7 @@ export default function TricodePage() {
 
                         <h2 className="ca-section-title">What I Built</h2>
                         <p className="ca-section-subtitle">
-                            My contributions spanned design and development—here's what I worked on.
+                            My contributions spanned design and development—here&apos;s what I worked on.
                         </p>
                     </BlurFade>
 
@@ -563,7 +563,7 @@ export default function TricodePage() {
 
                     <BlurFade delay={0.3}>
                         <div className="tc-trusted-by">
-                            <p className="tc-trusted-label">Trusted by student organizations at Queen's</p>
+                            <p className="tc-trusted-label">Trusted by student organizations at Queen&apos;s</p>
                             <div className="tc-trusted-logos">
                                 <Image src="/asus.webp" alt="ASUS" width={60} height={60} className="tc-org-logo" />
                                 <Image src="/CESA.webp" alt="CESA" width={60} height={60} className="tc-org-logo" />
