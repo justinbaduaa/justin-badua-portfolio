@@ -52,7 +52,7 @@ export default function Placeholder({ title, slug }) {
         <div className="space-y-3">
           <p className="text-sm uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">{title}</p>
           <h1 className="text-3xl font-semibold text-neutral-900 dark:text-[#f5f5f7]">
-            {leadershipSlugs.has(slug) ? 'Experience write-up on deck' : 'Case study in progress'}
+            {leadershipSlugs.has(slug) ? 'Experience write-up on deck' : 'Project overview in progress'}
           </h1>
           <p className="max-w-xl leading-7">
             {leadershipSlugs.has(slug)

@@ -56,82 +56,82 @@ export default function Sidebar() {
       <div className="flex-1 overflow-y-auto custom-scroll px-12 pt-16 pb-6">
         <div className="space-y-12">
           <div className="space-y-6">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="inline-block" aria-label="Go to work page">
-              <Image
-                src={theme === 'dark' ? '/JB Glasses White.svg' : '/JB-Glasses.svg'}
-                alt="Justin Badua mark"
-                width={48}
-                height={48}
-                className="h-12 w-auto"
-                draggable={false}
-                priority
-              />
-            </Link>
+            <div className="flex items-center justify-between">
+              <Link href="/" className="inline-block" aria-label="Go to work page">
+                <Image
+                  src={theme === 'dark' ? '/JB Glasses White.svg' : '/JB-Glasses.svg'}
+                  alt="Justin Badua mark"
+                  width={48}
+                  height={48}
+                  className="h-12 w-auto"
+                  draggable={false}
+                  priority
+                />
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <nav className="space-y-10">
-          <ul className="space-y-4 text-sm">
-            {primaryLinks.map((link) => {
-              const active = link.external ? false : isActive(pathname, link.href);
+          <nav className="space-y-10">
+            <ul className="space-y-4 text-sm">
+              {primaryLinks.map((link) => {
+                const active = link.external ? false : isActive(pathname, link.href);
 
-              return (
-                <li key={link.label}>
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[15px] font-semibold text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      className={clsx(
-                        'text-[15px] font-semibold transition-colors duration-200',
-                        active ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
-                      )}
-                    >
-                      {link.label}
-                    </Link>
+                return (
+                  <li key={link.label}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[15px] font-semibold text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className={clsx(
+                          'text-[15px] font-semibold transition-colors duration-200',
+                          active ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+
+            <div className="space-y-6">
+              {workSections.map((section) => (
+                <div key={section.label} className="space-y-3">
+                  <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 dark:text-neutral-200 font-medium">
+                    {section.label}
+                  </p>
+                  {section.items.length > 0 && (
+                    <ul className="space-y-2.5">
+                      {section.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className={clsx(
+                              'text-[14px] font-normal transition-colors duration-200',
+                              isActive(pathname, item.href) ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
+                            )}
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   )}
-                </li>
-              );
-            })}
-          </ul>
-
-          <div className="space-y-6">
-            {workSections.map((section) => (
-              <div key={section.label} className="space-y-3">
-                <p className="text-[0.6rem] uppercase tracking-[0.4em] text-neutral-400 dark:text-neutral-200 font-medium">
-                  {section.label}
-                </p>
-                {section.items.length > 0 && (
-                  <ul className="space-y-2.5">
-                    {section.items.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className={clsx(
-                            'text-[14px] font-normal transition-colors duration-200',
-                            isActive(pathname, item.href) ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
-                          )}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
-          </div>
-        </nav>
+                </div>
+              ))}
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
 
       <div className="shrink-0 px-12 pb-8 pt-4 bg-white dark:bg-[#1c1c1e] border-t border-neutral-200/60 dark:border-[#2c2c2e] space-y-6">
         <div className="space-y-4">
@@ -163,24 +163,45 @@ export default function Sidebar() {
           type="button"
           aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
         >
-          <span className="inline-flex h-4 w-4 items-center justify-center text-current opacity-80 transition-opacity duration-200 group-hover:opacity-100">
-            {theme === 'dark' ? (
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2" />
-                <path d="M12 20v2" />
-                <path d="m4.93 4.93 1.41 1.41" />
-                <path d="m17.66 17.66 1.41 1.41" />
-                <path d="M2 12h2" />
-                <path d="M20 12h2" />
-                <path d="m6.34 17.66-1.41 1.41" />
-                <path d="m19.07 4.93-1.41 1.41" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-            )}
+          <span className="relative inline-flex h-4 w-4 items-center justify-center text-current">
+            {/* Sun icon - shown in dark mode */}
+            <svg
+              viewBox="0 0 24 24"
+              className={`absolute h-4 w-4 transition-all duration-300 ease-out ${theme === 'dark'
+                  ? 'rotate-0 scale-100 opacity-100'
+                  : 'rotate-90 scale-0 opacity-0'
+                }`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="m17.66 17.66 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m6.34 17.66-1.41 1.41" />
+              <path d="m19.07 4.93-1.41 1.41" />
+            </svg>
+            {/* Moon icon - shown in light mode */}
+            <svg
+              viewBox="0 0 24 24"
+              className={`absolute h-4 w-4 transition-all duration-300 ease-out ${theme === 'light'
+                  ? 'rotate-0 scale-100 opacity-100'
+                  : '-rotate-90 scale-0 opacity-0'
+                }`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
           </span>
           <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
         </button>

@@ -1834,6 +1834,66 @@
   color: var(--ca-text-body);
 }
 
+/* ============================================
+   ATTIO-STYLE FEATURE GRID
+   ============================================ */
+
+.tc-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 48px;
+  margin-top: 40px;
+}
+
+.tc-feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tc-feature-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tc-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ca-text-muted);
+}
+
+.tc-feature-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tc-feature-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ca-text-heading);
+  letter-spacing: -0.01em;
+}
+
+.tc-feature-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ca-text-body);
+  max-width: 320px;
+}
+
+@media (max-width: 768px) {
+  .tc-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tc-feature-text {
+    max-width: none;
+  }
+}
+
 @media (max-width: 640px) {
   .tc-role-item {
     gap: 16px;
@@ -2043,6 +2103,18 @@
   letter-spacing: 0.05em;
 }
 
+.tc-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.tc-logo-image {
+  max-width: 280px;
+  height: auto;
+}
+
 .tc-color-swatches {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2050,11 +2122,18 @@
 }
 
 .tc-swatch {
+  position: relative;
   height: 80px;
   border-radius: 8px;
   display: flex;
   align-items: flex-end;
   padding: 12px;
+  overflow: hidden;
+}
+
+.tc-swatch-img span {
+  position: relative;
+  z-index: 1;
 }
 
 .tc-swatch span {
@@ -2241,6 +2320,86 @@
 }
 
 /* ============================================
+   PRINCIPLE - Clean Numbered Rows (Apple style)
+   ============================================ */
+
+.tc-principle-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--ca-border-primary);
+}
+
+.tc-principle-row:first-child {
+  padding-top: 0;
+}
+
+.tc-principle-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.tc-principle-num {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--ca-text-heading);
+  line-height: 1;
+  opacity: 0.15;
+  min-width: 48px;
+}
+
+.tc-principle-info {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.tc-principle-h {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ca-text-heading);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.tc-principle-p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ca-text-body);
+}
+
+/* Principles grid for tricode - single column list */
+.tricode-page .tc-principles-grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+}
+
+@media (max-width: 640px) {
+  .tc-principle-row {
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .tc-principle-num {
+    font-size: 36px;
+    min-width: 36px;
+  }
+
+  .tc-principle-h {
+    font-size: 16px;
+  }
+
+  .tc-principle-p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+/* ============================================
    PRODUCT UI SHOWCASE
    ============================================ */
 
@@ -2343,6 +2502,103 @@
   color: var(--ca-text-body);
   max-width: 500px;
 }
+
+/* ============================================
+   ATTIO-STYLE SPLIT LAYOUT
+   ============================================ */
+
+.tc-attio-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 48px;
+}
+
+.tc-attio-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.tc-attio-row-reverse {
+  direction: rtl;
+}
+
+.tc-attio-row-reverse>* {
+  direction: ltr;
+}
+
+.tc-attio-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tc-attio-headline {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ca-text-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.tc-attio-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ca-text-body);
+}
+
+.tc-attio-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fafafa;
+  border: 1px solid var(--ca-border-primary);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.dark .tc-attio-image {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.2),
+    0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.tc-attio-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .tc-attio-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .tc-attio-row-reverse {
+    direction: ltr;
+  }
+
+  .tc-attio-headline {
+    font-size: 20px;
+  }
+
+  .tc-attio-desc {
+    font-size: 15px;
+  }
+
+  .tc-attio-showcase {
+    gap: 56px;
+  }
+}
+
+
+
+
 
 /* ============================================
    REFLECTION SECTION
@@ -2772,7 +3028,25 @@
 @media (max-width: 640px) {
   .tricode-page .tc-hero-meta {
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ca-border-primary);
+  }
+
+  .tricode-page .tc-meta-item {
+    flex-direction: row;
+    gap: 8px;
+    align-items: baseline;
+  }
+
+  .tricode-page .tc-meta-label {
+    min-width: 80px;
+    color: var(--ca-text-metadata);
+  }
+
+  .tricode-page .tc-meta-value {
+    font-weight: 500;
   }
 }
 

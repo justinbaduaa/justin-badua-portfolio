@@ -1,8 +1,8 @@
 export const metadata = {
-    title: 'Tricode Case Study | Justin Badua',
-    description: 'Case study: Building the design and engineering foundation for Tricode. Brand identity, landing pages, and frontend development for student software.',
+    title: 'Tricode Project Overview | Justin Badua',
+    description: 'Project overview: Building the design and engineering foundation for Tricode. Brand identity, landing pages, and frontend development for student software.',
     openGraph: {
-        title: 'Tricode: Design & Engineering Foundation - Justin Badua',
+        title: 'Tricode Cloud: Design & Engineering Foundation - Justin Badua',
         description: 'From brand identity to production code: How I built the design system, landing pages, and frontend architecture for Tricode Cloud.',
         type: 'article',
     },

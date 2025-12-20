@@ -11,25 +11,25 @@ import { useTheme } from '@/components/ThemeProvider';
 import './tricode.css';
 
 // ========================================
-// SIMPLE ROLE ITEM (Clean list style)
+// SIMPLE ROLE ITEM - Attio feature grid style
 // ========================================
-function RoleItem({ number, title, description, index = 0 }) {
+function RoleItem({ icon, title, description, index = 0 }) {
     const itemRef = useRef(null);
     const isInView = useInView(itemRef, { once: true, margin: '-50px' });
 
     return (
         <motion.div
             ref={itemRef}
-            className="tc-role-item"
+            className="tc-feature-card"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.08 }}
         >
-            <span className="tc-role-number">{number}</span>
-            <div className="tc-role-text">
-                <h4 className="tc-role-title">{title}</h4>
-                <p className="tc-role-desc">{description}</p>
+            <div className="tc-feature-header">
+                <span className="tc-feature-icon">{icon}</span>
+                <span className="tc-feature-title">{title}</span>
             </div>
+            <p className="tc-feature-text">{description}</p>
         </motion.div>
     );
 }
@@ -87,8 +87,8 @@ function LandingPageShowcase() {
             title: 'Clikk Apply',
             subtitle: 'Product Page',
             description: 'The conversion-focused product landing. Built with interactive feature demos, pricing tables, and clear CTAs for student organization admins.',
-            image: '/tricode-cloud-mock.webp',
-            darkImage: '/Tricode Cloud Mock Dark.png',
+            image: '/Clikk Apply Mock.png',
+            darkImage: '/Clikk Apply Mock Dark.png',
             link: 'https://clikk.ca/',
             tags: ['React', 'Framer Motion', 'Tailwind CSS']
         }
@@ -143,87 +143,76 @@ function LandingPageShowcase() {
 
 
 // ========================================
-// DESIGN PRINCIPLE CARD
+// DESIGN PRINCIPLE - Numbered list (Apple style)
 // ========================================
 function PrincipleCard({ number, title, description }) {
     return (
-        <motion.div
-            className="tc-principle-card"
-            whileHover={{ y: -2 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-        >
-            <span className="tc-principle-number">{number}</span>
-            <h4 className="tc-principle-title">{title}</h4>
-            <p className="tc-principle-desc">{description}</p>
-        </motion.div>
+        <div className="tc-principle-row">
+            <div className="tc-principle-num">{number}</div>
+            <div className="tc-principle-info">
+                <h4 className="tc-principle-h">{title}</h4>
+                <p className="tc-principle-p">{description}</p>
+            </div>
+        </div>
     );
 }
 
 // ========================================
-// PRODUCT UI SHOWCASE
+// PRODUCT UI SHOWCASE - Attio-style split layout
 // ========================================
 function ProductUIShowcase() {
     const features = [
         {
-            title: 'Anonymized Candidates',
-            description: 'Candidates are assigned random names and icons to eliminate unconscious bias during review.',
+            id: 'anonymized',
+            headline: 'Anonymized Candidates',
+            description: 'Eliminate unconscious bias with randomly generated names and colorful icons. Reviewers focus on qualifications, not identities.',
             image: '/tricode-anonymized-candidates.jpg'
         },
         {
-            title: 'Department Management',
-            description: 'Color-coded department cards for organizing hiring across different teams.',
+            id: 'departments',
+            headline: 'Department Management',
+            description: 'Color-coded department cards make it easy to organize hiring across different teams and roles within your organization.',
             image: '/tricode-departments.png'
         },
         {
-            title: 'Candidate Portal',
-            description: 'Clear progress stepper so applicants always know where they stand.',
+            id: 'portal',
+            headline: 'Candidate Portal',
+            description: 'Give applicants a clear view of their progress with an intuitive stepper. No more "where am I in the process?" emails.',
             image: '/tricode-candidate-portal.png'
-        },
-        {
-            title: 'Feature System',
-            description: 'Modular feature cards with consistent iconography and clear descriptions.',
-            image: '/tricode-features.png'
         }
     ];
 
-    const [activeFeature, setActiveFeature] = useState(0);
-
     return (
-        <div className="tc-product-showcase">
-            <div className="tc-feature-nav">
-                {features.map((feature, idx) => (
-                    <button
-                        key={feature.title}
-                        onClick={() => setActiveFeature(idx)}
-                        className={`tc-feature-btn ${activeFeature === idx ? 'active' : ''}`}
-                    >
-                        <span className="tc-feature-btn-num">{String(idx + 1).padStart(2, '0')}</span>
-                        <span className="tc-feature-btn-title">{feature.title}</span>
-                    </button>
-                ))}
-            </div>
-            <AnimatePresence mode="wait">
+        <div className="tc-attio-showcase">
+            {features.map((feature, idx) => (
                 <motion.div
-                    key={activeFeature}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="tc-feature-display"
+                    key={feature.id}
+                    className={`tc-attio-row ${idx % 2 === 1 ? 'tc-attio-row-reverse' : ''}`}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true, margin: '-100px' }}
                 >
-                    <div className="tc-feature-image-wrapper">
+                    <div className="tc-attio-text">
+                        <h3 className="tc-attio-headline">{feature.headline}</h3>
+                        <p className="tc-attio-desc">{feature.description}</p>
+                    </div>
+                    <div className="tc-attio-image">
                         <Image
-                            src={features[activeFeature].image}
-                            alt={features[activeFeature].title}
-                            fill
-                            style={{ objectFit: 'contain' }}
+                            src={feature.image}
+                            alt={feature.headline}
+                            width={600}
+                            height={400}
+                            className="tc-attio-img"
                         />
                     </div>
-                    <p className="tc-feature-desc">{features[activeFeature].description}</p>
                 </motion.div>
-            </AnimatePresence>
+            ))}
         </div>
     );
 }
+
+
 
 // ========================================
 // METRIC CARD COMPONENT
@@ -276,7 +265,7 @@ export default function TricodePage() {
 
                         <BlurFade delay={0.2}>
                             <h1 className="tc-hero-title">
-                                Tricode: Building the Design & Engineering Foundation
+                                Tricode Cloud: Building the Design & Engineering Foundation
                             </h1>
                         </BlurFade>
 
@@ -338,27 +327,27 @@ export default function TricodePage() {
                     </BlurFade>
 
                     <BlurFade delay={0.2}>
-                        <div className="tc-role-list">
+                        <div className="tc-feature-grid">
                             <RoleItem
-                                number="01"
+                                icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>}
                                 title="Brand Identity"
                                 description="Designed the Tricode logo, established brand guidelines, color system, and visual language."
                                 index={0}
                             />
                             <RoleItem
-                                number="02"
+                                icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>}
                                 title="UX/UI Design"
                                 description="Prototyped in Figma with a focus on accessibility and simplicity for student users."
                                 index={1}
                             />
                             <RoleItem
-                                number="03"
+                                icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>}
                                 title="Frontend Development"
                                 description="Built the React/Next.js codebase, component library, and animation system."
                                 index={2}
                             />
                             <RoleItem
-                                number="04"
+                                icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8" /><path d="M12 17v4" /></svg>}
                                 title="Landing Pages"
                                 description="Designed and developed both the Tricode Cloud and Clikk Apply marketing sites."
                                 index={3}
@@ -387,22 +376,34 @@ export default function TricodePage() {
                         <div className="tc-brand-grid">
                             <div className="tc-brand-card tc-brand-logo">
                                 <h4>Logo & Wordmark</h4>
-                                <Placeholder label="Logo assets - add later" aspectRatio="2/1" />
+                                <div className="tc-logo-container">
+                                    <Image
+                                        src="/TriLogo.png"
+                                        alt="Tricode Logo"
+                                        width={400}
+                                        height={200}
+                                        className="tc-logo-image"
+                                    />
+                                </div>
                             </div>
                             <div className="tc-brand-card tc-brand-colors">
                                 <h4>Color System</h4>
                                 <div className="tc-color-swatches">
-                                    <div className="tc-swatch" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}>
-                                        <span>Primary Gradient</span>
+                                    <div className="tc-swatch tc-swatch-img">
+                                        <Image src="/Freebie-GradientTextures-01.jpg" alt="Primary" fill style={{ objectFit: 'cover' }} />
+                                        <span>Primary</span>
                                     </div>
-                                    <div className="tc-swatch" style={{ background: '#0055FF' }}>
-                                        <span>Accent Blue</span>
+                                    <div className="tc-swatch tc-swatch-img">
+                                        <Image src="/hire-bg.jpg" alt="Hire" fill style={{ objectFit: 'cover' }} />
+                                        <span>Hire</span>
                                     </div>
-                                    <div className="tc-swatch" style={{ background: '#10B981' }}>
-                                        <span>Success Green</span>
+                                    <div className="tc-swatch tc-swatch-img">
+                                        <Image src="/events-bg.jpg" alt="Events" fill style={{ objectFit: 'cover' }} />
+                                        <span>Events</span>
                                     </div>
-                                    <div className="tc-swatch" style={{ background: '#1a1a1a' }}>
-                                        <span>Dark</span>
+                                    <div className="tc-swatch tc-swatch-img">
+                                        <Image src="/ExpenseBg.jpg" alt="Expense" fill style={{ objectFit: 'cover' }} />
+                                        <span>Expense</span>
                                     </div>
                                 </div>
                             </div>
@@ -458,17 +459,17 @@ export default function TricodePage() {
                     <BlurFade delay={0.2}>
                         <div className="tc-principles-grid">
                             <PrincipleCard
-                                number="01"
+                                number="1"
                                 title="Simplicity First"
                                 description="If a feature needs explaining, the design failed. We aimed for interfaces so intuitive that onboarding is unnecessary."
                             />
                             <PrincipleCard
-                                number="02"
+                                number="2"
                                 title="Accessible by Default"
                                 description="Student orgs include members with diverse needs. We built for keyboard navigation, screen readers, and color blindness from day one."
                             />
                             <PrincipleCard
-                                number="03"
+                                number="3"
                                 title="Edge Case Friendly"
                                 description="Clubs have chaotic workflows. The UI handles messy data, partial completions, and user mistakes gracefully."
                             />
