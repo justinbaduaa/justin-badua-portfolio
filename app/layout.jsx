@@ -33,7 +33,7 @@ export const metadata = {
     description: "Queen's University Computing student specializing in AI and Economics, building human-centered interfaces.",
     images: [
       {
-        url: "/JustinB HeadshotV2.1 26.png",
+        url: "/JustinB-Headshot.webp",
         width: 1200,
         height: 630,
         alt: "Justin Badua - Portfolio",
@@ -44,7 +44,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Justin Badua | Portfolio",
     description: "Queen's University Computing student building human-centered interfaces.",
-    images: ["/JustinB HeadshotV2.1 26.png"],
+    images: ["/JustinB-Headshot.webp"],
   },
   robots: {
     index: true,
@@ -69,7 +69,7 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Justin Badua',
   url: 'https://justinbadua.ca',
-  image: 'https://justinbadua.ca/JustinB HeadshotV2.1 26.png',
+  image: 'https://justinbadua.ca/JustinB-Headshot.webp',
   jobTitle: 'Computing Student & Frontend Developer',
   worksFor: {
     '@type': 'Organization',
