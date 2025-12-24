@@ -77,7 +77,7 @@ function LandingPageShowcase() {
             subtitle: 'Company Website',
             description: 'The parent company landing page. Designed with soft gradient aesthetics and a clean SaaS layout that communicates trust and professionalism.',
             image: '/tricode-cloud-mock.webp',
-            darkImage: '/Tricode Cloud Mock Dark.png',
+            darkImage: '/Tricode-Cloud-Mock-Dark.webp',
             link: 'https://tricode.cloud/',
             tags: ['Next.js', 'Responsive', 'Custom Illustrations']
         },
@@ -86,8 +86,8 @@ function LandingPageShowcase() {
             title: 'Clikk Apply',
             subtitle: 'Product Page',
             description: 'The conversion-focused product landing. Built with interactive feature demos, pricing tables, and clear CTAs for student organization admins.',
-            image: '/Clikk Apply Mock.png',
-            darkImage: '/Clikk Apply Mock Dark.png',
+            image: '/Clikk-Apply-Mock.webp',
+            darkImage: '/Clikk-Apply-Mock-Dark.webp',
             link: 'https://clikk.ca/',
             tags: ['React', 'Framer Motion', 'Tailwind CSS']
         }
@@ -396,19 +396,19 @@ export default function TricodePage() {
                                 <h4>Color System</h4>
                                 <div className="tc-color-swatches">
                                     <div className="tc-swatch tc-swatch-img">
-                                        <Image src="/Freebie-GradientTextures-01.jpg" alt="Primary" fill style={{ objectFit: 'cover' }} />
+                                        <Image src="/Freebie-GradientTextures-01.webp" alt="Primary" fill style={{ objectFit: 'cover' }} />
                                         <span>Primary</span>
                                     </div>
                                     <div className="tc-swatch tc-swatch-img">
-                                        <Image src="/hire-bg.jpg" alt="TriHire" fill style={{ objectFit: 'cover' }} />
+                                        <Image src="/hire-bg.webp" alt="TriHire" fill style={{ objectFit: 'cover' }} />
                                         <span>TriHire</span>
                                     </div>
                                     <div className="tc-swatch tc-swatch-img">
-                                        <Image src="/events-bg.jpg" alt="TriEvents" fill style={{ objectFit: 'cover' }} />
+                                        <Image src="/events-bg.webp" alt="TriEvents" fill style={{ objectFit: 'cover' }} />
                                         <span>TriEvents</span>
                                     </div>
                                     <div className="tc-swatch tc-swatch-img">
-                                        <Image src="/ExpenseBg.jpg" alt="TriExpense" fill style={{ objectFit: 'cover' }} />
+                                        <Image src="/ExpenseBg.webp" alt="TriExpense" fill style={{ objectFit: 'cover' }} />
                                         <span>TriExpense</span>
                                     </div>
                                 </div>

@@ -45,7 +45,7 @@ export default function AboutPage() {
               {/* Center portrait - Always visible when container is shown */}
               <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_12px_40px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.7)] sm:mt-[102px] lg:mt-[118px]" style={{ aspectRatio: '3/4' }}>
                 <Image
-                  src="/JustinB HeadshotV2.1 26.png"
+                  src="/JustinB-HeadshotV2-26.webp"
                   alt="Justin Badua headshot"
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -167,7 +167,7 @@ export default function AboutPage() {
             <div className="w-full lg:w-[44%]">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                 <Image
-                  src="/queens_university_sunset.jpg"
+                  src="/queens-university-sunset.webp"
                   alt="Queen's University main campus at sunset"
                   fill
                   className="object-cover"
