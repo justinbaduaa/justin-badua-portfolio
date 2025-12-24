@@ -116,7 +116,7 @@ export default function ProjectCard({
     >
       {/* Image Container - Takes up most of the card */}
       <div
-        className="relative w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:group-hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+        className="group/image relative w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
         style={currentAspect ? { aspectRatio: currentAspect } : undefined}
       >
         {activeResourceLinks.length > 0 && (
@@ -144,7 +144,7 @@ export default function ProjectCard({
             loop
             muted
             playsInline
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] transform-gpu will-change-transform [backface-visibility:hidden]"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/image:scale-[1.02] transform-gpu will-change-transform [backface-visibility:hidden]"
           >
             <source src={currentVideoSrc} type="video/mp4" />
           </video>
@@ -155,7 +155,7 @@ export default function ProjectCard({
             alt={`${title} preview`}
             fill
             sizes={imageSizes}
-            className={`${fitClass} transition-transform duration-700 ease-out group-hover:scale-[1.02] transform-gpu will-change-transform [backface-visibility:hidden]`}
+            className={`${fitClass} transition-transform duration-700 ease-out group-hover/image:scale-[1.02] transform-gpu will-change-transform [backface-visibility:hidden]`}
             priority={false}
           />
         ) : (
