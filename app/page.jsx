@@ -166,10 +166,10 @@ export default function HomePage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900 dark:text-[#f5f5f7]">
+    <div className="mx-auto w-full max-w-[1400px] pb-32 text-neutral-900 dark:text-foreground">
       <header className="mb-12 sm:mb-16 lg:mb-20 space-y-10 sm:space-y-12 px-6 sm:px-8 lg:px-16 pt-12 sm:pt-16">
         <BlurFade delay={0.1}>
-          <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex flex-col gap-3 sm:gap-4 text-sm text-neutral-500 dark:text-muted-foreground sm:flex-row sm:items-start sm:justify-between">
             <div className="space-y-1">
               <p className="text-[15px] text-neutral-600 dark:text-neutral-300">
                 Hi there, <span className="font-normal">kamusta!</span>
@@ -185,7 +185,7 @@ export default function HomePage() {
 
         <div className="space-y-6 sm:space-y-8">
           <BlurFade delay={0.2}>
-            <h1 className="max-w-4xl text-[2rem] font-medium leading-[1.2] text-neutral-800 dark:text-[#f5f5f7] sm:text-[2.75rem] lg:text-[3.25rem] tracking-tight">
+            <h1 className="max-w-4xl text-[2rem] font-medium leading-[1.2] text-neutral-800 dark:text-foreground sm:text-[2.75rem] lg:text-[3.25rem] tracking-tight">
               I&apos;m a{' '}
               <span
                 className="queens-highlight"
@@ -216,7 +216,7 @@ export default function HomePage() {
       </header>
 
       <BlurFade delay={0.4} inView>
-        <div className="mx-6 sm:mx-8 lg:mx-16 border-t border-neutral-200 dark:border-[#2c2c2e]" />
+        <div className="mx-6 sm:mx-8 lg:mx-16 border-t border-neutral-200 dark:border-border" />
       </BlurFade>
 
       <section className="space-y-8 sm:space-y-10 px-6 sm:px-8 lg:px-16">

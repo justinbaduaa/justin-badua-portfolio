@@ -14,9 +14,9 @@ export default function ClientLayout({ children }) {
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <div className={`mx-auto flex w-full transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <Sidebar />
-        <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col lg:ml-56">
+        <div className="flex min-h-screen w-full min-w-0 flex-1 flex-col lg:ml-64">
           <MobileHeader />
-          <main className="min-w-0 flex-1 bg-white dark:bg-black">{children}</main>
+          <main className="min-w-0 flex-1 bg-background">{children}</main>
         </div>
       </div>
     </>

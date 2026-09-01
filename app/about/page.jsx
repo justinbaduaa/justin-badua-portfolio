@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <div className="relative isolate overflow-hidden">
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[340px] bg-gradient-to-b from-neutral-100 via-white to-transparent dark:from-[#1c1c1e] dark:via-black blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[340px] bg-gradient-to-b from-neutral-100 via-white to-transparent dark:from-card dark:via-background blur-3xl"
         aria-hidden
       />
 
@@ -33,7 +33,7 @@ export default function AboutPage() {
 
             <div className="grid h-full w-full grid-cols-8 grid-rows-6 gap-3 sm:gap-4 lg:gap-5">
               {/* Left square - Hidden on small screens, shown from 1700px up to avoid text overlap */}
-              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden min-[1700px]:block" style={{ aspectRatio: '1/1' }}>
+              <div className="relative z-10 col-span-3 col-start-1 row-span-3 row-start-3 -mt-[50px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)] hidden min-[1700px]:block" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/Ski.webp"
                   alt="Skiing adventure"
@@ -43,7 +43,7 @@ export default function AboutPage() {
               </div>
 
               {/* Center portrait - Always visible when container is shown */}
-              <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_12px_40px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.7)] sm:mt-[102px] lg:mt-[118px]" style={{ aspectRatio: '3/4' }}>
+              <div className="relative z-20 col-span-3 col-start-4 row-span-5 row-start-1 mt-[86px] mb-[20px] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-4 hover:shadow-[0_12px_40px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.7)] sm:mt-[102px] lg:mt-[118px]" style={{ aspectRatio: '3/4' }}>
                 <Image
                   src="/JustinB-HeadshotV2-26.webp"
                   alt="Justin Badua headshot"
@@ -54,7 +54,7 @@ export default function AboutPage() {
               </div>
 
               {/* Top-right square - Shown from sm up */}
-              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{ aspectRatio: '1/1' }}>
+              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-2 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/Queens.webp"
                   alt="Queen's University"
@@ -64,7 +64,7 @@ export default function AboutPage() {
               </div>
 
               {/* Bottom-right square - Hidden on sm, shown from lg up */}
-              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{ aspectRatio: '1/1' }}>
+              <div className="relative z-10 col-span-3 col-start-7 row-span-2 row-start-4 w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]" style={{ aspectRatio: '1/1' }}>
                 <Image
                   src="/HTN.webp"
                   alt="Hack the North"
@@ -83,7 +83,7 @@ export default function AboutPage() {
               {/* Left side: Images */}
               <div className="flex flex-row gap-3 sm:gap-4 xl:gap-6 shrink-0">
                 {/* Left image */}
-                <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] xl:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+                <div className="relative w-[40%] min-w-[140px] max-w-[220px] sm:w-[200px] xl:w-[220px] aspect-[220/215] -mt-[20px] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                   <Image
                     src="/waterfall.webp"
                     alt="Waterfall view"
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Right image */}
-                <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] xl:w-[280px] aspect-[3/4] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+                <div className="relative w-[55%] min-w-[180px] max-w-[280px] sm:w-[240px] xl:w-[280px] aspect-[3/4] overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                   <Image
                     src="/Trail.webp"
                     alt="Scenic trail view"
@@ -126,7 +126,7 @@ export default function AboutPage() {
         {/* Divider before education */}
         <div className="mx-auto mt-20 max-w-[1920px] px-6 sm:px-12 lg:px-20 xl:px-32">
           <BlurFade delay={0.5} inView>
-            <div className="border-t border-neutral-200 dark:border-[#2c2c2e]" />
+            <div className="border-t border-neutral-200 dark:border-border" />
           </BlurFade>
         </div>
 
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
             {/* Right side: Faded image with caption */}
             <div className="w-full lg:w-[44%]">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
                 <Image
                   src="/queens-university-sunset.webp"
                   alt="Queen's University main campus at sunset"

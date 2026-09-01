@@ -102,7 +102,7 @@ export default function MobileHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 flex min-w-0 shrink-0 items-center justify-between bg-white dark:bg-[#1c1c1e] border-b border-neutral-200 dark:border-[#2c2c2e] px-5 sm:px-6 py-4 sm:py-5 lg:hidden backdrop-blur-xl dark:bg-opacity-90">
+      <header className="sticky top-0 z-40 flex min-w-0 shrink-0 items-center justify-between bg-white dark:bg-background border-b border-neutral-200 dark:border-border px-5 sm:px-6 py-4 sm:py-5 lg:hidden backdrop-blur-xl dark:bg-opacity-90">
         <Link href="/" className="flex items-center" aria-label="Go to work page">
           <Image
             src={theme === 'dark' ? '/JB Glasses White.svg' : '/JB-Glasses.svg'}
@@ -148,13 +148,13 @@ export default function MobileHeader() {
       {/* Mobile menu full-screen panel */}
       <div
         className={clsx(
-          'fixed inset-0 z-50 flex min-h-[100dvh] flex-col bg-white dark:bg-[#1c1c1e] transition-transform duration-500 ease-out lg:hidden',
+          'fixed inset-0 z-50 flex min-h-[100dvh] flex-col bg-white dark:bg-background transition-transform duration-500 ease-out lg:hidden',
           isMenuOpen ? 'translate-y-0 pointer-events-auto' : '-translate-y-full pointer-events-none'
         )}
         aria-hidden={!isMenuOpen}
       >
         <div
-          className="flex items-center justify-between px-6 pb-4 border-b border-neutral-200 dark:border-[#2c2c2e]"
+          className="flex items-center justify-between px-6 pb-4"
           style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 1.5rem)' }}
         >
           <Link href="/" className="flex items-center" aria-label="Go to work page">
@@ -170,7 +170,7 @@ export default function MobileHeader() {
           </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="flex items-center justify-center w-10 h-10 -mr-2 text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7] transition-colors"
+            className="flex items-center justify-center w-10 h-10 -mr-2 text-neutral-500 dark:text-muted-foreground hover:text-neutral-900 dark:hover:text-[#f5f5f7] transition-colors"
             aria-label="Close menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -194,7 +194,7 @@ export default function MobileHeader() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block text-[17px] font-medium text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
+                          className="block text-[17px] font-medium text-neutral-500 dark:text-muted-foreground transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
                         >
                           {link.label}
                         </a>
@@ -203,7 +203,7 @@ export default function MobileHeader() {
                           href={link.href}
                           className={clsx(
                             'block text-[17px] font-medium transition-colors duration-200',
-                            active ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
+                            active ? 'text-neutral-900 dark:text-foreground' : 'text-neutral-500 dark:text-muted-foreground hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
                           )}
                         >
                           {link.label}
@@ -219,7 +219,7 @@ export default function MobileHeader() {
             <div className="grid grid-cols-1 gap-6">
               {workSections.map((section) => (
                 <div key={section.label} className="space-y-3">
-                  <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 dark:text-neutral-200 font-medium">
+                  <p className="text-[13px] font-semibold text-muted-foreground">
                     {section.label}
                   </p>
                   {section.items.length > 0 && (
@@ -230,7 +230,7 @@ export default function MobileHeader() {
                             href={item.href}
                             className={clsx(
                               'block text-[14px] font-normal transition-colors duration-200',
-                              isActive(pathname, item.href) ? 'text-neutral-900 dark:text-[#f5f5f7]' : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
+                              isActive(pathname, item.href) ? 'text-neutral-900 dark:text-foreground' : 'text-neutral-500 dark:text-muted-foreground hover:text-neutral-900 dark:hover:text-[#f5f5f7]'
                             )}
                           >
                             {item.label}
@@ -246,12 +246,12 @@ export default function MobileHeader() {
 
           {/* Contact links */}
           <div className="mt-auto pt-6 space-y-3">
-            <p className="text-[0.6rem] uppercase tracking-[0.38em] text-neutral-400 dark:text-neutral-200 font-medium">Contact</p>
+            <p className="text-[13px] font-semibold text-muted-foreground">Contact</p>
             <ul className="space-y-3">
               {contactLinks.map((link) => (
                 <li key={link.label}>
                   <a
-                    className="group inline-flex items-center gap-2.5 text-[14px] font-normal text-neutral-500 dark:text-neutral-400 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
+                    className="group inline-flex items-center gap-2.5 text-[14px] font-normal text-neutral-500 dark:text-muted-foreground transition-colors duration-200 hover:text-neutral-900 dark:hover:text-[#f5f5f7]"
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
