@@ -20,8 +20,10 @@ const itemClass = (active) =>
       : 'text-muted-foreground hover:bg-accent hover:text-foreground'
   );
 
+// Section headings are non-interactive. They sit under a hairline divider and
+// render smaller and dimmer than links so the two never read as the same thing.
 const sectionLabelClass =
-  'px-3 pb-1 pt-5 text-[0.7rem] font-medium uppercase tracking-wider text-muted-foreground';
+  'px-3 pb-1.5 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-muted-foreground opacity-60';
 
 const iconProps = {
   'aria-hidden': true,
@@ -104,7 +106,7 @@ export default function Sidebar() {
         </ul>
 
         {workSections.map((section) => (
-          <div key={section.label}>
+          <div key={section.label} className="mt-3 border-t border-border pt-3">
             <p className={sectionLabelClass}>{section.label}</p>
             <ul className="flex flex-col gap-0.5">
               {section.items.map((item) => (
