@@ -154,7 +154,7 @@ export default function MobileHeader() {
         aria-hidden={!isMenuOpen}
       >
         <div
-          className="flex items-center justify-between px-6 pb-4 border-b border-neutral-200 dark:border-border"
+          className="flex items-center justify-between px-6 pb-4"
           style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 1.5rem)' }}
         >
           <Link href="/" className="flex items-center" aria-label="Go to work page">
@@ -219,7 +219,7 @@ export default function MobileHeader() {
             <div className="grid grid-cols-1 gap-6">
               {workSections.map((section) => (
                 <div key={section.label} className="space-y-3">
-                  <p className="text-[0.6rem] uppercase tracking-[0.38em] text-muted-foreground font-medium">
+                  <p className="text-[13px] font-semibold text-muted-foreground">
                     {section.label}
                   </p>
                   {section.items.length > 0 && (
@@ -246,7 +246,7 @@ export default function MobileHeader() {
 
           {/* Contact links */}
           <div className="mt-auto pt-6 space-y-3">
-            <p className="text-[0.6rem] uppercase tracking-[0.38em] text-muted-foreground font-medium">Contact</p>
+            <p className="text-[13px] font-semibold text-muted-foreground">Contact</p>
             <ul className="space-y-3">
               {contactLinks.map((link) => (
                 <li key={link.label}>

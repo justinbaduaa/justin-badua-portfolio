@@ -22,7 +22,7 @@ const itemClass = (active) =>
 
 // Section headings are non-interactive: sentence case, smaller and lighter than
 // links, with a wide gap above so groups separate by space rather than by rules.
-const sectionLabelClass = 'px-3 pb-1.5 text-[13px] font-medium text-muted-foreground';
+const sectionLabelClass = 'px-3 pb-1.5 text-[13px] font-semibold text-muted-foreground';
 
 const iconProps = {
   'aria-hidden': true,
