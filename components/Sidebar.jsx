@@ -88,7 +88,8 @@ export default function Sidebar() {
       </div>
 
       <nav className="custom-scroll flex-1 overflow-y-auto px-3 pb-4 pt-2">
-        <ul className="flex flex-col gap-0.5">
+        <p className={sectionLabelClass}>Home</p>
+        <ul className="flex flex-col gap-0.5 pl-3">
           {primaryLinks.map((link) => (
             <li key={link.label}>
               {link.external ? (
