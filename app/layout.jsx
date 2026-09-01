@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="custom-scroll min-h-screen overflow-x-hidden bg-white dark:bg-black text-neutral-900 dark:text-[#f5f5f7] transition-colors duration-300">
+      <body className="custom-scroll min-h-screen overflow-x-hidden bg-background text-foreground transition-colors duration-300">
         <ThemeProvider>
           <ClientLayout>{children}</ClientLayout>
         </ThemeProvider>

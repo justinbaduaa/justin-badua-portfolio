@@ -47,11 +47,11 @@ export default function Placeholder({ title, slug }) {
   const projectName = resource?.title || label;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-white dark:bg-black px-6 py-24 text-center text-neutral-500 dark:text-neutral-400">
+    <div className="flex min-h-screen items-center justify-center bg-white dark:bg-background px-6 py-24 text-center text-neutral-500 dark:text-muted-foreground">
       <div className="space-y-5">
         <div className="space-y-3">
           <p className="text-sm uppercase tracking-[0.3em] text-neutral-400 dark:text-neutral-500">{title}</p>
-          <h1 className="text-3xl font-semibold text-neutral-900 dark:text-[#f5f5f7]">
+          <h1 className="text-3xl font-semibold text-neutral-900 dark:text-foreground">
             {leadershipSlugs.has(slug) ? 'Experience write-up on deck' : 'Project overview in progress'}
           </h1>
           <p className="max-w-xl leading-7">
@@ -63,7 +63,7 @@ export default function Placeholder({ title, slug }) {
 
         {resourceLinks.length > 0 && (
           <div className="space-y-4 pt-2">
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            <p className="text-sm text-neutral-500 dark:text-muted-foreground">
               In the meantime, here are the live links if you want to take a look.
             </p>
             <div className="flex items-center justify-center gap-3">
@@ -73,7 +73,7 @@ export default function Placeholder({ title, slug }) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200/80 text-neutral-500 transition-colors duration-200 hover:border-neutral-300 hover:text-neutral-900 dark:border-[#2c2c2e] dark:text-neutral-400 dark:hover:border-[#434348] dark:hover:text-[#f5f5f7]"
+                  className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-neutral-200/80 text-neutral-500 transition-colors duration-200 hover:border-neutral-300 hover:text-neutral-900 dark:border-border dark:text-muted-foreground dark:hover:border-[#434348] dark:hover:text-[#f5f5f7]"
                   aria-label={`Open ${RESOURCE_LABELS[link.type]} for ${projectName}`}
                 >
                   <span className="text-current transition-transform duration-200 group-hover:scale-105">{RESOURCE_ICONS[link.type]}</span>

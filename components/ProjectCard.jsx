@@ -116,7 +116,7 @@ export default function ProjectCard({
     >
       {/* Image Container - Takes up most of the card */}
       <div
-        className="group/image relative w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-[#2c2c2e] bg-[#F5F5F5] dark:bg-[#1c1c1e] shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+        className="group/image relative w-full overflow-hidden rounded-xl border border-neutral-200/40 dark:border-border bg-[#F5F5F5] dark:bg-card shadow-[0_4px_16px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.4)] transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:group-focus-visible:shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
         style={currentAspect ? { aspectRatio: currentAspect } : undefined}
       >
         {activeResourceLinks.length > 0 && (
@@ -172,10 +172,10 @@ export default function ProjectCard({
       <div className="relative z-10 px-0 pt-5 sm:pt-6 pb-4 sm:pb-5">
         <div className="flex items-start justify-between gap-2 sm:gap-3">
           <div className="min-w-0 flex-1">
-            <h3 className="text-[19px] sm:text-[22px] font-semibold leading-tight tracking-tight text-neutral-900 dark:text-[#f5f5f7]">{title}</h3>
+            <h3 className="text-[19px] sm:text-[22px] font-semibold leading-tight tracking-tight text-neutral-900 dark:text-foreground">{title}</h3>
             <p className="mt-0.5 text-[19px] sm:text-[22px] font-semibold leading-tight tracking-tight text-[#A0A5AC] dark:text-neutral-500">{subtitle}</p>
           </div>
-          <span className="pt-0.5 text-[13px] sm:text-[14px] font-medium text-neutral-500 dark:text-neutral-400 whitespace-nowrap">{year}</span>
+          <span className="pt-0.5 text-[13px] sm:text-[14px] font-medium text-neutral-500 dark:text-muted-foreground whitespace-nowrap">{year}</span>
         </div>
       </div>
     </Link>

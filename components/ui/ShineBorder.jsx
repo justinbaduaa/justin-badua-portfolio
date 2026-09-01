@@ -28,7 +28,7 @@ export default function ShineBorder({
         ...props.style,
       }}
       className={cn(
-        "relative min-h-[60px] w-full min-w-[300px] place-items-center rounded-[--border-radius] bg-white dark:bg-[#1c1c1e] p-3 text-black dark:text-white",
+        "relative min-h-[60px] w-full min-w-[300px] place-items-center rounded-[--border-radius] bg-white dark:bg-card p-3 text-black dark:text-white",
         className,
       )}
       {...props}
