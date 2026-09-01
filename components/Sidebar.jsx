@@ -107,7 +107,8 @@ export default function Sidebar() {
         {workSections.map((section) => (
           <div key={section.label} className="mt-7">
             <p className={sectionLabelClass}>{section.label}</p>
-            <ul className="flex flex-col gap-0.5">
+            {/* Indented so the header reads as a parent of the links beneath it. */}
+            <ul className="flex flex-col gap-0.5 pl-3">
               {section.items.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className={itemClass(isActive(pathname, item.href))}>
