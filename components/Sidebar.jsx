@@ -14,16 +14,15 @@ const isActive = (pathname, href) => (href === '/' ? pathname === '/' : pathname
 // filled background and full-contrast text; everything else stays muted until hover.
 const itemClass = (active) =>
   clsx(
-    'flex w-full items-center gap-2.5 rounded-md px-3 py-1.5 text-left text-sm leading-snug transition-colors duration-150',
+    'flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-[15px] leading-snug transition-colors duration-150',
     active
       ? 'bg-sidebar-accent font-medium text-foreground'
-      : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+      : 'text-sidebar-foreground hover:bg-sidebar-hover hover:text-foreground'
   );
 
-// Section headings are non-interactive. They sit under a hairline divider and
-// render smaller and dimmer than links so the two never read as the same thing.
-const sectionLabelClass =
-  'px-3 pb-1.5 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-muted-foreground opacity-60';
+// Section headings are non-interactive: sentence case, smaller and lighter than
+// links, with a wide gap above so groups separate by space rather than by rules.
+const sectionLabelClass = 'px-3 pb-1.5 text-[13px] font-medium text-muted-foreground';
 
 const iconProps = {
   'aria-hidden': true,
@@ -79,7 +78,7 @@ export default function Sidebar() {
   const isDark = theme === 'dark';
 
   return (
-    <aside className="hidden border-r border-border bg-background lg:fixed lg:left-0 lg:top-0 lg:flex lg:h-screen lg:w-64 lg:flex-col">
+    <aside className="hidden border-r border-border bg-sidebar lg:fixed lg:left-0 lg:top-0 lg:flex lg:h-screen lg:w-64 lg:flex-col">
       <div className="flex h-16 shrink-0 items-center px-5">
         <Link href="/" className="inline-flex" aria-label="Go to work page">
           {/* CSS-only swap on the `dark` class so the mark never flashes the wrong colour. */}
@@ -106,7 +105,7 @@ export default function Sidebar() {
         </ul>
 
         {workSections.map((section) => (
-          <div key={section.label} className="mt-3 border-t border-border pt-3">
+          <div key={section.label} className="mt-7">
             <p className={sectionLabelClass}>{section.label}</p>
             <ul className="flex flex-col gap-0.5">
               {section.items.map((item) => (
@@ -121,7 +120,7 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      <ul className="flex shrink-0 flex-col gap-0.5 border-t border-border px-3 py-3">
+      <ul className="flex shrink-0 flex-col gap-0.5 px-3 py-3">
         {contactLinks.map((link) => (
           <li key={link.label}>
             <a href={link.href} target="_blank" rel="noreferrer" className={itemClass(false)}>
